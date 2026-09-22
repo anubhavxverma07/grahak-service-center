@@ -5,3 +5,21 @@
 .float-card .float-icon{width:24px;height:24px;border:1px solid #fff2;border-radius:8px;display:grid;place-items:center;background:#ffffff08;grid-row:span 2}
 .float-card .float-icon svg{width:13px;height:13px;fill:none;stroke:#ddd;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
 .float-card small{grid-column:2}
+
+/* Icon cleanup: replace text/emoji-like symbols with consistent line icons. */
+.ui-icon,.service-svg,.check-icon{display:inline-block;width:1em;height:1em;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;vertical-align:-.16em}
+.btn-icon{display:inline-flex;align-items:center;justify-content:center;margin-left:5px}
+.btn-icon .ui-icon{width:14px;height:14px;vertical-align:0}
+.inline-arrow{display:inline-flex;align-items:center;margin-left:3px;color:currentColor}
+.inline-arrow .ui-icon{width:13px;height:13px;vertical-align:0}
+.icon{height:32px;display:flex;align-items:center;margin:12px 0 35px;color:#bbb}
+.service-svg{width:29px;height:29px;stroke-width:1.45}
+.checklist>span{display:flex;align-items:center;justify-content:center}
+.check-icon{width:16px;height:16px;stroke:#d9ff80;stroke-width:2}
+.trust-dot{width:6px!important;height:6px!important;background:#d9ff80;border-radius:50%;display:inline-block;vertical-align:middle;box-shadow:0 0 14px #d9ff80}
+.chat{display:flex;align-items:center;justify-content:center;gap:7px}
+.chat span{width:7px;height:7px;border-radius:50%;background:#777;display:block}
+.detail-close .ui-icon,.modal-close .ui-icon,.close-menu .ui-icon{width:19px;height:19px;vertical-align:0}
+.faq summary{position:relative;padding-right:32px}
+.faq summary:after{content:"";position:absolute;right:3px;top:50%;width:13px;height:13px;transform:translateY(-50%);background:linear-gradient(currentColor,currentColor) center/13px 1px no-repeat,linear-gradient(currentColor,currentColor) center/1px 13px no-repeat;color:#777}
+.faq details[open] summary:after{background:linear-gradient(currentColor,currentColor) center/13px 1px no-repeat}
