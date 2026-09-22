@@ -1,128 +1,1224 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="theme-color" content="#050505">
-  <meta name="description" content="Grahak Service Center — digital business services including AEPS, BBPS, money transfer, recharge, DTH and PAN services.">
-  <title>Grahak Service Center</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#1E40AF">
+<title>Grahak Service Center — Aapke Digital Counter Ka Partner</title>
+<meta name="description" content="AEPS, BBPS, money transfer, recharge, PAN aur zyada — ek hi platform par. Retailers aur agents ke liye.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --blue:#1E40AF; --blue-deep:#0B1E5C; --blue-soft:#EFF4FF;
+  --orange:#F97316; --orange-light:#FB923C;
+  --green:#10B981;
+  --ink:#0F172A; --muted:#64748B; --line:#E2E8F0;
+  --bg:#FFFFFF; --bg-alt:#F8FAFC;
+  --shadow-sm:0 1px 2px rgba(15,23,42,.06), 0 2px 8px rgba(15,23,42,.04);
+  --shadow-md:0 4px 12px rgba(15,23,42,.08), 0 12px 32px rgba(15,23,42,.06);
+  --shadow-lg:0 20px 50px rgba(15,23,42,.12);
+  --radius:16px;
+  --ease:cubic-bezier(.22,.7,.25,1);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:'Inter',system-ui,-apple-system,sans-serif;
+  color:var(--ink);background:var(--bg);
+  -webkit-font-smoothing:antialiased;
+  font-synthesis:none;
+  line-height:1.5;
+  overflow-x:hidden;
+}
+a{color:inherit;text-decoration:none}
+button{font-family:inherit;cursor:pointer;border:0;background:none}
+img,svg{display:block;max-width:100%}
+::selection{background:var(--orange);color:#fff}
+
+/* ---------- LAYOUT ---------- */
+.container{width:100%;max-width:1200px;margin:0 auto;padding:0 24px}
+.section{padding:96px 0}
+.section-tight{padding:64px 0}
+@media(max-width:768px){.section{padding:64px 0}.section-tight{padding:48px 0}}
+
+/* ---------- HEADER ---------- */
+.header{
+  position:sticky;top:0;z-index:100;
+  background:rgba(255,255,255,.82);
+  -webkit-backdrop-filter:blur(16px) saturate(180%);
+  backdrop-filter:blur(16px) saturate(180%);
+  border-bottom:1px solid rgba(226,232,240,.7);
+  transition:box-shadow .3s var(--ease);
+}
+.header.scrolled{box-shadow:var(--shadow-sm)}
+.header-inner{
+  display:flex;align-items:center;justify-content:space-between;
+  height:72px;
+}
+.brand{display:flex;align-items:center;gap:10px;font-weight:700;font-size:17px;letter-spacing:-.02em}
+.brand-mark{
+  width:36px;height:36px;border-radius:10px;flex:none;
+  background:linear-gradient(135deg,var(--blue),var(--orange));
+  display:flex;align-items:center;justify-content:center;
+  color:#fff;font-weight:800;font-size:16px;
+  box-shadow:0 4px 12px rgba(30,64,175,.25);
+}
+.brand-text small{display:block;font-size:10.5px;font-weight:500;color:var(--muted);letter-spacing:.06em;text-transform:uppercase;margin-top:1px}
+
+.nav{display:flex;align-items:center;gap:4px}
+.nav a{
+  padding:8px 14px;border-radius:8px;font-size:14.5px;font-weight:500;
+  color:#334155;transition:color .2s, background .2s;
+  position:relative;
+}
+.nav a:hover{color:var(--blue);background:var(--blue-soft)}
+.nav a.active{color:var(--blue)}
+.nav a.active::after{
+  content:"";position:absolute;left:14px;right:14px;bottom:2px;height:2px;
+  background:var(--orange);border-radius:2px;
+}
+.btn{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:11px 20px;border-radius:10px;font-size:14.5px;font-weight:600;
+  transition:transform .25s var(--ease), box-shadow .25s, background .2s;
+  white-space:nowrap;
+}
+.btn-primary{
+  background:linear-gradient(135deg,var(--orange),#EA580C);color:#fff;
+  box-shadow:0 6px 18px rgba(249,115,22,.32);
+}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 10px 24px rgba(249,115,22,.4)}
+.btn-ghost{background:#fff;color:var(--ink);border:1.5px solid var(--line)}
+.btn-ghost:hover{border-color:var(--blue);color:var(--blue);transform:translateY(-2px)}
+.btn-blue{background:var(--blue);color:#fff;box-shadow:0 6px 18px rgba(30,64,175,.28)}
+.btn-blue:hover{transform:translateY(-2px);background:var(--blue-deep)}
+.btn-lg{padding:15px 26px;font-size:15.5px;border-radius:12px}
+.btn svg{width:16px;height:16px}
+
+.burger{display:none;width:44px;height:44px;border-radius:10px;flex-direction:column;gap:5px;align-items:center;justify-content:center;background:#fff;border:1.5px solid var(--line)}
+.burger span{width:20px;height:2px;background:var(--ink);border-radius:2px;transition:.3s var(--ease)}
+.burger[aria-expanded="true"] span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.burger[aria-expanded="true"] span:nth-child(2){opacity:0}
+.burger[aria-expanded="true"] span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+
+@media(max-width:900px){
+  .nav{display:none}
+  .burger{display:flex}
+  .header .btn-primary{display:none}
+}
+.mobile-menu{
+  position:fixed;inset:72px 0 auto 0;background:#fff;z-index:99;
+  border-bottom:1px solid var(--line);box-shadow:var(--shadow-md);
+  padding:16px 24px 24px;
+  opacity:0;visibility:hidden;transform:translateY(-12px);
+  transition:opacity .28s var(--ease), transform .28s var(--ease), visibility .28s;
+}
+.mobile-menu[data-open]{opacity:1;visibility:visible;transform:none}
+.mobile-menu a{display:block;padding:14px 12px;border-radius:10px;font-size:16px;font-weight:500;color:#334155;border-bottom:1px solid var(--line)}
+.mobile-menu a:last-of-type{border-bottom:0}
+.mobile-menu a:hover,.mobile-menu a.active{background:var(--blue-soft);color:var(--blue)}
+.mobile-menu .btn{margin-top:16px;width:100%;justify-content:center}
+
+/* ---------- PAGES ---------- */
+.page{display:none;animation:pageIn .5s var(--ease) both}
+.page[data-active]{display:block}
+@keyframes pageIn{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+
+/* ---------- HERO ---------- */
+.hero{
+  position:relative;overflow:hidden;
+  padding:72px 0 96px;
+  background:
+    radial-gradient(1000px 500px at 15% 0%, rgba(30,64,175,.08), transparent 60%),
+    radial-gradient(900px 480px at 100% 100%, rgba(249,115,22,.08), transparent 60%),
+    var(--bg);
+}
+.hero-grid{
+  display:grid;grid-template-columns:1.05fr 1fr;gap:56px;align-items:center;
+}
+@media(max-width:960px){.hero-grid{grid-template-columns:1fr;gap:48px}.hero{padding:40px 0 64px}}
+
+.badge{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:7px 14px;border-radius:999px;
+  background:#fff;border:1px solid var(--line);
+  font-size:13px;font-weight:500;color:#475569;
+  box-shadow:var(--shadow-sm);
+  margin-bottom:22px;
+}
+.badge-dot{width:8px;height:8px;border-radius:50%;background:var(--green);box-shadow:0 0 0 4px rgba(16,185,129,.15);animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.6}}
+
+h1.hero-title{
+  font-size:clamp(34px,5vw,58px);
+  font-weight:700;letter-spacing:-.035em;line-height:1.05;
+  color:var(--ink);margin-bottom:22px;
+}
+.hero-title .grad{
+  background:linear-gradient(120deg,var(--blue) 0%, var(--orange) 90%);
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+}
+.hero-sub{
+  font-size:17px;line-height:1.65;color:#475569;max-width:540px;
+  margin-bottom:32px;
+}
+.hero-cta{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:32px}
+.hero-trust{
+  display:flex;gap:28px;flex-wrap:wrap;
+  padding-top:24px;border-top:1px solid var(--line);
+}
+.hero-trust div strong{display:block;font-size:20px;font-weight:700;color:var(--ink);letter-spacing:-.02em}
+.hero-trust div span{font-size:12.5px;color:var(--muted);font-weight:500}
+
+/* hero visual */
+.hero-visual{position:relative;height:480px}
+@media(max-width:960px){.hero-visual{height:380px}}
+.hv-card{
+  position:absolute;background:#fff;border-radius:18px;padding:18px;
+  box-shadow:var(--shadow-lg);
+  border:1px solid rgba(226,232,240,.9);
+  animation:float 6s ease-in-out infinite;
+}
+.hv-1{top:20px;left:20px;width:200px;animation-delay:0s}
+.hv-2{top:120px;right:0;width:220px;animation-delay:-2s}
+.hv-3{bottom:60px;left:0;width:230px;animation-delay:-4s}
+.hv-4{bottom:0;right:40px;width:180px;animation-delay:-1s}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+.hv-icon{
+  width:40px;height:40px;border-radius:10px;display:flex;align-items:center;justify-content:center;
+  margin-bottom:12px;
+}
+.hv-1 .hv-icon{background:#EFF4FF;color:var(--blue)}
+.hv-2 .hv-icon{background:#FFF7ED;color:var(--orange)}
+.hv-3 .hv-icon{background:#ECFDF5;color:var(--green)}
+.hv-4 .hv-icon{background:#EFF4FF;color:var(--blue)}
+.hv-card h4{font-size:14px;font-weight:600;letter-spacing:-.01em;margin-bottom:4px}
+.hv-card p{font-size:12px;color:var(--muted);line-height:1.4}
+.hv-glow{
+  position:absolute;inset:0;pointer-events:none;
+  background:radial-gradient(400px 300px at 50% 50%, rgba(30,64,175,.15), transparent 70%);
+  filter:blur(40px);z-index:-1;
+}
+
+/* ---------- SECTION HEADER ---------- */
+.sec-head{max-width:640px;margin:0 auto 56px;text-align:center}
+.sec-eyebrow{
+  display:inline-block;font-size:12.5px;font-weight:600;letter-spacing:.12em;
+  text-transform:uppercase;color:var(--orange);margin-bottom:14px;
+}
+.sec-title{
+  font-size:clamp(26px,3.5vw,40px);font-weight:700;letter-spacing:-.03em;line-height:1.15;
+  color:var(--ink);margin-bottom:16px;
+}
+.sec-sub{font-size:16px;color:var(--muted);line-height:1.6}
+
+/* ---------- SERVICES GRID ---------- */
+.services-grid{
+  display:grid;grid-template-columns:repeat(4,1fr);gap:20px;
+}
+@media(max-width:1024px){.services-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:520px){.services-grid{grid-template-columns:1fr}}
+.svc{
+  background:#fff;border:1px solid var(--line);border-radius:var(--radius);
+  padding:26px 22px;transition:transform .35s var(--ease), box-shadow .35s, border-color .3s;
+  position:relative;overflow:hidden;
+}
+.svc::before{
+  content:"";position:absolute;inset:0;border-radius:var(--radius);
+  background:linear-gradient(135deg,rgba(30,64,175,.04),transparent 60%);
+  opacity:0;transition:opacity .35s;
+}
+.svc:hover{transform:translateY(-6px);box-shadow:var(--shadow-md);border-color:transparent}
+.svc:hover::before{opacity:1}
+.svc-icon{
+  width:48px;height:48px;border-radius:12px;display:flex;align-items:center;justify-content:center;
+  margin-bottom:18px;position:relative;
+}
+.svc h3{font-size:16px;font-weight:600;letter-spacing:-.015em;margin-bottom:8px;position:relative}
+.svc p{font-size:13.5px;color:var(--muted);line-height:1.55;position:relative}
+.svc-tag{
+  display:inline-block;font-size:11px;font-weight:600;letter-spacing:.06em;
+  text-transform:uppercase;color:var(--green);margin-top:14px;position:relative;
+}
+.i-blue{background:#EFF4FF;color:var(--blue)}
+.i-orange{background:#FFF7ED;color:var(--orange)}
+.i-green{background:#ECFDF5;color:var(--green)}
+.i-purple{background:#F5F3FF;color:#7C3AED}
+
+/* ---------- STATS STRIP ---------- */
+.stats-strip{
+  background:linear-gradient(120deg,var(--blue-deep) 0%, var(--blue) 60%, #2E5AC7 100%);
+  color:#fff;padding:56px 0;position:relative;overflow:hidden;
+}
+.stats-strip::before{
+  content:"";position:absolute;inset:0;
+  background:radial-gradient(600px 300px at 90% 50%, rgba(249,115,22,.25), transparent 60%);
+}
+.stats-grid{
+  display:grid;grid-template-columns:repeat(4,1fr);gap:20px;
+  position:relative;text-align:center;
+}
+@media(max-width:768px){.stats-grid{grid-template-columns:repeat(2,1fr);gap:36px}}
+.stat-num{font-size:clamp(32px,4vw,46px);font-weight:700;letter-spacing:-.03em;line-height:1}
+.stat-lbl{font-size:13.5px;color:rgba(255,255,255,.75);margin-top:10px;font-weight:500}
+
+/* ---------- HOW IT WORKS ---------- */
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;position:relative}
+@media(max-width:900px){.steps{grid-template-columns:1fr;gap:32px}}
+.step{position:relative;padding-top:12px}
+.step-num{
+  width:52px;height:52px;border-radius:14px;
+  background:#fff;border:2px solid var(--line);
+  display:flex;align-items:center;justify-content:center;
+  font-weight:700;font-size:19px;color:var(--blue);
+  margin-bottom:20px;transition:.3s var(--ease);
+  position:relative;z-index:1;
+}
+.step:hover .step-num{background:var(--blue);color:#fff;border-color:var(--blue);transform:scale(1.06)}
+.step h3{font-size:17px;font-weight:600;letter-spacing:-.015em;margin-bottom:10px}
+.step p{font-size:14px;color:var(--muted);line-height:1.6}
+.step-line{
+  position:absolute;top:38px;left:52px;right:-24px;height:2px;
+  background:repeating-linear-gradient(to right,var(--line) 0 6px, transparent 6px 12px);
+}
+@media(max-width:900px){.step-line{display:none}}
+
+/* ---------- WHY US ---------- */
+.why-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+@media(max-width:900px){.why-grid{grid-template-columns:1fr;gap:40px}}
+.why-list{display:flex;flex-direction:column;gap:22px;margin-top:32px}
+.why-item{display:flex;gap:16px;align-items:flex-start}
+.why-check{
+  width:28px;height:28px;border-radius:8px;flex:none;
+  background:linear-gradient(135deg,var(--green),#059669);
+  display:flex;align-items:center;justify-content:center;color:#fff;
+  box-shadow:0 4px 10px rgba(16,185,129,.25);
+}
+.why-check svg{width:14px;height:14px}
+.why-item h4{font-size:15.5px;font-weight:600;margin-bottom:4px;letter-spacing:-.01em}
+.why-item p{font-size:13.5px;color:var(--muted);line-height:1.55}
+.why-visual{
+  background:linear-gradient(135deg,#EFF4FF 0%, #FFF7ED 100%);
+  border-radius:24px;padding:40px;position:relative;overflow:hidden;
+  min-height:400px;
+  display:flex;align-items:center;justify-content:center;
+}
+.why-visual-card{
+  background:#fff;border-radius:18px;padding:24px;width:100%;max-width:340px;
+  box-shadow:var(--shadow-lg);
+}
+.why-visual-card h5{font-size:14px;font-weight:600;margin-bottom:16px;letter-spacing:-.01em}
+.mini-row{display:flex;align-items:center;justify-content:space-between;padding:11px 0;border-bottom:1px solid var(--line);font-size:13.5px}
+.mini-row:last-child{border-bottom:0;padding-bottom:0}
+.mini-row span:first-child{color:var(--muted)}
+.mini-row span:last-child{font-weight:600;color:var(--ink)}
+.mini-row .up{color:var(--green)}
+
+/* ---------- TESTIMONIALS ---------- */
+.tst-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+@media(max-width:900px){.tst-grid{grid-template-columns:1fr}}
+.tst{
+  background:#fff;border:1px solid var(--line);border-radius:var(--radius);
+  padding:28px 24px;display:flex;flex-direction:column;
+  transition:transform .35s var(--ease), box-shadow .35s;
+}
+.tst:hover{transform:translateY(-6px);box-shadow:var(--shadow-md)}
+.tst-stars{color:#FBBF24;font-size:15px;letter-spacing:2px;margin-bottom:16px}
+.tst-quote{font-size:14.5px;line-height:1.65;color:#334155;flex:1;margin-bottom:22px}
+.tst-author{display:flex;align-items:center;gap:12px}
+.tst-avatar{
+  width:44px;height:44px;border-radius:50%;flex:none;
+  display:flex;align-items:center;justify-content:center;
+  font-weight:700;color:#fff;font-size:16px;
+}
+.tst-author strong{font-size:14px;font-weight:600;display:block;letter-spacing:-.01em}
+.tst-author span{font-size:12.5px;color:var(--muted)}
+
+/* ---------- CTA BLOCK ---------- */
+.cta-block{
+  background:linear-gradient(120deg,var(--blue-deep) 0%, var(--blue) 55%, #2E5AC7 100%);
+  border-radius:24px;padding:72px 56px;position:relative;overflow:hidden;
+  color:#fff;text-align:center;
+}
+@media(max-width:640px){.cta-block{padding:48px 28px;border-radius:18px}}
+.cta-block::before{
+  content:"";position:absolute;top:-100px;right:-100px;width:400px;height:400px;
+  background:radial-gradient(circle, rgba(249,115,22,.4), transparent 60%);
+}
+.cta-block::after{
+  content:"";position:absolute;bottom:-100px;left:-100px;width:400px;height:400px;
+  background:radial-gradient(circle, rgba(16,185,129,.25), transparent 60%);
+}
+.cta-block > *{position:relative;z-index:1}
+.cta-block h2{font-size:clamp(24px,3.2vw,36px);font-weight:700;letter-spacing:-.03em;margin-bottom:16px;line-height:1.2}
+.cta-block p{font-size:16px;color:rgba(255,255,255,.85);max-width:540px;margin:0 auto 32px;line-height:1.6}
+.cta-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+.cta-block .btn-ghost{background:rgba(255,255,255,.1);color:#fff;border-color:rgba(255,255,255,.3)}
+.cta-block .btn-ghost:hover{background:rgba(255,255,255,.18);color:#fff}
+
+/* ---------- PAGE HERO (inner pages) ---------- */
+.page-hero{
+  padding:64px 0 48px;text-align:center;
+  background:linear-gradient(180deg, var(--blue-soft), transparent);
+}
+.page-hero h1{font-size:clamp(30px,4vw,48px);font-weight:700;letter-spacing:-.03em;line-height:1.1;margin-bottom:16px}
+.page-hero p{font-size:17px;color:#475569;max-width:600px;margin:0 auto;line-height:1.6}
+
+/* ---------- SERVICE DETAIL CARDS ---------- */
+.svc-detail{
+  display:grid;grid-template-columns:80px 1fr auto;gap:24px;align-items:center;
+  background:#fff;border:1px solid var(--line);border-radius:var(--radius);
+  padding:24px 28px;margin-bottom:14px;
+  transition:transform .3s var(--ease), box-shadow .3s, border-color .3s;
+}
+.svc-detail:hover{transform:translateX(4px);box-shadow:var(--shadow-md);border-color:transparent}
+@media(max-width:720px){.svc-detail{grid-template-columns:60px 1fr;gap:16px}.svc-detail .btn{grid-column:1/-1;width:100%;justify-content:center}}
+.svc-detail-icon{
+  width:64px;height:64px;border-radius:14px;display:flex;align-items:center;justify-content:center;
+}
+.svc-detail h3{font-size:17px;font-weight:600;letter-spacing:-.015em;margin-bottom:6px}
+.svc-detail p{font-size:14px;color:var(--muted);line-height:1.55}
+
+/* ---------- CONTACT ---------- */
+.contact-grid{display:grid;grid-template-columns:1fr 1.2fr;gap:60px}
+@media(max-width:900px){.contact-grid{grid-template-columns:1fr;gap:40px}}
+.contact-info{display:flex;flex-direction:column;gap:24px}
+.contact-item{display:flex;gap:16px;align-items:flex-start}
+.contact-item-icon{
+  width:44px;height:44px;border-radius:12px;flex:none;
+  display:flex;align-items:center;justify-content:center;
+}
+.contact-item h4{font-size:15px;font-weight:600;margin-bottom:4px;letter-spacing:-.01em}
+.contact-item p, .contact-item a{font-size:14px;color:var(--muted);line-height:1.55}
+.contact-item a:hover{color:var(--blue)}
+.form-card{
+  background:#fff;border:1px solid var(--line);border-radius:var(--radius);
+  padding:32px;box-shadow:var(--shadow-sm);
+}
+.form-card h3{font-size:19px;font-weight:600;letter-spacing:-.02em;margin-bottom:8px}
+.form-card > p{font-size:14px;color:var(--muted);margin-bottom:24px}
+.field{margin-bottom:18px}
+.field label{display:block;font-size:13px;font-weight:500;color:#334155;margin-bottom:7px}
+.field input, .field textarea, .field select{
+  width:100%;padding:12px 14px;border-radius:10px;
+  border:1.5px solid var(--line);background:#fff;
+  font-family:inherit;font-size:14.5px;color:var(--ink);
+  transition:border-color .2s, box-shadow .2s;
+}
+.field input:focus, .field textarea:focus, .field select:focus{
+  outline:none;border-color:var(--blue);
+  box-shadow:0 0 0 4px rgba(30,64,175,.1);
+}
+.field textarea{resize:vertical;min-height:110px}
+.form-card .btn{width:100%;justify-content:center}
+
+/* ---------- FAQ ---------- */
+.faq-list{max-width:780px;margin:0 auto;display:flex;flex-direction:column;gap:12px}
+.faq{
+  background:#fff;border:1px solid var(--line);border-radius:14px;
+  overflow:hidden;transition:box-shadow .3s, border-color .3s;
+}
+.faq[open]{box-shadow:var(--shadow-sm);border-color:transparent}
+.faq summary{
+  padding:20px 24px;font-size:15.5px;font-weight:600;letter-spacing:-.01em;
+  cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:16px;
+  transition:color .2s;
+}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary:hover{color:var(--blue)}
+.faq summary::after{
+  content:"+";font-size:22px;font-weight:400;color:var(--muted);
+  transition:transform .3s var(--ease);flex:none;
+}
+.faq[open] summary::after{transform:rotate(45deg);color:var(--blue)}
+.faq-body{padding:0 24px 22px;font-size:14.5px;color:var(--muted);line-height:1.65}
+
+/* ---------- FOOTER ---------- */
+.footer{
+  background:var(--blue-deep);color:rgba(255,255,255,.75);
+  padding:64px 0 32px;margin-top:80px;
+}
+.footer-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:48px;margin-bottom:48px}
+@media(max-width:820px){.footer-grid{grid-template-columns:1fr 1fr;gap:36px}}
+@media(max-width:520px){.footer-grid{grid-template-columns:1fr}}
+.footer-brand{display:flex;align-items:center;gap:10px;color:#fff;font-weight:700;font-size:17px;letter-spacing:-.02em;margin-bottom:16px}
+.footer-brand .brand-mark{box-shadow:0 4px 12px rgba(0,0,0,.3)}
+.footer p{font-size:14px;line-height:1.65;color:rgba(255,255,255,.6);max-width:320px}
+.footer h5{color:#fff;font-size:14px;font-weight:600;margin-bottom:16px;letter-spacing:.02em}
+.footer ul{list-style:none;display:flex;flex-direction:column;gap:10px}
+.footer ul a{font-size:14px;color:rgba(255,255,255,.65);transition:color .2s}
+.footer ul a:hover{color:#fff}
+.footer-bottom{
+  padding-top:28px;border-top:1px solid rgba(255,255,255,.1);
+  display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;
+  font-size:13px;color:rgba(255,255,255,.5);
+}
+.footer-bottom a{color:rgba(255,255,255,.65)}
+.footer-bottom a:hover{color:#fff}
+
+/* ---------- REVEAL ANIMATION ---------- */
+[data-reveal]{opacity:0;transform:translateY(24px);transition:opacity .8s var(--ease), transform .8s var(--ease);transition-delay:var(--d,0s)}
+[data-reveal].in-view{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){
+  [data-reveal]{opacity:1;transform:none;transition:none}
+  .hv-card{animation:none}
+  *{scroll-behavior:auto !important}
+}
+
+/* ---------- WHATSAPP FLOAT ---------- */
+.wa-float{
+  position:fixed;bottom:24px;right:24px;z-index:90;
+  width:56px;height:56px;border-radius:50%;
+  background:#25D366;color:#fff;
+  display:flex;align-items:center;justify-content:center;
+  box-shadow:0 8px 24px rgba(37,211,102,.4);
+  transition:transform .3s var(--ease), box-shadow .3s;
+}
+.wa-float:hover{transform:translateY(-3px) scale(1.05);box-shadow:0 12px 30px rgba(37,211,102,.5)}
+.wa-float svg{width:28px;height:28px}
+@media(max-width:640px){.wa-float{bottom:16px;right:16px;width:52px;height:52px}}
+</style>
 </head>
 <body>
-<div class="ambient"></div>
-<header class="nav">
-  <a class="brand" href="#home" aria-label="Grahak Service Center home">
-    <span class="brand-mark">G</span><span>Grahak <b>Service Center</b></span>
-  </a>
-  <nav class="desktop-nav">
-    <a href="#services">Services</a><a href="#how">How It Works</a><a href="#platform">Platform</a><a href="#faq">FAQ</a><a href="#contact">Contact</a>
-  </nav>
-  <div class="nav-actions">
-    <button class="btn ghost" data-open="login">Login</button>
-    <button class="btn primary" data-open="partner">Become a Partner <span class="btn-icon"><svg class="ui-icon arrow-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></button>
+
+<!-- ================= HEADER ================= -->
+<header class="header" id="header">
+  <div class="container header-inner">
+    <a href="#/" class="brand">
+      <div class="brand-mark">G</div>
+      <div class="brand-text">
+        Grahak
+        <small>Service Center</small>
+      </div>
+    </a>
+    <nav class="nav" id="mainNav">
+      <a href="#/" data-nav="/">Home</a>
+      <a href="#/services" data-nav="/services">Services</a>
+      <a href="#/how" data-nav="/how">How It Works</a>
+      <a href="#/about" data-nav="/about">About</a>
+      <a href="#/faq" data-nav="/faq">FAQ</a>
+      <a href="#/contact" data-nav="/contact">Contact</a>
+    </nav>
+    <a href="#/contact" class="btn btn-primary">
+      Become a Partner
+      <svg viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </a>
+    <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
+      <span></span><span></span><span></span>
+    </button>
   </div>
-  <button class="menu-btn" id="menuBtn" aria-label="Open menu"><i></i><i></i></button>
 </header>
 
-<aside class="mobile-menu" id="mobileMenu">
-  <button class="close-menu" id="closeMenu" aria-label="Close menu"><svg class="ui-icon close-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
-  <a href="#services">Services</a><a href="#how">How It Works</a><a href="#platform">Platform</a><a href="#faq">FAQ</a><a href="#contact">Contact</a>
-  <button class="btn ghost" data-open="login">Login</button>
-  <button class="btn primary" data-open="partner">Become a Partner</button>
-</aside>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#/" data-nav="/">Home</a>
+  <a href="#/services" data-nav="/services">Services</a>
+  <a href="#/how" data-nav="/how">How It Works</a>
+  <a href="#/about" data-nav="/about">About</a>
+  <a href="#/faq" data-nav="/faq">FAQ</a>
+  <a href="#/contact" data-nav="/contact">Contact</a>
+  <a href="#/contact" class="btn btn-primary">Become a Partner</a>
+</div>
 
-<main id="home">
-<section class="hero section">
-  <div class="hero-copy reveal">
-    <div class="eyebrow"><span class="dot"></span> Digital Business Services</div>
-    <h1>One platform for your <em>digital business</em> services.</h1>
-    <p>Access essential business services including AEPS, BBPS, money transfer, recharge, DTH and PAN services through one platform.</p>
-    <div class="hero-actions">
-      <button class="btn primary large" data-open="partner">Become a Partner <span class="btn-icon"><svg class="ui-icon arrow-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></button>
-      <a class="btn outline large" href="#services">Explore Services <span class="btn-icon"><svg class="ui-icon down-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></span></a>
+<!-- ================= PAGES ================= -->
+<main id="main">
+
+<!-- ---------- HOME ---------- -->
+<div class="page"- data-page="/" data-active>
+  <section class="hero">
+    <div class="container hero-grid">
+      <div>
+        <div class="badge" data-reveal>
+          <span class="badge-dot"></span>
+          Trusted by 10,000+ retailers across India
+        </div>
+        <h1 class="hero-title" data-reveal style="--d:.08s">
+          Aapke counter ko banayein<br>
+          <span class="grad">digital business hub.</span>
+        </h1>
+        <p class="hero-sub" data-reveal style="--d:.16s">
+          AEPS, BBPS, money transfer, mobile recharge, PAN card aur bahut kuch —
+          ek hi platform par. Kirana stores, cyber cafes aur agents ke liye banaya gaya.
+        </p>
+        <div class="hero-cta" data-reveal style="--d:.24s">
+          <a href="#/contact" class="btn btn-primary btn-lg">
+            Become a Partner
+            <svg viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+          <a href="#/services" class="btn btn-ghost btn-lg">Explore Services</a>
+        </div>
+        <div class="hero-trust" data-reveal style="--d:.32s">
+          <div><strong>10,000+</strong><span>Active Partners</span></div>
+          <div><strong>₹500Cr+</strong><span>Monthly Volume</span></div>
+          <div><strong>24×7</strong><span>Support</span></div>
+        </div>
+      </div>
+
+      <div class="hero-visual">
+        <div class="hv-glow"></div>
+        <div class="hv-card hv1">
+          <div class="hv-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M3 12h18M12 3v18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          </div>
+          <h4>AEPS Withdrawal</h4>
+          <p>Aadhaar-based cash withdrawal, instant.</p>
+        </div>
+        <div class="hv-card hv-2">
+          <div class="hv-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><rect x="3" y="6" width="18" height="13" rx="2" stroke="currentColor" stroke-width="2"/><path d="M3 10h18" stroke="currentColor" stroke-width="2"/></svg>
+          </div>
+          <h4>BBPS Bill Pay</h4>
+          <p>Electricity, water, gas — sab ek jagah.</p>
+        </div>
+        <div class="hv-card hv-3">
+          <div class="hv-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><rect x="6" y="2" width="12" height="20" rx="2" stroke="currentColor" stroke-width="2"/><path d="M12 18h.01" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          </div>
+          <h4>Mobile Recharge</h4>
+          <p>All networks, instant commission.</p>
+        </div>
+        <div class="hv-card hv-4">
+          <div class="hv-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 2 4 6v6c0 5 3.4 9.4 8 10 4.6-.6 8-5 8-10V6z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
+          </div>
+          <h4>Secure & Safe</h4>
+          <p>Bank-grade encryption.</p>
+        </div>
+      </div>
     </div>
-    <div class="trust-line"><span class="trust-dot" aria-hidden="true"></span> Built for retailers, agents &amp; digital service partners</div>
-  </div>
-  <div class="hero-visual reveal delay">
-    <div class="orb"></div>
-    <div class="glass-card main-card">
-      <div class="card-top"><span>GRAHAK / SERVICES</span><span class="live"><i></i> READY</span></div>
-      <div class="big-word">SERVICES</div>
-      <div class="mini-grid"><span>AEPS</span><span>BBPS</span><span>DMT</span><span>RECHARGE</span></div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="sec-head" data-reveal>
+        <span class="sec-eyebrow">Our Services</span>
+        <h2 class="sec-title">Sab kuch ek hi platform par</h2>
+        <p class="sec-sub">Jo bhi aapke customers ko chahiye — sab yahin milega. Ek registration, hazaar services.</p>
+      </div>
+      <div class="services-grid">
+        <div class="svc" data-reveal style="--d:.05s">
+          <div class="svc-icon i-blue"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M12 2v20M6 8h12M6 16h12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></div>
+          <h3>AEPS</h3><p>Aadhaar-enabled cash withdrawal, balance enquiry aur mini statement.</p>
+          <span class="svc-tag">Instant</span>
+        </div>
+        <div class="svc" data-reveal style="--d:.1s">
+          <div class="svc-icon i-orange"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><rect x="3" y="6" width="18" height="13" rx="2" stroke="currentColor" stroke-width="2"/><path d="M3 10h18" stroke="currentColor" stroke-width="2"/></svg></div>
+          <h3>BBPS Bills</h3><p>Bijli, paani, gas, DTH, broadband — sab bills ek jagah.</p>
+          <span class="svc-tag">20+ Billers</span>
+        </div>
+        <div class="svc" data-reveal style="--d:.15s">
+          <div class="svc-icon i-green"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M12 1v22M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></div>
+          <h3>Money Transfer</h3><p>DMT — instant bank transfer across India, 24×7.</p>
+          <span class="svc-tag">Live</span>
+        </div>
+        <div class="svc" data-reveal style="--d:.2s">
+          <div class="svc-icon i-purple"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><rect x="6" y="2" width="12" height="20" rx="2" stroke="currentColor" stroke-width="2"/><path d="M12 18h.01" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></div>
+          <h3>Recharge</h3><p>Mobile, DTH aur data card recharge — sab operators.</p>
+          <span class="svc-tag">Instant</span>
+        </div>
+        <div class="svc" data-reveal style="--d:.25s">
+          <div class="svc-icon i-blue"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><rect x="3" y="4" width="18" height="16" rx="2" stroke="currentColor" stroke-width="2"/><circle cx="9" cy="10" r="2" stroke="currentColor" stroke-width="2"/></svg></div>
+          <h3>PAN Card</h3><p>New PAN aur correction — NSDL & UTI se apply karein.</p>
+          <span class="svc-tag">7-10 Days</span>
+        </div>
+        <div class="svc" data-reveal style="--d:.3s">
+          <div class="svc-icon i-orange"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M12 2 4 6v6c0 5 3.4 9.4 8 10 4.6-.6 8-5 8-10V6z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="m9 12 2 2 4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <h3>Insurance</h3><p>Two-wheeler, car aur health insurance — instant quotes.</p>
+          <span class="svc-tag">IRDAI</span>
+        </div>
+        <div class="svc" data-reveal style="--d:.35s">
+          <div class="svc-icon i-green"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M2 12h20M12 2a15 15 0 0 1 0 20M12 2a15 15 0 0 0 0 20" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/></svg></div>
+          <h3>Travel Booking</h3><p>Bus, train aur flight tickets — instant confirmation.</p>
+          <span class="svc-tag">Live</span>
+        </div>
+        <div class="svc" data-reveal style="--d:.4s">
+          <div class="svc-icon i-purple"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M3 3v18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="m7 14 4-4 3 3 5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <h3>More Services</h3><p>Gift cards, FASTag, e-stamp, aur bahut kuch aa raha hai.</p>
+          <span class="svc-tag">Coming Soon</span>
+        </div>
+      </div>
     </div>
-    <div class="float-card fc1"><span class="float-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M13 2 5 13h6l-1 9 9-12h-6z"/></svg></span><b>Recharge</b><small>Quick service access</small></div>
-    <div class="float-card fc2"><span class="float-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="2.5"/></svg></span><b>AEPS</b><small>Banking service</small></div>
-  </div>
-</section>
+  </section>
 
-<section class="stats-wrap">
-  <div><strong>06</strong><span>Core Services</span></div><div><strong>01</strong><span>Unified Platform</span></div><div><strong>WEB</strong><span>Responsive Access</span></div><div><strong>API</strong><span>Integration Ready</span></div>
-</section>
+  <section class="stats-strip">
+    <div class="container stats-grid">
+      <div data-reveal><div class="stat-num">10K+</div><div class="stat-lbl">Active Partners</div></div>
+      <div data-reveal style="--d:.08s"><div class="stat-num">₹500Cr+</div><div class="stat-lbl">Monthly Volume</div></div>
+      <div data-reveal style="--d:.16s"><div class="stat-num">28</div><div class="stat-lbl">States Covered</div></div>
+      <div data-reveal style="--d:.24s"><div class="stat-num">24×7</div><div class="stat-lbl">Live Support</div></div>
+    </div>
+  </section>
 
-<section class="section" id="services">
-  <div class="section-head reveal"><div><span class="eyebrow">OUR SERVICES</span><h2>Everything your <em>digital counter</em> needs.</h2></div><p>Explore the core services available through the Grahak Service Center ecosystem.</p></div>
-  <div class="service-grid">
-    <article class="service reveal" data-service="AEPS"><span class="num">01</span><div class="icon"><svg class="service-svg" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8"/><path d="M8.5 12h7M12 8.5v7"/></svg></div><h3>AEPS</h3><p>Aadhaar Enabled Payment System for supported banking services.</p><button>View details <span class="inline-arrow"><svg class="ui-icon arrow-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></button></article>
-    <article class="service reveal" data-service="BBPS"><span class="num">02</span><div class="icon"><svg class="service-svg" viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="3" width="14" height="18" rx="2"/><path d="M8 8h8M8 12h8M8 16h5"/></svg></div><h3>BBPS</h3><p>Bill payment services across supported biller categories.</p><button>View details <span class="inline-arrow"><svg class="ui-icon arrow-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></button></article>
-    <article class="service reveal" data-service="Money Transfer"><span class="num">03</span><div class="icon"><svg class="service-svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 8h14M14 4l4 4-4 4M20 16H6M10 12l-4 4 4 4"/></svg></div><h3>Money Transfer</h3><p>Domestic money transfer access through an authorized integration.</p><button>View details <span class="inline-arrow"><svg class="ui-icon arrow-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></button></article>
-    <article class="service reveal" data-service="Recharge"><span class="num">04</span><div class="icon"><svg class="service-svg" viewBox="0 0 24 24" aria-hidden="true"><path d="m13 2-8 11h6l-1 9 8-11h-6z"/></svg></div><h3>Recharge</h3><p>Recharge services for supported mobile and utility operators.</p><button>View details <span class="inline-arrow"><svg class="ui-icon arrow-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></button></article>
-    <article class="service reveal" data-service="PAN Card"><span class="num">05</span><div class="icon"><svg class="service-svg" viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="5" width="16" height="14" rx="2"/><circle cx="9" cy="10" r="2"/><path d="M13 9h4M13 12h4M7 15h10"/></svg></div><h3>PAN Card</h3><p>PAN-related application services subject to authorized processing.</p><button>View details <span class="inline-arrow"><svg class="ui-icon arrow-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></button></article>
-    <article class="service reveal" data-service="DTH"><span class="num">06</span><div class="icon"><svg class="service-svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 17a10 10 0 0 0 14 0"/><path d="M8 14a6 6 0 0 0 8 0"/><path d="M12 11v6M9 21h6"/><circle cx="12" cy="9" r="1.5"/></svg></div><h3>DTH</h3><p>DTH recharge and related services for supported operators.</p><button>View details <span class="inline-arrow"><svg class="ui-icon arrow-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></button></article>
-  </div>
-  <div class="service-detail" id="serviceDetail"><button class="detail-close" id="detailClose" aria-label="Close details"><svg class="ui-icon close-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg></button><span class="eyebrow" id="detailEyebrow">SERVICE</span><h3 id="detailTitle">AEPS</h3><p id="detailText"></p><div class="note">Availability depends on your partner account, authorized provider and service configuration.</div></div>
-</section>
+  <section class="section">
+    <div class="container">
+      <div class="sec-head" data-reveal>
+        <span class="sec-eyebrow">Kaise Kaam Karta Hai</span>
+        <h2 class="sec-title">4 aasan steps mein partner banein</h2>
+        <p class="sec-sub">Registration se earning tak — pura process simple aur transparent hai.</p>
+      </div>
+      <div class="steps">
+        <div class="step" data-reveal style="--d:.05s">
+          <div class="step-num">1</div>
+          <div class="step-line"></div>
+          <h3>Register Karein</h3>
+          <p>Aadhaar, PAN aur bank details ke saath online form bharein.</p>
+        </div>
+        <div class="step" data-reveal style="--d:.15s">
+          <div class="step-num">2</div>
+          <div class="step-line"></div>
+          <h3>KYC Verify</h3>
+          <p>24 ghante ke andar verification complete — turant approval.</p>
+        </div>
+        <div class="step" data-reveal style="--d:.25s">
+          <div class="step-num">3</div>
+          <div class="step-line"></div>
+          <h3>Dashboard Login</h3>
+          <p>Apna counter set karein aur services activate karein.</p>
+        </div>
+        <div class="step" data-reveal style="--d:.35s">
+          <div class="step-num">4</div>
+          <h3>Earning Start</h3>
+          <p>Har transaction par commission kamayein — daily payout.</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-<section class="split section" id="about">
-  <div class="split-image reveal"><div class="image-label">DIGITAL<br><em>ACCESS</em></div><div class="grid-lines"></div></div>
-  <div class="split-copy reveal"><span class="eyebrow">ABOUT GRAHAK</span><h2>Simple access to essential <em>digital services.</em></h2><p>Grahak Service Center is designed around the everyday needs of digital service retailers and partners. The goal is a clean, centralized experience where essential services can be accessed without juggling multiple interfaces.</p><div class="checklist"><span><svg class="check-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12 4 4L19 7"/></svg></span><p>Centralized service experience</p><span><svg class="check-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12 4 4L19 7"/></svg></span><p>Partner-focused workflow</p><span><svg class="check-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12 4 4L19 7"/></svg></span><p>Web-first, mobile-friendly interface</p></div><button class="btn primary" data-open="partner">Start as a Partner <span class="btn-icon"><svg class="ui-icon arrow-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></button></div>
-</section>
+  <section class="section" style="background:var(--bg-alt)">
+    <div class="container why-grid">
+      <div data-reveal>
+        <span class="sec-eyebrow">Why Choose Us</span>
+        <h2 class="sec-title" style="text-align:left">Kyun 10,000+ retailers humein chunte hain</h2>
+        <p class="sec-sub" style="text-align:left">Sirf ek platform nahi — ek pura ecosystem jo aapke business ko grow karta hai.</p>
+        <div class="why-list">
+          <div class="why-item">
+            <div class="why-check"><svg viewBox="0 0 14 14" fill="none"><path d="m2 7 3.5 3.5L12 3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+            <div><h4>Highest Commission</h4><p>Industry mein sabse competitive rates — per transaction, per day payout.</p></div>
+          </div>
+          <div class="why-item">
+            <div class="why-check"><svg viewBox="0 0 14 14" fill="none"><path d="m2 7 3.5 3.5L12 3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+            <div><h4>Instant Settlement</h4><p>Paise wahin, usi waqt. Koi wait nahi, koi tension nahi.</p></div>
+          </div>
+          <div class="why-item">
+            <div class="why-check"><svg viewBox="0 0 14 14" fill="none"><path d="m2 7 3.5 3.5L12 3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+            <div><h4>Zero Setup Cost</h4><p>Registration free. Koi hidden charges nahi.</p></div>
+          </div>
+          <div class="why-item">
+            <div class="why-check"><svg viewBox="0 0 14 14" fill="none"><path d="m2 7 3.5 3.5L12 3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+            <div><h4>24×7 Support</h4><p>Hindi mein support, WhatsApp par — jab chahiye, tab.</p></div>
+          </div>
+        </div>
+      </div>
+      <div class="why-visual" data-reveal style="--d:.15s">
+        <div class="why-visual-card">
+          <h5>Aaj Ka Performance</h5>
+          <div class="mini-row"><span>AEPS Transactions</span><span>248</span></div>
+          <div class="mini-row"><span>Recharges</span><span>156</span></div>
+          <div class="mini-row"><span>Bill Payments</span><span>89</span></div>
+          <div class="mini-row"><span>Total Earnings</span><span class="up">₹4,280</span></div>
+          <div class="mini-row"><span>Status</span><span class="up">● Live</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-<section class="section process" id="how">
-  <div class="section-head centered reveal"><span class="eyebrow">HOW IT WORKS</span><h2>From signup to <em>service.</em></h2></div>
-  <div class="steps">
-    <div class="step reveal"><b>01</b><span>01</span><h3>Select Services</h3><p>Choose the digital services relevant to your business.</p></div>
-    <div class="step reveal"><b>02</b><span>02</span><h3>Become Our Partner</h3><p>Submit your basic details to begin the partner onboarding process.</p></div>
-    <div class="step reveal"><b>03</b><span>03</span><h3>Start Business</h3><p>After verification and activation, use the services available to your account.</p></div>
-  </div>
-</section>
+  <section class="section">
+    <div class="container">
+      <div class="sec-head" data-reveal>
+        <span class="sec-eyebrow">Testimonials</span>
+        <h2 class="sec-title">Hamare partners kya kehte hain</h2>
+      </div>
+      <div class="tst-grid">
+        <div class="tst" data-reveal style="--d:.05s">
+          <div class="tst-stars">★★★★★</div>
+          <p class="tst-quote">"Pehle sirf kirana chalata tha. Ab AEPS aur recharge se mahine ka ₹15,000 extra kama raha hoon. Platform bahut simple hai."</p>
+          <div class="tst-author">
+            <div class="tst-avatar" style="background:linear-gradient(135deg,#1E40AF,#3B82F6)">RK</div>
+            <div><strong>Ramesh Kumar</strong><span>Kirana Store, Patna</span></div>
+          </div>
+        </div>
+        <div class="tst" data-reveal style="--d:.15s">
+          <div class="tst-stars">★★★★★</div>
+          <p class="tst-quote">"Commission sabse zyada yahin milta hai. Payout daily aata hai — koi rukna nahi. Support team bhi turant reply karti hai."</p>
+          <div class="tst-author">
+            <div class="tst-avatar" style="background:linear-gradient(135deg,#F97316,#FB923C)">PS</div>
+            <div><strong>Priya Sharma</strong><span>Cyber Cafe, Lucknow</span></div>
+          </div>
+        </div>
+        <div class="tst" data-reveal style="--d:.25s">
+          <div class="tst-stars">★★★★★</div>
+          <p class="tst-quote">"Registration se activation sirf 1 din mein ho gaya. Ab mere customers ko kahin jaana nahi padta — sab kuch yahin mil jata hai."</p>
+          <div class="tst-author">
+            <div class="tst-avatar" style="background:linear-gradient(135deg,#10B981,#34D399)">AY</div>
+            <div><strong>Arjun Yadav</strong><span>CSC Agent, Jaipur</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-<section class="platform section" id="platform">
-  <div class="section-head reveal"><div><span class="eyebrow">THE PLATFORM</span><h2>Built around the way <em>you work.</em></h2></div></div>
-  <div class="platform-grid">
-    <div class="platform-card reveal"><span>01</span><h3>Web Application</h3><p>A responsive interface designed for everyday service operations.</p><div class="platform-art browser"><i></i><i></i><i></i></div></div>
-    <div class="platform-card reveal"><span>02</span><h3>Android App</h3><p>Mobile access can be supported through an authorized application when the relevant integration is available.</p><div class="platform-art phone"></div></div>
-    <div class="platform-card reveal"><span>03</span><h3>WhatsApp Support</h3><p>Keep support and partner communication easy and accessible.</p><div class="platform-art chat"><span></span><span></span><span></span></div></div>
-  </div>
-</section>
+  <section class="section-tight">
+    <div class="container">
+      <div class="cta-block" data-reveal>
+        <h2>Aaj hi apna digital counter shuru karein</h2>
+        <p>Free registration. Zero setup cost. Instant activation. Aur hazaar retailers ke saath juden.</p>
+        <div class="cta-btns">
+          <a href="#/contact" class="btn btn-primary btn-lg">
+            Register Now
+            <svg viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+          <a href="https://wa.me/918685820290" class="btn btn-ghost btn-lg">WhatsApp Par Baat Karein</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
 
-<section class="cta section reveal">
-  <div><span class="eyebrow">READY TO START?</span><h2>Turn your counter into a <em>digital service point.</em></h2></div>
-  <button class="btn primary large" data-open="partner">Become a Partner <span class="btn-icon"><svg class="ui-icon arrow-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></button>
-</section>
+<!-- ---------- SERVICES ---------- -->
+<div class="page" data-page="/services">
+  <section class="page-hero">
+    <div class="container">
+      <span class="sec-eyebrow" data-reveal>Services</span>
+      <h1 data-reveal style="--d:.08s">Sabhi services transaction, ek hi jagah</h1>
+      <p data.</-reveal style="--d:.16s">Retpailers aur agents ke liye pura digital toolkit — banking se lekar bill payment tak.</p>
+    </div>
+  </section>
 
-<section class="section faq-section" id="faq">
-  <div class="section-head centered reveal"><span class="eyebrow">FAQ</span><h2>Questions, <em>answered.</em></h2></div>
-  <div class="faq">
-    <details><summary>What services are available?</summary><p>Core services include AEPS, BBPS, money transfer, recharge, PAN card and DTH services. Exact availability depends on the partner setup and authorized service providers.</p></details>
-    <details><summary>Can I register as a partner online?</summary><p>You can submit the partner registration form on this website. Final onboarding, verification and activation require the appropriate backend process.</p></details>
-    <details><summary>Are transactions live on this website?</summary><p>This frontend is prepared for integration. Real financial transactions require authorized APIs, credentials, compliance checks and a connected backend.</p></details>
-    <details><summary>Can I use it on my phone?</summary><p>Yes. The website is responsive and designed for mobile, tablet and desktop screens.</p></details>
-  </div>
-</section>
+  <section class="section-tight">
+    <div class="container">
 
-<section class="contact section" id="contact">
-  <div class="contact-copy reveal"><span class="eyebrow">CONTACT</span><h2>Let's get your <em>business moving.</em></h2><p>Have a question about partnership or services? Send a message or contact the team directly.</p><div class="contact-items"><a href="tel:8685820290"><small>PHONE</small><b>8685820290</b></a><a href="mailto:nikhilsharma32102003@gmail.com"><small>EMAIL</small><b>nikhilsharma32102003@gmail.com</b></a></div></div>
-  <form class="contact-form reveal" id="contactForm"><input required name="name" placeholder="Your name"><input required type="tel" name="phone" placeholder="Mobile number"><input required type="email" name="email" placeholder="Email address"><textarea required name="message" placeholder="How can we help?"></textarea><button class="btn primary large" type="submit">Send Enquiry <span class="btn-icon"><svg class="ui-icon arrow-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></button><small class="form-note">This form opens your email client; no message is silently stored by this frontend.</small></form>
-</section>
+></     div <div class="svc-detail" data-reveal>
+        <div class="svc-detail-icon i-blue"><svg width="28" height="28" viewBox="0 0 24 24" fill="none"><path d="M12 2v20M6 8h12M6 16h12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></div>
+        <div><h3>AEPS — Aadhaar Enabled Payment System</h3><p>Cash withdrawal, balance enquiry, mini statement aur Aadhaar-to-Aadhaar transfer. Customer ke fingerprint se instant>
+        <a href="#/contact" class="btn btn-blue">Activate</a>
+      </div>
+
+      <div class="svc-detail" data-reveal>
+        <div class="svc-detail-icon i-orange"><svg width="28" height="28" viewBox="0 0 24 24" fill="none"><rect x="3" y="6" width="18" height="13" rx="2" stroke="currentColor" stroke-width="2"/><path d="M3 10h18" stroke="currentColor" stroke-width="2"/></svg></div>
+        <div><h3>BBPS — Bharat Bill Payment System</h3><p>Electricity, water, gas, DTH, broadband, LPG, insurance premium — 20,000+ billers ka direct payment.</p></div>
+        <a href="#/contact" class="btn btn-blue">Activate</a>
+      </div>
+
+      <div class="svc-detail" data-reveal>
+        <div class="svc-detail-icon i-green"><svg width="28" height="28" viewBox="0 0 24 24" fill="none"><path d="M12 1v22M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></div>
+        <div><h3>Domestic Money Transfer (DMT)</h3><p>Kisi bhi bank account mein instant transfer — 24×7 available. IMPS, NEFT aur RTGS support.</p></div>
+        <a href="#/contact" class="btn btn-blue">Activate</a>
+      </div>
+
+      <div class="svc-detail" data-reveal>
+        <div class="svc-detail-icon i-purple"><svg width="28" height="28" viewBox="0 0 24 24" fill="none"><rect x="6" y="2" width="12" height="20" rx="2" stroke="currentColor" stroke-width="2"/><path d="M12 18h.01" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></div>
+        <div><h3>Mobile & DTH Recharge</h3><p>Jio, Airtel, Vi, BSNL, Tata Play, Airtel DTH, Dish TV — sab operators. Instant commission.</p></div>
+        <a href="#/contact" class="btn btn-blue">Activate</a>
+      </div>
+
+      <div class="svc-detail" data-reveal>
+        <div class="svc-detail-icon i-blue"><svg width="28" height="28" viewBox="0 0 24 24" fill="none"><rect x="3" y="4" width="18" height="16" rx="2" stroke="currentColor" stroke-width="2"/><circle cx="9" cy="10" r="2" stroke="currentColor" stroke-width="2"/></svg></div>
+        <div><h3>PAN Card Services</h3><p>New PAN application, correction aur reprint — NSDL & UTI ke through. 7-10 din mein delivery.</p></div>
+        <a href="#/contact" class="btn btn-blue">Activate</a>
+      </div>
+
+      <div class="svc-detail" data-reveal>
+        <div class="svc-detail-icon i-orange"><svg width="28" height="28" viewBox="0 0 24 24" fill="none"><path d="M12 2 4 6v6c0 5 3.4 9.4 8 10 4.6-.6 8-5 8-10V6z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg></div>
+        <div><h3>Insurance</h3><p>Two-wheeler, car aur health insurance — IRDAI-approved. Instant quote aur policy issuance.</p></div>
+        <a href="#/contact" class="btn btn-blue">Activate</a>
+      </div>
+
+      <div class="svc-detail" data-reveal>
+        <div class="svc-detail-icon i-green"><svg width="28" height="28" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/><path d="M2 12h20M12 2a15 15 0 0 1 0 20M12 2a15 15 0 0 0 0 20" stroke="currentColor" stroke-width="2"/></svg></div>
+        <div><h3>Travel Booking</h3><p>Bus, train aur flight tickets — instant confirmation. Cancel aur refund bhi same platform se.</p></div>
+        <a href="#/contact" class="btn btn-blue">Activate</a>
+      </div>
+
+      <div class="svc-detail" data-reveal>
+        <div class="svc-detail-icon i-purple"><svg width="28" height="28" viewBox="0 0 24 24" fill="none"><path d="M3 3v18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="m7 14 4-4 3 3 5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <div><h3>Gift Cards, FASTag & More</h3><p>Amazon, Flipkart gift cards, FASTag recharge, e-stamp paper — aur bahut kuch aa raha hai.</p></div>
+        <a href="#/contact" class="btn btn-blue">Activate</a>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="section-tight">
+    <div class="container">
+      <div class="cta-block" data-reveal>
+        <h2>Ready to start earning?</h2>
+        <p>Aaj hi register karein aur kal se kamai shuru karein.</p>
+        <div class="cta-btns">
+          <a href="#/contact" class="btn btn-primary btn-lg">Register Now</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ---------- HOW IT WORKS ---------- -->
+<div class="page" data-page="/how">
+  <section class="page-hero">
+    <div class="container">
+      <span class="sec-eyebrow" data-reveal>How It Works</span>
+      <h1 data-reveal style="--d:.08s">Sirf 4 steps mein shuru</h1>
+      <p data-reveal style="--d:.16s">Registration se earning tak — pura process 24 ghante ke andar.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="steps" style="grid-template-columns:1fr;gap:0;max-width:820px;margin:0 auto">
+        <div class="step" data-reveal style="display:grid;grid-template-columns:80px 1fr;gap:28px;align-items:flex-start;padding:28px 0;border-bottom:1px solid var(--line)">
+          <div class="step-num" style="margin:0">1</div>
+          <div>
+            <h3>Online registration form bharein</h3>
+            <p style="font-size:15px;margin-top:8px">Apna naam, mobile number, email, Aadhaar aur PAN details daalein. Form sirf 3 minute mein bhar jata hai. Koi registration fee nahi.</p>
+          </div>
+        </div>
+        <div class="step" data-reveal style="display:grid;grid-template-columns:80px 1fr;gap:28px;align-items:flex-start;padding:28px 0;border-bottom:1px solid var(--line)">
+          <div class="step-num" style="margin:0">2</div>
+          <div>
+            <h3>Documents upload karein</h3>
+            <p style="font-size:15px;margin-top:8px">Aadhaar, PAN, bank passbook aur ek passport photo upload karein. Sab documents clear hone chahiye — verification fast hoga.</p>
+          </div>
+        </div>
+        <div class="step" data-reveal style="display:grid;grid-template-columns:80px 1fr;gap:28px;align-items:flex-start;padding:28px 0;border-bottom:1px solid var(--line)">
+          <div class="step-num" style="margin:0">3</div>
+          <div>
+            <h3>KYC verification (24 hours)</h3>
+            <p style="font-size:15px;margin-top:8px">Hamari team aapke documents verify karegi. Approval ke baad aapko login credentials milenge email aur SMS par.</p>
+          </div>
+        </div>
+        <div class="step" data-reveal style="display:grid;grid-template-columns:80px 1fr;gap:28px;align-items:flex-start;padding:28px 0">
+          <div class="step-num" style="margin:0">4</div>
+          <div>
+            <h3>Dashboard login aur earning start</h3>
+            <p style="font-size:15px;margin-top:8px">Apne dashboard mein login karein, services activate karein, aur pehla transaction karein. Commission turant wallet mein aa jayega.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-tight">
+    <div class="container">
+      <div class="cta-block" data-reveal>
+        <h2>Shuru karne ke liye ready?</h2>
+        <p>Form sirf 3 minute ka hai. Registration bilkul free hai.</p>
+        <div class="cta-btns">
+          <a href="#/contact" class="btn btn-primary btn-lg">Register Now</a>
+          <a href="https://wa.me/918685820290" class="btn btn-ghost btn-lg">WhatsApp Par Poochhein</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ---------- ABOUT ---------- -->
+<div class="page" data-page="/about">
+  <section class="page-hero">
+    <div class="container">
+      <span class="sec-eyebrow" data-reveal>About Us</span>
+      <h1 data-reveal style="--d:.08s">Hum kaun hain</h1>
+      <p data-reveal style="--d:.16s">Grahak Service Center ek mission hai — Bharat ke har chhote retailer ko digital banane ka.</p>
+    </div>
+  </section>
+
+  <section class="section-tight">
+    <div class="container" style="max-width:820px">
+      <div data-reveal>
+        <h2 class="sec-title" style="text-align:left">Hamari kahani</h2>
+        <p style="font-size:16px;color:#475569;line-height:1.75;margin-bottom:20px">
+          2019 mein shuru hua Grahak Service Center ek simple soch se aaya — ki Bharat ke chhote kirana stores, cyber cafes aur CSC agents ko bhi wahi digital power mile jo bade businesses ke paas hai. Ek aisa platform jo unke counter ko ek complete digital service hub bana de.
+        </p>
+        <p style="font-size:16px;color:#475569;line-height:1.75;margin-bottom:20px">
+          Aaj 10,000+ partners 28 states mein hamare platform se roz hazaar transactions karte hain — AEPS withdrawal se lekar bill payments tak. Har transaction ek chhote business ki income badhata hai, ek customer ka time bachata hai.
+        </p>
+      </div>
+
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:56px" data-reveal>
+        <div style="background:var(--blue-soft);border-radius:16px;padding:28px">
+          <div style="font-size:32px;font-weight:700;color:var(--blue);letter-spacing:-.03em">2019</div>
+          <p style="font-size:14px;color:var(--muted);margin-top:6px">Founded</p>
+        </div>
+        <div style="background:#FFF7ED;border-radius:16px;padding:28px">
+          <div style="font-size:32px;font-weight:700;color:var(--orange);letter-spacing:-.03em">10K+</div>
+          <p style="font-size:14px;color:var(--muted);margin-top:6px">Partners</p>
+        </div>
+        <div style="background:#ECFDF5;border-radius:16px;padding:28px">
+          <div style="font-size:32px;font-weight:700;color:var(--green);letter-spacing:-.03em">28</div>
+          <p style="font-size:14px;color:var(--muted);margin-top:6px">States</p>
+        </div>
+      </div>
+
+      <div style="margin-top:56px" data-reveal>
+        <h2 class="sec-title" style="text-align:left;margin-bottom:32px">Hamari values</h2>
+        <div class="why-list">
+          <div class="why-item">
+            <div class="why-check"><svg viewBox="0 0 14 14" fill="none"><path d="m2 7 3.5 3.5L12 3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+            <div><h4>Transparency</h4><p>Koi hidden charges nahi. Har commission, har fee clearly dikhti hai.</p></div>
+          </div>
+          <div class="why-item">
+            <div class="why-check"><svg viewBox="0 0 14 14" fill="none"><path d="m2 7 3.5 3.5L12 3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+            <div><h4>Bharat-first</h4><p>Hindi aur regional languages mein support. Chhote towns tak pahunch.</p></div>
+          </div>
+          <div class="why-item">
+            <div class="why-check"><svg viewBox="0 0 14 14" fill="none"><path d="m2 7 3.5 3.5L12 3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+            <div><h4>Security</h4><p>Bank-grade encryption, RBI-compliant partners, aur secure infrastructure.</p></div>
+          </div>
+          <div class="why-item">
+            <div class="why-check"><svg viewBox="0 0 14 14" fill="none"><path d="m2 7 3.5 3.5L12 3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+            <div><h4>Partner growth</h4><p>Aapka business badhega toh humara bhi. Isliye sabse zyada commission.</p></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ---------- FAQ ---------- -->
+<div class="page" data-page="/faq">
+  <section class="page-hero">
+    <div class="container">
+      <span class="sec-eyebrow" data-reveal>FAQ</span>
+      <h1 data-reveal style="--d:.08s">Aksar poochhe jaane wale sawaal</h1>
+      <p data-reveal style="--d:.16s">Jo har naya partner poochta hai — sab jawab yahin.</p>
+    </div>
+  </section>
+
+  <section class="section-tight">
+    <div class="container">
+      <div class="faq-list">
+        <details class="faq" data-reveal>
+          <summary>Registration ke liye kya documents chahiye?</summary>
+          <div class="faq-body">Aadhaar card, PAN card, bank passbook (front page) aur ek passport size photo. Sab documents clear aur valid hone chahiye. Ek baar verify hone ke baad dobara nahi maangte.</div>
+        </details>
+        <details class="faq" data-reveal>
+          <summary>Registration fees kitni hai?</summary>
+          <div class="faq-body">Bilkul free. Koi registration fee, koi setup cost, koi monthly charges nahi. Aap sirf tab kamate hain jab aapke customer transaction karte hain.</div>
+        </details>
+        <details class="faq" data-reveal>
+          <summary>Commission kitna milta hai?</summary>
+          <div class="faq-body">Har service ka commission alag hai — recharge par 1-3%, AEPS par per transaction, bill payments par per bill. Detailed commission chart aapko activation ke baad dashboard mein milega.</div>
+        </details>
+        <details class="faq" data-reveal>
+          <summary>Payout kab milta hai?</summary>
+          <div class="faq-body">Daily payout. Aapke wallet mein commission turant add hoti hai, aur aap use apne bank account mein transfer kar sakte hain — usually usi din.</div>
+        </details>
+        <details class="faq" data-reveal>
+          <summary>KYC verification mein kitna time lagta hai?</summary>
+          <div class="faq-body">Usually 24 ghante. Agar documents clear hain toh kuch cases mein same-day approval bhi mil jata hai. Verification complete hone par SMS aur email aata hai.</div>
+        </details>
+        <details class="faq" data-reveal>
+          <summary>Kya main mobile se bhi use kar sakta hoon?</summary>
+          <div class="faq-body">Haan. Platform mobile, tablet aur computer — sab par kaam karta hai. Android app bhi available hai Play Store par.</div>
+        </details>
+        <details class="faq" data-reveal>
+          <summary>Support kaise milega?</summary>
+          <div class="faq-body">24×7 WhatsApp support, phone support (9 AM - 9 PM) aur email. Hindi, English aur regional languages mein support available hai.</div>
+        </details>
+        <details class="faq" data-reveal>
+          <summary>Kya transactions live hain?</summary>
+          <div class="faq-body">Haan. Hamare saare services RBI-compliant banking partners ke through live chalti hain. Real money, real transactions, real commissions.</div>
+        </details>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ---------- CONTACT ---------- -->
+<div class="page" data-page="/contact">
+  <section class="page-hero">
+    <div class="container">
+      <span class="sec-eyebrow" data-reveal>Contact</span>
+      <h1 data-reveal style="--d:.08s">Aaiye, baat karte hain</h1>
+      <p data-reveal style="--d:.16s">Form bharein ya WhatsApp par message karein — hum 24 ghante mein reply karte hain.</p>
+    </div>
+  </section>
+
+  <section class="section-tight">
+    <div class="container">
+      <div class="contact-grid">
+        <div class="contact-info" data-reveal>
+          <div class="contact-item">
+            <div class="contact-item-icon i-blue"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 2 .7 2.9a2 2 0 0 1-.4 2.1L8.1 10a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c1 .3 1.9.6 2.9.7a2 2 0 0 1 1.7 2z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+            <div><h4>Phone</h4><a href="tel:+918685820290">+91 99999 99999</a></div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-item-icon i-green"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M21 11.5a8.4 8.4 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.4 8.4 0 0 1-3.8-.9L3 21l1.9-5.7a8.4 8.4 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.4 8.4 0 0 1 3.8-.9h.5a8.5 8.5 0 0 1 8 8z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+            <div><h4>WhatsApp</h4><a href="https://wa.me/918685820290">+91 99999 99999</a></div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-item-icon i-orange"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><rect x="2" y="4" width="20" height="16" rx="2" stroke="currentColor" stroke-width="2"/><path d="m2 7 10 6 10-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+            <div><h4>Email</h4><a href="mailto:nikhilsharma32102003@gmail.com">nikhilsharma32102003@gmail.com</a></div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-item-icon i-purple"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="10" r="3" stroke="currentColor" stroke-width="2"/></svg></div>
+            <div><h4>Office</h4><p>India, Bharat — 800001</p></div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-item-icon i-blue"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/><path d="M12 6v6l4 2" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></div>
+            <div><h4>Support Hours</h4><p>WhatsApp 24×7 · Phone 9 AM – 9 PM</p></div>
+          </div>
+        </div>
+
+        <div class="form-card" data-reveal style="--d:.15s">
+          <h3>Partner registration form</h3>
+          <p>Details bharein — hum 24 ghante mein contact karenge.</p>
+          <form onsubmit="event.preventDefault(); alert('Form submit ho gaya! Hum jaldi contact karenge. 😊'); this.reset();">
+            <div class="field"><label>Poora Naam *</label><input type="text" required placeholder="Aapka naam"></div>
+            <div class="field"><label>Mobile Number *</label><input type="tel" required pattern="[0-9]{10}" placeholder="10-digit mobile"></div>
+            <div class="field"><label>Email</label><input type="email" placeholder="aap@example.com"></div>
+            <div class="field"><label>Sheher / State *</label><input type="text" required placeholder="Jaise: Patna, Bihar"></div>
+            <div class="field"><label>Business Type</label>
+              <select>
+                <option>Kirana Store</option>
+                <option>Cyber Cafe</option>
+                <option>CSC Center</option>
+                <option>Mobile Shop</option>
+                <option>Other</option>
+              </select>
+            </div>
+            <div class="field"><label>Message</label><textarea placeholder="Koi sawaal ya note..."></textarea></div>
+            <button type="submit" class="btn btn-primary btn-lg">Submit Registration</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
 </main>
 
-<footer><div class="footer-top"><div><a class="brand" href="#home"><span class="brand-mark">G</span><span>Grahak <b>Service Center</b></span></a><p>Digital business services, brought together in one experience.</p></div><div class="footer-links"><a href="#services">Services</a><a href="#about">About</a><a href="#faq">FAQ</a><a href="#contact">Contact</a><button data-open="privacy">Privacy</button><button data-open="terms">Terms</button></div></div><div class="footer-bottom"><span>© <span id="year"></span> Grahak Service Center. All rights reserved.</span><span>Built for digital service partners.</span></div></footer>
+<!-- ================= FOOTER ================= -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand">
+          <div class="brand-mark">G</div>
+          Grahak Service Center
+        </div>
+        <p>Bharat ke har chhote retailer ko digital banane ka mission. Ek platform, hazaar services, aur ek behtar kal.</p>
+      </div>
+      <div>
+        <h5>Services</h5>
+        <ul>
+          <li><a href="#/services">AEPS</a></li>
+          <li><a href="#/services">BBPS Bills</a></li>
+          <li><a href="#/services">Money Transfer</a></li>
+          <li><a href="#/services">Recharge</a></li>
+          <li><a href="#/services">PAN Card</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Company</h5>
+        <ul>
+          <li><a href="#/about">About Us</a></li>
+          <li><a href="#/how">How It Works</a></li>
+          <li><a href="#/faq">FAQ</a></li>
+          <li><a href="#/contact">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Support</h5>
+        <ul>
+          <li><a href="https://wa.me/918685820290">WhatsApp</a></li>
+          <li><a href="tel:+918685820290">+91 86858 20290</a></li>
+          <li><a href="mailto:nikhilsharma32102003@gmail.com">Email Support</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Grahak Service Center. Sabhi adhikaar surakshit.</span>
+      <span>Made in Bharat 🇮🇳</span>
+    </div>
+  </div>
+</footer>
 
-<div class="modal" id="modal"><div class="modal-box"><button class="modal-close" id="modalClose" aria-label="Close dialog"><svg class="ui-icon close-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg></button><div id="modalContent"></div></div></div>
+<a href="https://wa.me/918685820290" class="wa-float" aria-label="WhatsApp">
+  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.1-1.7-.8-2-.9-.3-.1-.5-.1-.7.1s-.8.9-.9 1.1c-.2.2-.3.2-.6.1-.3-.1-1.2-.5-2.3-1.4-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.4.1-.6.1-.1.3-.4.5-.6.2-.2.2-.3.3-.5.1-.2.1-.4 0-.5s-.7-1.6-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.4s1 2.8 1.2 3c.1.2 2 3 4.8 4.2.7.3 1.2.5 1.6.6.7.2 1.3.2 1.8.1.6-.1 1.7-.7 2-1.4.2-.7.2-1.2.2-1.4-.1-.2-.3-.2-.6-.3zM12 2a10 10 0 0 0-8.5 15.2L2 22l4.9-1.3A10 10 0 1 0 12 2z"/></svg>
+</a>
 
-<script src="script.js"></script>
+<script>
+/* ---------- ROUTER ---------- */
+(function(){
+  const pages = document.querySelectorAll('[data-page]');
+  const navLinks = document.querySelectorAll('[data-nav]');
+
+  function getPath(){
+    const h = location.hash.replace(/^#/, '') || '/';
+    return h.startsWith('/') ? h : '/' + h;
+  }
+
+  function show(path){
+    let found = false;
+    pages.forEach(p => {
+      const active = p.dataset.page === path;
+      p.toggleAttribute('data-active', active);
+      if(active) found = true;
+    });
+    if(!found){
+      pages[0].setAttribute('data-active','');
+      path = '/';
+    }
+    navLinks.forEach(a => a.classList.toggle('active', a.dataset.nav === path));
+    window.scrollTo({top:0, behavior:'instant' in window ? 'instant' : 'auto'});
+    // reset reveals for re-animation
+    const active = document.querySelector('[data-page][data-active]');
+    if(active){
+      active.querySelectorAll('[data-reveal]').forEach(el => el.classList.remove('in-view'));
+      requestAnimationFrame(() => observe(active));
+    }
+    // close mobile menu
+    closeMenu();
+  }
+
+  window.addEventListener('hashchange', () => show(getPath()));
+  document.addEventListener('DOMContentLoaded', () => show(getPath()));
+  show(getPath());
+})();
+
+/* ---------- REVEAL ON SCROLL ---------- */
+let revealObserver;
+function observe(root){
+  if(!revealObserver){
+    revealObserver = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if(e.isIntersecting){
+          e.target.classList.add('in-view');
+          revealObserver.unobserve(e.target);
+        }
+      });
+    }, {threshold:0.12, rootMargin:'0px 0px -40px 0px'});
+  }
+  root.querySelectorAll('[data-reveal]:not(.in-view)').forEach(el => revealObserver.observe(el));
+}
+
+/* ---------- HEADER SHADOW ---------- */
+window.addEventListener('scroll', () => {
+  document.getElementById('header').classList.toggle('scrolled', window.scrollY > 8);
+}, {passive:true});
+
+/* ---------- MOBILE MENU ---------- */
+const burger = document.getElementById('burger');
+const menu = document.getElementById('mobileMenu');
+function closeMenu(){
+  burger.setAttribute('aria-expanded','false');
+  menu.removeAttribute('data-open');
+}
+burger.addEventListener('click', (e) => {
+  e.stopPropagation();
+  const open = burger.getAttribute('aria-expanded') === 'true';
+  burger.setAttribute('aria-expanded', String(!open));
+  menu.toggleAttribute('data-open', !open);
+});
+menu.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMenu));
+document.addEventListener('click', (e) => {
+  if(!menu.contains(e.target) && !burger.contains(e.target)) closeMenu();
+});
+document.addEventListener('keydown', e => { if(e.key === 'Escape') closeMenu(); });
+window.matchMedia('(min-width: 901px)').addEventListener('change', e => { if(e.matches) closeMenu(); });
+
+/* ---------- INITIAL REVEAL ---------- */
+document.addEventListener('DOMContentLoaded', () => observe(document));
+</script>
 </body>
 </html>
