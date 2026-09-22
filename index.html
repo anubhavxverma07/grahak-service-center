@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#050505">
+  <meta name="description" content="Grahak Service Center — digital business services including AEPS, BBPS, money transfer, recharge, DTH and PAN services.">
+  <title>Grahak Service Center</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="ambient"></div>
+<header class="nav">
+  <a class="brand" href="#home" aria-label="Grahak Service Center home">
+    <span class="brand-mark">G</span><span>Grahak <b>Service Center</b></span>
+  </a>
+  <nav class="desktop-nav">
+    <a href="#services">Services</a><a href="#how">How It Works</a><a href="#platform">Platform</a><a href="#faq">FAQ</a><a href="#contact">Contact</a>
+  </nav>
+  <div class="nav-actions">
+    <button class="btn ghost" data-open="login">Login</button>
+    <button class="btn primary" data-open="partner">Become a Partner <span>↗</span></button>
+  </div>
+  <button class="menu-btn" id="menuBtn" aria-label="Open menu"><i></i><i></i></button>
+</header>
+
+<aside class="mobile-menu" id="mobileMenu">
+  <button class="close-menu" id="closeMenu">×</button>
+  <a href="#services">Services</a><a href="#how">How It Works</a><a href="#platform">Platform</a><a href="#faq">FAQ</a><a href="#contact">Contact</a>
+  <button class="btn ghost" data-open="login">Login</button>
+  <button class="btn primary" data-open="partner">Become a Partner</button>
+</aside>
+
+<main id="home">
+<section class="hero section">
+  <div class="hero-copy reveal">
+    <div class="eyebrow"><span class="dot"></span> Digital Business Services</div>
+    <h1>One platform for your <em>digital business</em> services.</h1>
+    <p>Access essential business services including AEPS, BBPS, money transfer, recharge, DTH and PAN services through one platform.</p>
+    <div class="hero-actions">
+      <button class="btn primary large" data-open="partner">Become a Partner <span>↗</span></button>
+      <a class="btn outline large" href="#services">Explore Services <span>↓</span></a>
+    </div>
+    <div class="trust-line"><span>●</span> Built for retailers, agents &amp; digital service partners</div>
+  </div>
+  <div class="hero-visual reveal delay">
+    <div class="orb"></div>
+    <div class="glass-card main-card">
+      <div class="card-top"><span>GRAHAK / SERVICES</span><span class="live"><i></i> READY</span></div>
+      <div class="big-word">SERVICES</div>
+      <div class="mini-grid"><span>AEPS</span><span>BBPS</span><span>DMT</span><span>RECHARGE</span></div>
+    </div>
+    <div class="float-card fc1">⚡ <b>Recharge</b><small>Quick service access</small></div>
+    <div class="float-card fc2">◉ <b>AEPS</b><small>Banking service</small></div>
+  </div>
+</section>
+
+<section class="stats-wrap">
+  <div><strong>06</strong><span>Core Services</span></div><div><strong>01</strong><span>Unified Platform</span></div><div><strong>24/7</strong><span>Digital Access</span></div><div><strong>∞</strong><span>Business Potential</span></div>
+</section>
+
+<section class="section" id="services">
+  <div class="section-head reveal"><div><span class="eyebrow">OUR SERVICES</span><h2>Everything your <em>digital counter</em> needs.</h2></div><p>Explore the core services available through the Grahak Service Center ecosystem.</p></div>
+  <div class="service-grid">
+    <article class="service reveal" data-service="AEPS"><span class="num">01</span><div class="icon">◎</div><h3>AEPS</h3><p>Aadhaar Enabled Payment System for supported banking services.</p><button>View details →</button></article>
+    <article class="service reveal" data-service="BBPS"><span class="num">02</span><div class="icon">▣</div><h3>BBPS</h3><p>Bill payment services across supported biller categories.</p><button>View details →</button></article>
+    <article class="service reveal" data-service="Money Transfer"><span class="num">03</span><div class="icon">⇄</div><h3>Money Transfer</h3><p>Domestic money transfer access through an authorized integration.</p><button>View details →</button></article>
+    <article class="service reveal" data-service="Recharge"><span class="num">04</span><div class="icon">ϟ</div><h3>Recharge</h3><p>Recharge services for supported mobile and utility operators.</p><button>View details →</button></article>
+    <article class="service reveal" data-service="PAN Card"><span class="num">05</span><div class="icon">▤</div><h3>PAN Card</h3><p>PAN-related application services subject to authorized processing.</p><button>View details →</button></article>
+    <article class="service reveal" data-service="DTH"><span class="num">06</span><div class="icon">◒</div><h3>DTH</h3><p>DTH recharge and related services for supported operators.</p><button>View details →</button></article>
+  </div>
+  <div class="service-detail" id="serviceDetail"><button class="detail-close" id="detailClose">×</button><span class="eyebrow" id="detailEyebrow">SERVICE</span><h3 id="detailTitle">AEPS</h3><p id="detailText"></p><div class="note">Availability depends on your partner account, authorized provider and service configuration.</div></div>
+</section>
+
+<section class="split section" id="about">
+  <div class="split-image reveal"><div class="image-label">DIGITAL<br><em>ACCESS</em></div><div class="grid-lines"></div></div>
+  <div class="split-copy reveal"><span class="eyebrow">ABOUT GRAHAK</span><h2>Simple access to essential <em>digital services.</em></h2><p>Grahak Service Center is designed around the everyday needs of digital service retailers and partners. The goal is a clean, centralized experience where essential services can be accessed without juggling multiple interfaces.</p><div class="checklist"><span>✓</span><p>Centralized service experience</p><span>✓</span><p>Partner-focused workflow</p><span>✓</span><p>Web-first, mobile-friendly interface</p></div><button class="btn primary" data-open="partner">Start as a Partner ↗</button></div>
+</section>
+
+<section class="section process" id="how">
+  <div class="section-head centered reveal"><span class="eyebrow">HOW IT WORKS</span><h2>From signup to <em>service.</em></h2></div>
+  <div class="steps">
+    <div class="step reveal"><b>01</b><span>01</span><h3>Select Services</h3><p>Choose the digital services relevant to your business.</p></div>
+    <div class="step reveal"><b>02</b><span>02</span><h3>Become Our Partner</h3><p>Submit your basic details to begin the partner onboarding process.</p></div>
+    <div class="step reveal"><b>03</b><span>03</span><h3>Start Business</h3><p>After verification and activation, use the services available to your account.</p></div>
+  </div>
+</section>
+
+<section class="platform section" id="platform">
+  <div class="section-head reveal"><div><span class="eyebrow">THE PLATFORM</span><h2>Built around the way <em>you work.</em></h2></div></div>
+  <div class="platform-grid">
+    <div class="platform-card reveal"><span>01</span><h3>Web Application</h3><p>A responsive interface designed for everyday service operations.</p><div class="platform-art browser"><i></i><i></i><i></i></div></div>
+    <div class="platform-card reveal"><span>02</span><h3>Android App</h3><p>Mobile access can be provided through an authorized application and integration.</p><div class="platform-art phone"></div></div>
+    <div class="platform-card reveal"><span>03</span><h3>WhatsApp Support</h3><p>Keep support and partner communication easy and accessible.</p><div class="platform-art chat">•••</div></div>
+  </div>
+</section>
+
+<section class="cta section reveal">
+  <div><span class="eyebrow">READY TO START?</span><h2>Turn your counter into a <em>digital service point.</em></h2></div>
+  <button class="btn primary large" data-open="partner">Become a Partner ↗</button>
+</section>
+
+<section class="section faq-section" id="faq">
+  <div class="section-head centered reveal"><span class="eyebrow">FAQ</span><h2>Questions, <em>answered.</em></h2></div>
+  <div class="faq">
+    <details><summary>What services are available?</summary><p>Core services include AEPS, BBPS, money transfer, recharge, PAN card and DTH services. Exact availability depends on the partner setup and authorized service providers.</p></details>
+    <details><summary>Can I register as a partner online?</summary><p>You can submit the partner registration form on this website. Final onboarding, verification and activation require the appropriate backend process.</p></details>
+    <details><summary>Are transactions live on this website?</summary><p>This frontend is prepared for integration. Real financial transactions require authorized APIs, credentials, compliance checks and a connected backend.</p></details>
+    <details><summary>Can I use it on my phone?</summary><p>Yes. The website is responsive and designed for mobile, tablet and desktop screens.</p></details>
+  </div>
+</section>
+
+<section class="contact section" id="contact">
+  <div class="contact-copy reveal"><span class="eyebrow">CONTACT</span><h2>Let's get your <em>business moving.</em></h2><p>Have a question about partnership or services? Send a message or contact the team directly.</p><div class="contact-items"><a href="tel:8685820290"><small>PHONE</small><b>8685820290</b></a><a href="mailto:nikhilsharma32102003@gmail.com"><small>EMAIL</small><b>nikhilsharma32102003@gmail.com</b></a></div></div>
+  <form class="contact-form reveal" id="contactForm"><input required name="name" placeholder="Your name"><input required type="tel" name="phone" placeholder="Mobile number"><input required type="email" name="email" placeholder="Email address"><textarea required name="message" placeholder="How can we help?"></textarea><button class="btn primary large" type="submit">Send Enquiry ↗</button><small class="form-note">This form opens your email client; no message is silently stored by this frontend.</small></form>
+</section>
+</main>
+
+<footer><div class="footer-top"><div><a class="brand" href="#home"><span class="brand-mark">G</span><span>Grahak <b>Service Center</b></span></a><p>Digital business services, brought together in one experience.</p></div><div class="footer-links"><a href="#services">Services</a><a href="#about">About</a><a href="#faq">FAQ</a><a href="#contact">Contact</a><button data-open="privacy">Privacy</button><button data-open="terms">Terms</button></div></div><div class="footer-bottom"><span>© <span id="year"></span> Grahak Service Center. All rights reserved.</span><span>Built for digital service partners.</span></div></footer>
+
+<div class="modal" id="modal"><div class="modal-box"><button class="modal-close" id="modalClose">×</button><div id="modalContent"></div></div></div>
+
+<script src="script.js"></script>
+</body>
+</html>
