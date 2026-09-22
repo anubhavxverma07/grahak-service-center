@@ -25,3 +25,35 @@ $("#detailClose").onclick=()=>$("#serviceDetail").classList.remove("show");
 const observer=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add("visible")}),{threshold:.12});$$(".reveal").forEach(e=>observer.observe(e));
 $("#contactForm").addEventListener("submit",e=>{e.preventDefault();const f=new FormData(e.target);const subject=encodeURIComponent("Grahak Service Center Enquiry - "+f.get("name"));const body=encodeURIComponent(`Name: ${f.get("name")}\nMobile: ${f.get("phone")}\nEmail: ${f.get("email")}\n\nMessage:\n${f.get("message")}`);location.href=`mailto:nikhilsharma32102003@gmail.com?subject=${subject}&body=${body}`});
 $("#year").textContent=new Date().getFullYear();
+
+// Lightweight pointer motion for desktop depth; no WebGL/video dependencies.
+(() => {
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches || window.matchMedia('(pointer: coarse)').matches) return;
+  const visual = document.querySelector('.hero-visual');
+  const ambient = document.querySelector('.ambient');
+  if (!visual) return;
+  let raf = 0, tx = 0, ty = 0, x = 0, y = 0;
+  const render = () => {
+    x += (tx - x) * 0.08;
+    y += (ty - y) * 0.08;
+    visual.style.transform = `translate3d(${x * 2.5}px,${y * 2.5}px,0)`;
+    if (ambient) ambient.style.marginLeft = `${x * 3}px`;
+    raf = requestAnimationFrame(render);
+  };
+  visual.addEventListener('pointermove', e => {
+    const r = visual.getBoundingClientRect();
+    tx = (e.clientX - (r.left + r.width / 2)) / r.width;
+    ty = (e.clientY - (r.top + r.height / 2)) / r.height;
+  }, {passive:true});
+  visual.addEventListener('pointerleave', () => { tx = 0; ty = 0; }, {passive:true});
+  render();
+  window.addEventListener('beforeunload', () => cancelAnimationFrame(raf), {once:true});
+})();
+
+document.querySelectorAll('.service').forEach(card => {
+  card.addEventListener('pointermove', e => {
+    const r = card.getBoundingClientRect();
+    card.style.setProperty('--mx', `${((e.clientX-r.left)/r.width)*100}%`);
+    card.style.setProperty('--my', `${((e.clientY-r.top)/r.height)*100}%`);
+  }, {passive:true});
+});
