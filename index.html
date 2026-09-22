@@ -458,11 +458,23 @@ h1.hero-title{
 .footer-bottom a{color:rgba(255,255,255,.65)}
 .footer-bottom a:hover{color:#fff}
 
-/* ---------- REVEAL ANIMATION ---------- */
-[data-reveal]{opacity:0;transform:translateY(24px);transition:opacity .8s var(--ease), transform .8s var(--ease);transition-delay:var(--d,0s)}
-[data-reveal].in-view{opacity:1;transform:none}
+/* ---------- REVEAL ANIMATION (FIXED) ---------- */
+[data-reveal]{
+  opacity:1;
+  transform:none;
+  transition:opacity .8s var(--ease), transform .8s var(--ease);
+  transition-delay:var(--d,0s);
+}
+html.js-ready [data-reveal]:not(.in-view){
+  opacity:0;
+  transform:translateY(24px);
+}
+html.js-ready [data-reveal].in-view{
+  opacity:1;
+  transform:none;
+}
 @media(prefers-reduced-motion:reduce){
-  [data-reveal]{opacity:1;transform:none;transition:none}
+  [data-reveal]{opacity:1 !important;transform:none !important;transition:none !important}
   .hv-card{animation:none}
   *{scroll-behavior:auto !important}
 }
@@ -525,7 +537,7 @@ h1.hero-title{
 <main id="main">
 
 <!-- ---------- HOME ---------- -->
-<div class="page"- data-page="/" data-active>
+<div class="page" data-page="/" data-active>
   <section class="hero">
     <div class="container hero-grid">
       <div>
@@ -557,7 +569,7 @@ h1.hero-title{
 
       <div class="hero-visual">
         <div class="hv-glow"></div>
-        <div class="hv-card hv1">
+        <div class="hv-card hv-1">
           <div class="hv-icon">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M3 12h18M12 3v18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
           </div>
@@ -780,17 +792,17 @@ h1.hero-title{
   <section class="page-hero">
     <div class="container">
       <span class="sec-eyebrow" data-reveal>Services</span>
-      <h1 data-reveal style="--d:.08s">Sabhi services transaction, ek hi jagah</h1>
-      <p data.</-reveal style="--d:.16s">Retpailers aur agents ke liye pura digital toolkit — banking se lekar bill payment tak.</p>
+      <h1 data-reveal style="--d:.08s">Sabhi services, ek hi jagah</h1>
+      <p data-reveal style="--d:.16s">Retailers aur agents ke liye pura digital toolkit — banking se lekar bill payment tak.</p>
     </div>
   </section>
 
   <section class="section-tight">
     <div class="container">
 
-></     div <div class="svc-detail" data-reveal>
+      <div class="svc-detail" data-reveal>
         <div class="svc-detail-icon i-blue"><svg width="28" height="28" viewBox="0 0 24 24" fill="none"><path d="M12 2v20M6 8h12M6 16h12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></div>
-        <div><h3>AEPS — Aadhaar Enabled Payment System</h3><p>Cash withdrawal, balance enquiry, mini statement aur Aadhaar-to-Aadhaar transfer. Customer ke fingerprint se instant>
+        <div><h3>AEPS — Aadhaar Enabled Payment System</h3><p>Cash withdrawal, balance enquiry, mini statement aur Aadhaar-to-Aadhaar transfer. Customer ke fingerprint se instant transaction.</p></div>
         <a href="#/contact" class="btn btn-blue">Activate</a>
       </div>
 
@@ -1047,7 +1059,7 @@ h1.hero-title{
           </div>
           <div class="contact-item">
             <div class="contact-item-icon i-orange"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><rect x="2" y="4" width="20" height="16" rx="2" stroke="currentColor" stroke-width="2"/><path d="m2 7 10 6 10-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-            <div><h4>Email</h4><a href="mailto:nikhilsharma32102003@gmail.com">nikhilsharma32102003@gmail.com</a></div>
+            <div><h4>Email</h4><a href="mailto:support@grahakservicecenter.in">support@grahakservicecenter.in</a></div>
           </div>
           <div class="contact-item">
             <div class="contact-item-icon i-purple"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="10" r="3" stroke="currentColor" stroke-width="2"/></svg></div>
@@ -1066,7 +1078,7 @@ h1.hero-title{
             <div class="field"><label>Poora Naam *</label><input type="text" required placeholder="Aapka naam"></div>
             <div class="field"><label>Mobile Number *</label><input type="tel" required pattern="[0-9]{10}" placeholder="10-digit mobile"></div>
             <div class="field"><label>Email</label><input type="email" placeholder="aap@example.com"></div>
-            <div class="field"><label>Sheher / State *</label><input type="text" required placeholder="Jaise: Patna, Bihar"></div>
+            <div class="field"><label>Sheher / State *</label><input type="text" required placeholder="Jaise: India, Bharatr"></div>
             <div class="field"><label>Business Type</label>
               <select>
                 <option>Kirana Store</option>
@@ -1122,7 +1134,7 @@ h1.hero-title{
         <ul>
           <li><a href="https://wa.me/918685820290">WhatsApp</a></li>
           <li><a href="tel:+918685820290">+91 86858 20290</a></li>
-          <li><a href="mailto:nikhilsharma32102003@gmail.com">Email Support</a></li>
+          <li><a href="mailto:support@grahakservicecenter.in">Email Support</a></li>
         </ul>
       </div>
     </div>
@@ -1138,87 +1150,136 @@ h1.hero-title{
 </a>
 
 <script>
+/* ============================================================
+   BULLETPROOF INIT — content dikhega chahe kuch bhi ho
+   ============================================================ */
+document.documentElement.classList.add('js-ready');
+
+/* Safety net: 1.5 second baad sab visible */
+setTimeout(function(){
+  document.querySelectorAll('[data-reveal]:not(.in-view)').forEach(function(el){
+    var rect = el.getBoundingClientRect();
+    if(rect.top < window.innerHeight && rect.bottom > 0){
+      el.classList.add('in-view');
+    }
+  });
+}, 1500);
+
 /* ---------- ROUTER ---------- */
 (function(){
-  const pages = document.querySelectorAll('[data-page]');
-  const navLinks = document.querySelectorAll('[data-nav]');
+  var pages = document.querySelectorAll('[data-page]');
+  var navLinks = document.querySelectorAll('[data-nav]');
 
   function getPath(){
-    const h = location.hash.replace(/^#/, '') || '/';
-    return h.startsWith('/') ? h : '/' + h;
+    var h = location.hash.replace(/^#/, '') || '/';
+    return h.charAt(0) === '/' ? h : '/' + h;
   }
 
   function show(path){
-    let found = false;
-    pages.forEach(p => {
-      const active = p.dataset.page === path;
-      p.toggleAttribute('data-active', active);
-      if(active) found = true;
+    var found = false;
+    pages.forEach(function(p){
+      var active = p.getAttribute('data-page') === path;
+      if(active){
+        p.setAttribute('data-active','');
+        found = true;
+      } else {
+        p.removeAttribute('data-active');
+      }
     });
     if(!found){
       pages[0].setAttribute('data-active','');
       path = '/';
     }
-    navLinks.forEach(a => a.classList.toggle('active', a.dataset.nav === path));
-    window.scrollTo({top:0, behavior:'instant' in window ? 'instant' : 'auto'});
-    // reset reveals for re-animation
-    const active = document.querySelector('[data-page][data-active]');
+    navLinks.forEach(function(a){
+      if(a.getAttribute('data-nav') === path) a.classList.add('active');
+      else a.classList.remove('active');
+    });
+    window.scrollTo(0,0);
+
+    var active = document.querySelector('[data-page][data-active]');
     if(active){
-      active.querySelectorAll('[data-reveal]').forEach(el => el.classList.remove('in-view'));
-      requestAnimationFrame(() => observe(active));
+      active.querySelectorAll('[data-reveal]').forEach(function(el){
+        el.classList.remove('in-view');
+      });
+      requestAnimationFrame(function(){
+        active.querySelectorAll('[data-reveal]').forEach(function(el){
+          revealObserver.observe(el);
+        });
+        /* fallback */
+        setTimeout(function(){
+          active.querySelectorAll('[data-reveal]:not(.in-view)').forEach(function(el){
+            el.classList.add('in-view');
+          });
+        }, 800);
+      });
     }
-    // close mobile menu
     closeMenu();
   }
 
-  window.addEventListener('hashchange', () => show(getPath()));
-  document.addEventListener('DOMContentLoaded', () => show(getPath()));
+  window.addEventListener('hashchange', function(){ show(getPath()); });
   show(getPath());
 })();
 
 /* ---------- REVEAL ON SCROLL ---------- */
-let revealObserver;
-function observe(root){
-  if(!revealObserver){
-    revealObserver = new IntersectionObserver(entries => {
-      entries.forEach(e => {
-        if(e.isIntersecting){
-          e.target.classList.add('in-view');
-          revealObserver.unobserve(e.target);
-        }
-      });
-    }, {threshold:0.12, rootMargin:'0px 0px -40px 0px'});
-  }
-  root.querySelectorAll('[data-reveal]:not(.in-view)').forEach(el => revealObserver.observe(el));
-}
+var revealObserver = new IntersectionObserver(function(entries){
+  entries.forEach(function(e){
+    if(e.isIntersecting){
+      e.target.classList.add('in-view');
+      revealObserver.unobserve(e.target);
+    }
+  });
+}, {threshold:0.05, rootMargin:'0px 0px -30px 0px'});
 
 /* ---------- HEADER SHADOW ---------- */
-window.addEventListener('scroll', () => {
-  document.getElementById('header').classList.toggle('scrolled', window.scrollY > 8);
+window.addEventListener('scroll', function(){
+  var h = document.getElementById('header');
+  if(h) h.classList.toggle('scrolled', window.scrollY > 8);
 }, {passive:true});
 
 /* ---------- MOBILE MENU ---------- */
-const burger = document.getElementById('burger');
-const menu = document.getElementById('mobileMenu');
+var burger = document.getElementById('burger');
+var menu = document.getElementById('mobileMenu');
+
 function closeMenu(){
+  if(!burger || !menu) return;
   burger.setAttribute('aria-expanded','false');
   menu.removeAttribute('data-open');
 }
-burger.addEventListener('click', (e) => {
-  e.stopPropagation();
-  const open = burger.getAttribute('aria-expanded') === 'true';
-  burger.setAttribute('aria-expanded', String(!open));
-  menu.toggleAttribute('data-open', !open);
-});
-menu.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMenu));
-document.addEventListener('click', (e) => {
-  if(!menu.contains(e.target) && !burger.contains(e.target)) closeMenu();
-});
-document.addEventListener('keydown', e => { if(e.key === 'Escape') closeMenu(); });
-window.matchMedia('(min-width: 901px)').addEventListener('change', e => { if(e.matches) closeMenu(); });
 
-/* ---------- INITIAL REVEAL ---------- */
-document.addEventListener('DOMContentLoaded', () => observe(document));
+if(burger && menu){
+  burger.addEventListener('click', function(e){
+    e.stopPropagation();
+    var open = burger.getAttribute('aria-expanded') === 'true';
+    burger.setAttribute('aria-expanded', String(!open));
+    if(!open) menu.setAttribute('data-open','');
+    else menu.removeAttribute('data-open');
+  });
+  menu.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click', closeMenu);
+  });
+  document.addEventListener('click', function(e){
+    if(!menu.contains(e.target) && !burger.contains(e.target)) closeMenu();
+  });
+  document.addEventListener('keydown', function(e){
+    if(e.key === 'Escape') closeMenu();
+  });
+  window.matchMedia('(min-width: 901px)').addEventListener('change', function(e){
+    if(e.matches) closeMenu();
+  });
+}
+
+/* ---------- START OBSERVING ---------- */
+document.addEventListener('DOMContentLoaded', function(){
+  document.querySelectorAll('[data-reveal]').forEach(function(el){
+    revealObserver.observe(el);
+  });
+});
+/* Also run immediately in case DOMContentLoaded already fired */
+if(document.readyState !== 'loading'){
+  document.querySelectorAll('[data-reveal]').forEach(function(el){
+    revealObserver.observe(el);
+  });
+}
 </script>
 </body>
 </html>
