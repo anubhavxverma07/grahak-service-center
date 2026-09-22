@@ -27,3 +27,5 @@ For this static project:
 - Build output directory: `/`
 - Production branch: `main`
 
+
+Deployment trigger
