@@ -4,8 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="theme-color" content="#1E40AF">
-<title>Grahak Service Center — Aapke Digital Counter Ka Partner</title>
-<meta name="description" content="Railway ticket, BBPS, money transfer, recharge, PAN aur zyada — ek hi platform par. Retailers aur agents ke liye.">
+<title>Grahak Service Center — Your Digital Business Partner</title>
+<meta name="description" content="Railway ticket, BBPS, money transfer, recharge, PAN and more — all on one platform. For retailers and agents across India.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
@@ -24,86 +24,58 @@
 }
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
-body{
-  font-family:'Inter',system-ui,-apple-system,sans-serif;
-  color:var(--ink);background:var(--bg);
-  -webkit-font-smoothing:antialiased;
-  font-synthesis:none;
-  line-height:1.5;
-  overflow-x:hidden;
-}
+body{font-family:'Inter',system-ui,-apple-system,sans-serif;color:var(--ink);background:var(--bg);-webkit-font-smoothing:antialiased;font-synthesis:none;line-height:1.5;overflow-x:hidden}
 a{color:inherit;text-decoration:none}
 button{font-family:inherit;cursor:pointer;border:0;background:none}
 img,svg{display:block;max-width:100%}
 ::selection{background:var(--orange);color:#fff}
 
-/* ---------- LAYOUT ---------- */
 .container{width:100%;max-width:1200px;margin:0 auto;padding:0 24px}
 .section{padding:96px 0}
 .section-tight{padding:64px 0}
 @media(max-width:768px){.section{padding:64px 0}.section-tight{padding:48px 0}}
 
-/* ---------- PRICING TOP BAR ---------- */
+/* TOP PRICE BAR */
 .price-bar{
-  background:linear-gradient(90deg,var(--orange) 0%, #EA580C 50%, var(--orange) 100%);
-  color:#fff;text-align:center;padding:10px 16px;
+  background:linear-gradient(90deg,#EA580C 0%, var(--orange) 50%, #EA580C 100%);
+  color:#fff;text-align:center;padding:11px 44px 11px 16px;
   font-size:14px;font-weight:600;letter-spacing:-.01em;
-  position:relative;z-index:101;
+  position:relative;
 }
-.price-bar span{opacity:.95}
-.price-bar a{
-  color:#fff;text-decoration:underline;margin-left:8px;
-  font-weight:700;
-}
+.price-bar a{color:#fff;text-decoration:underline;margin-left:6px;font-weight:700;text-underline-offset:2px}
+.price-bar a:hover{opacity:.85}
 .price-bar .close-x{
-  position:absolute;right:12px;top:50%;transform:translateY(-50%);
+  position:absolute;right:10px;top:50%;transform:translateY(-50%);
   color:#fff;font-size:20px;font-weight:400;line-height:1;
-  padding:4px 8px;opacity:.8;
+  padding:6px 10px;opacity:.85;cursor:pointer;
 }
+.price-bar .close-x:hover{opacity:1}
 .price-bar.hide{display:none}
+@media(max-width:640px){.price-bar{font-size:12.5px;padding:10px 40px 10px 12px}}
 
-/* ---------- HEADER ---------- */
+/* HEADER */
 .header{
   position:sticky;top:0;z-index:100;
-  background:rgba(255,255,255,.82);
+  background:rgba(255,255,255,.88);
   -webkit-backdrop-filter:blur(16px) saturate(180%);
   backdrop-filter:blur(16px) saturate(180%);
   border-bottom:1px solid rgba(226,232,240,.7);
   transition:box-shadow .3s var(--ease);
 }
 .header.scrolled{box-shadow:var(--shadow-sm)}
-.header-inner{
-  display:flex;align-items:center;justify-content:space-between;
-  height:72px;
-}
-.brand{display:flex;align-items:center;gap:10px;font-weight:700;font-size:17px;letter-spacing:-.02em}
-.brand-mark{
-  width:42px;height:42px;flex:none;
-}
+.header-inner{display:flex;align-items:center;justify-content:space-between;height:72px;gap:12px}
+.brand{display:flex;align-items:center;gap:10px;font-weight:700;font-size:17px;letter-spacing:-.02em;flex:none}
+.brand-mark{width:42px;height:42px;flex:none}
 .brand-text small{display:block;font-size:10.5px;font-weight:500;color:var(--muted);letter-spacing:.06em;text-transform:uppercase;margin-top:1px}
 
 .nav{display:flex;align-items:center;gap:4px}
-.nav a{
-  padding:8px 14px;border-radius:8px;font-size:14.5px;font-weight:500;
-  color:#334155;transition:color .2s, background .2s;
-  position:relative;
-}
+.nav a{padding:8px 14px;border-radius:8px;font-size:14.5px;font-weight:500;color:#334155;transition:color .2s, background .2s;position:relative;white-space:nowrap}
 .nav a:hover{color:var(--blue);background:var(--blue-soft)}
 .nav a.active{color:var(--blue)}
-.nav a.active::after{
-  content:"";position:absolute;left:14px;right:14px;bottom:2px;height:2px;
-  background:var(--orange);border-radius:2px;
-}
-.btn{
-  display:inline-flex;align-items:center;gap:8px;
-  padding:11px 20px;border-radius:10px;font-size:14.5px;font-weight:600;
-  transition:transform .25s var(--ease), box-shadow .25s, background .2s;
-  white-space:nowrap;
-}
-.btn-primary{
-  background:linear-gradient(135deg,var(--orange),#EA580C);color:#fff;
-  box-shadow:0 6px 18px rgba(249,115,22,.32);
-}
+.nav a.active::after{content:"";position:absolute;left:14px;right:14px;bottom:2px;height:2px;background:var(--orange);border-radius:2px}
+
+.btn{display:inline-flex;align-items:center;gap:8px;padding:11px 20px;border-radius:10px;font-size:14.5px;font-weight:600;transition:transform .25s var(--ease), box-shadow .25s, background .2s;white-space:nowrap;cursor:pointer}
+.btn-primary{background:linear-gradient(135deg,var(--orange),#EA580C);color:#fff;box-shadow:0 6px 18px rgba(249,115,22,.32)}
 .btn-primary:hover{transform:translateY(-2px);box-shadow:0 10px 24px rgba(249,115,22,.4)}
 .btn-ghost{background:#fff;color:var(--ink);border:1.5px solid var(--line)}
 .btn-ghost:hover{border-color:var(--blue);color:var(--blue);transform:translateY(-2px)}
@@ -112,313 +84,163 @@ img,svg{display:block;max-width:100%}
 .btn-lg{padding:15px 26px;font-size:15.5px;border-radius:12px}
 .btn svg{width:16px;height:16px}
 
-.burger{display:none;width:44px;height:44px;border-radius:10px;flex-direction:column;gap:5px;align-items:center;justify-content:center;background:#fff;border:1.5px solid var(--line)}
-.burger span{width:20px;height:2px;background:var(--ink);border-radius:2px;transition:.3s var(--ease)}
-.burger[aria-expanded="true"] span:nth-child(1){transform:translateY(7px) rotate(45deg)}
-.burger[aria-expanded="true"] span:nth-child(2){opacity:0}
-.burger[aria-expanded="true"] span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+.burger{
+  display:none;width:44px;height:44px;border-radius:10px;
+  flex-direction:column;gap:5px;align-items:center;justify-content:center;
+  background:#fff;border:1.5px solid var(--line);cursor:pointer;
+  padding:0;flex:none;
+  -webkit-tap-highlight-color:transparent;
+}
+.burger span{display:block;width:20px;height:2px;background:var(--ink);border-radius:2px;transition:.3s var(--ease);pointer-events:none}
+.burger.is-open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.burger.is-open span:nth-child(2){opacity:0}
+.burger.is-open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
 
-@media(max-width:900px){
+@media(max-width:960px){
   .nav{display:none}
   .burger{display:flex}
   .header .btn-primary{display:none}
 }
+
 .mobile-menu{
-  position:fixed;inset:0 0 auto 0;background:#fff;z-index:99;
+  position:fixed;top:0;left:0;right:0;background:#fff;z-index:999;
   border-bottom:1px solid var(--line);box-shadow:var(--shadow-md);
-  padding:16px 24px 24px;
-  opacity:0;visibility:hidden;transform:translateY(-12px);
-  transition:opacity .28s var(--ease), transform .28s var(--ease), visibility .28s;
+  padding:88px 24px 24px;
+  opacity:0;visibility:hidden;transform:translateY(-20px);
+  transition:opacity .3s var(--ease), transform .3s var(--ease), visibility .3s;
   max-height:100vh;overflow-y:auto;
 }
-.mobile-menu[data-open]{opacity:1;visibility:visible;transform:none}
+.mobile-menu.is-open{opacity:1;visibility:visible;transform:none}
 .mobile-menu a{display:block;padding:14px 12px;border-radius:10px;font-size:16px;font-weight:500;color:#334155;border-bottom:1px solid var(--line)}
 .mobile-menu a:last-of-type{border-bottom:0}
 .mobile-menu a:hover,.mobile-menu a.active{background:var(--blue-soft);color:var(--blue)}
-.mobile-menu .btn{margin-top:16px;width:100%;justify-content:center}
+.mobile-menu .btn{margin-top:16px;width:100%;justify-content:center;border-bottom:0}
 
-/* ---------- PAGES ---------- */
-.page{display:none;animation:pageIn .5s var(--ease) both}
-.page[data-active]{display:block}
+/* PAGES */
+.page{display:none}
+.page.is-active{display:block;animation:pageIn .5s var(--ease) both}
 @keyframes pageIn{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
 
-/* ---------- HERO ---------- */
-.hero{
-  position:relative;overflow:hidden;
-  padding:72px 0 96px;
-  background:
-    radial-gradient(1000px 500px at 15% 0%, rgba(30,64,175,.08), transparent 60%),
-    radial-gradient(900px 480px at 100% 100%, rgba(249,115,22,.08), transparent 60%),
-    var(--bg);
-}
-.hero-grid{
-  display:grid;grid-template-columns:1.05fr 1fr;gap:56px;align-items:center;
-}
+/* HERO */
+.hero{position:relative;overflow:hidden;padding:72px 0 96px;background:radial-gradient(1000px 500px at 15% 0%, rgba(30,64,175,.08), transparent 60%),radial-gradient(900px 480px at 100% 100%, rgba(249,115,22,.08), transparent 60%),var(--bg)}
+.hero-grid{display:grid;grid-template-columns:1.05fr 1fr;gap:56px;align-items:center}
 @media(max-width:960px){.hero-grid{grid-template-columns:1fr;gap:48px}.hero{padding:40px 0 64px}}
 
-.badge{
-  display:inline-flex;align-items:center;gap:8px;
-  padding:7px 14px;border-radius:999px;
-  background:#fff;border:1px solid var(--line);
-  font-size:13px;font-weight:500;color:#475569;
-  box-shadow:var(--shadow-sm);
-  margin-bottom:22px;
-}
+.badge{display:inline-flex;align-items:center;gap:8px;padding:7px 14px;border-radius:999px;background:#fff;border:1px solid var(--line);font-size:13px;font-weight:500;color:#475569;box-shadow:var(--shadow-sm);margin-bottom:22px}
 .badge-dot{width:8px;height:8px;border-radius:50%;background:var(--green);box-shadow:0 0 0 4px rgba(16,185,129,.15);animation:pulse 2s infinite}
 @keyframes pulse{0%,100%{opacity:1}50%{opacity:.6}}
 
-h1.hero-title{
-  font-size:clamp(34px,5vw,58px);
-  font-weight:700;letter-spacing:-.035em;line-height:1.05;
-  color:var(--ink);margin-bottom:22px;
-}
-.hero-title .grad{
-  background:linear-gradient(120deg,var(--blue) 0%, var(--orange) 90%);
-  -webkit-background-clip:text;background-clip:text;color:transparent;
-}
-.hero-sub{
-  font-size:17px;line-height:1.65;color:#475569;max-width:540px;
-  margin-bottom:32px;
-}
+h1.hero-title{font-size:clamp(34px,5vw,58px);font-weight:700;letter-spacing:-.035em;line-height:1.05;color:var(--ink);margin-bottom:22px}
+.hero-title .grad{background:linear-gradient(120deg,var(--blue) 0%, var(--orange) 90%);-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero-sub{font-size:17px;line-height:1.65;color:#475569;max-width:540px;margin-bottom:32px}
 .hero-cta{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:32px}
-.hero-trust{
-  display:flex;gap:28px;flex-wrap:wrap;
-  padding-top:24px;border-top:1px solid var(--line);
-}
+.hero-trust{display:flex;gap:28px;flex-wrap:wrap;padding-top:24px;border-top:1px solid var(--line)}
 .hero-trust div strong{display:block;font-size:20px;font-weight:700;color:var(--ink);letter-spacing:-.02em}
 .hero-trust div span{font-size:12.5px;color:var(--muted);font-weight:500}
 
-/* hero visual */
 .hero-visual{position:relative;height:480px}
 @media(max-width:960px){.hero-visual{height:380px}}
-.hv-card{
-  position:absolute;background:#fff;border-radius:18px;padding:18px;
-  box-shadow:var(--shadow-lg);
-  border:1px solid rgba(226,232,240,.9);
-  animation:float 6s ease-in-out infinite;
-}
+.hv-card{position:absolute;background:#fff;border-radius:18px;padding:18px;box-shadow:var(--shadow-lg);border:1px solid rgba(226,232,240,.9);animation:float 6s ease-in-out infinite}
 .hv-1{top:20px;left:20px;width:200px;animation-delay:0s}
 .hv-2{top:120px;right:0;width:220px;animation-delay:-2s}
 .hv-3{bottom:60px;left:0;width:230px;animation-delay:-4s}
 .hv-4{bottom:0;right:40px;width:180px;animation-delay:-1s}
 @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
-.hv-icon{
-  width:40px;height:40px;border-radius:10px;display:flex;align-items:center;justify-content:center;
-  margin-bottom:12px;
-}
+.hv-icon{width:40px;height:40px;border-radius:10px;display:flex;align-items:center;justify-content:center;margin-bottom:12px}
 .hv-1 .hv-icon{background:#EFF4FF;color:var(--blue)}
 .hv-2 .hv-icon{background:#FFF7ED;color:var(--orange)}
 .hv-3 .hv-icon{background:#ECFDF5;color:var(--green)}
 .hv-4 .hv-icon{background:#EFF4FF;color:var(--blue)}
 .hv-card h4{font-size:14px;font-weight:600;letter-spacing:-.01em;margin-bottom:4px}
 .hv-card p{font-size:12px;color:var(--muted);line-height:1.4}
-.hv-glow{
-  position:absolute;inset:0;pointer-events:none;
-  background:radial-gradient(400px 300px at 50% 50%, rgba(30,64,175,.15), transparent 70%);
-  filter:blur(40px);z-index:-1;
-}
+.hv-glow{position:absolute;inset:0;pointer-events:none;background:radial-gradient(400px 300px at 50% 50%, rgba(30,64,175,.15), transparent 70%);filter:blur(40px);z-index:-1}
 
-/* ---------- SECTION HEADER ---------- */
 .sec-head{max-width:640px;margin:0 auto 56px;text-align:center}
-.sec-eyebrow{
-  display:inline-block;font-size:12.5px;font-weight:600;letter-spacing:.12em;
-  text-transform:uppercase;color:var(--orange);margin-bottom:14px;
-}
-.sec-title{
-  font-size:clamp(26px,3.5vw,40px);font-weight:700;letter-spacing:-.03em;line-height:1.15;
-  color:var(--ink);margin-bottom:16px;
-}
+.sec-eyebrow{display:inline-block;font-size:12.5px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--orange);margin-bottom:14px}
+.sec-title{font-size:clamp(26px,3.5vw,40px);font-weight:700;letter-spacing:-.03em;line-height:1.15;color:var(--ink);margin-bottom:16px}
 .sec-sub{font-size:16px;color:var(--muted);line-height:1.6}
 
-/* ---------- RAILWAY BANNER ---------- */
-.rail-banner{
-  position:relative;border-radius:24px;overflow:hidden;
-  background:linear-gradient(120deg,#0B1E5C 0%, #1E40AF 45%, #2E5AC7 100%);
-  color:#fff;padding:64px 56px;
-  display:grid;grid-template-columns:1.4fr 1fr;gap:48px;align-items:center;
-}
+/* RAILWAY BANNER */
+.rail-banner{position:relative;border-radius:24px;overflow:hidden;background:linear-gradient(120deg,#0B1E5C 0%, #1E40AF 45%, #2E5AC7 100%);color:#fff;padding:64px 56px;display:grid;grid-template-columns:1.4fr 1fr;gap:48px;align-items:center}
 @media(max-width:840px){.rail-banner{padding:44px 28px;grid-template-columns:1fr;gap:32px}}
-.rail-banner::before{
-  content:"";position:absolute;inset:0;
-  background:radial-gradient(700px 300px at 90% 20%, rgba(249,115,22,.35), transparent 65%);
-  pointer-events:none;
-}
+.rail-banner::before{content:"";position:absolute;inset:0;background:radial-gradient(700px 300px at 90% 20%, rgba(249,115,22,.35), transparent 65%);pointer-events:none}
 .rail-banner > *{position:relative;z-index:1}
-.rail-tag{
-  display:inline-flex;align-items:center;gap:8px;
-  background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.25);
-  color:#fff;font-size:12.5px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;
-  padding:6px 14px;border-radius:999px;margin-bottom:20px;
-  backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);
-}
+.rail-tag{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.25);color:#fff;font-size:12.5px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:6px 14px;border-radius:999px;margin-bottom:20px;backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}
 .rail-tag .dot{width:7px;height:7px;border-radius:50%;background:#FB923C;box-shadow:0 0 0 4px rgba(251,146,60,.3)}
-.rail-banner h2{
-  font-size:clamp(24px,3.4vw,40px);font-weight:700;letter-spacing:-.03em;line-height:1.15;
-  margin-bottom:14px;
-}
+.rail-banner h2{font-size:clamp(24px,3.4vw,40px);font-weight:700;letter-spacing:-.03em;line-height:1.15;margin-bottom:14px}
 .rail-banner p{font-size:16px;color:rgba(255,255,255,.85);line-height:1.65;margin-bottom:26px;max-width:520px}
 .rail-feats{display:flex;gap:22px;flex-wrap:wrap;margin-bottom:28px}
 .rail-feats div{font-size:13.5px;color:rgba(255,255,255,.9);display:flex;align-items:center;gap:8px;font-weight:500}
 .rail-feats svg{width:16px;height:16px;color:#FB923C}
 .rail-visual{display:flex;justify-content:center;align-items:center}
-.train-art{
-  width:100%;max-width:340px;height:auto;
-  filter:drop-shadow(0 20px 40px rgba(0,0,0,.35));
-}
+.train-art{width:100%;max-width:340px;height:auto;filter:drop-shadow(0 20px 40px rgba(0,0,0,.35))}
 .rail-btns{display:flex;gap:12px;flex-wrap:wrap}
 .rail-banner .btn-ghost{background:rgba(255,255,255,.12);color:#fff;border-color:rgba(255,255,255,.3)}
 .rail-banner .btn-ghost:hover{background:rgba(255,255,255,.2);color:#fff}
 
-/* ---------- SERVICES GRID ---------- */
-.services-grid{
-  display:grid;grid-template-columns:repeat(4,1fr);gap:20px;
-}
+/* SERVICES */
+.services-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
 @media(max-width:1024px){.services-grid{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:520px){.services-grid{grid-template-columns:1fr}}
-.svc{
-  background:#fff;border:1px solid var(--line);border-radius:var(--radius);
-  padding:26px 22px;transition:transform .35s var(--ease), box-shadow .35s, border-color .3s;
-  position:relative;overflow:hidden;
-}
-.svc::before{
-  content:"";position:absolute;inset:0;border-radius:var(--radius);
-  background:linear-gradient(135deg,rgba(30,64,175,.04),transparent 60%);
-  opacity:0;transition:opacity .35s;
-}
+.svc{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:26px 22px;transition:transform .35s var(--ease), box-shadow .35s, border-color .3s;position:relative;overflow:hidden}
+.svc::before{content:"";position:absolute;inset:0;border-radius:var(--radius);background:linear-gradient(135deg,rgba(30,64,175,.04),transparent 60%);opacity:0;transition:opacity .35s}
 .svc:hover{transform:translateY(-6px);box-shadow:var(--shadow-md);border-color:transparent}
 .svc:hover::before{opacity:1}
 .svc.featured{border-color:var(--orange);box-shadow:0 8px 24px rgba(249,115,22,.12)}
-.svc.featured::after{
-  content:"POPULAR";position:absolute;top:14px;right:14px;
-  background:linear-gradient(135deg,var(--orange),#EA580C);color:#fff;
-  font-size:9.5px;font-weight:700;letter-spacing:.08em;
-  padding:4px 9px;border-radius:999px;
-}
-.svc-icon{
-  width:48px;height:48px;border-radius:12px;display:flex;align-items:center;justify-content:center;
-  margin-bottom:18px;position:relative;
-}
+.svc.featured::after{content:"NEW";position:absolute;top:14px;right:14px;background:linear-gradient(135deg,var(--orange),#EA580C);color:#fff;font-size:9.5px;font-weight:700;letter-spacing:.08em;padding:4px 9px;border-radius:999px}
+.svc-icon{width:48px;height:48px;border-radius:12px;display:flex;align-items:center;justify-content:center;margin-bottom:18px;position:relative}
 .svc h3{font-size:16px;font-weight:600;letter-spacing:-.015em;margin-bottom:8px;position:relative}
 .svc p{font-size:13.5px;color:var(--muted);line-height:1.55;position:relative}
-.svc-tag{
-  display:inline-block;font-size:11px;font-weight:600;letter-spacing:.06em;
-  text-transform:uppercase;color:var(--green);margin-top:14px;position:relative;
-}
+.svc-tag{display:inline-block;font-size:11px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--green);margin-top:14px;position:relative}
 .i-blue{background:#EFF4FF;color:var(--blue)}
 .i-orange{background:#FFF7ED;color:var(--orange)}
 .i-green{background:#ECFDF5;color:var(--green)}
 .i-purple{background:#F5F3FF;color:#7C3AED}
 
-/* ---------- PRICING CALLOUT ---------- */
-.price-callout{
-  position:relative;border-radius:24px;overflow:hidden;
-  background:linear-gradient(135deg,#FFF7ED 0%, #FFEDD5 50%, #FED7AA 100%);
-  border:2px solid rgba(249,115,22,.2);
-  padding:56px 48px;text-align:center;
-  box-shadow:0 20px 50px rgba(249,115,22,.15);
-}
+/* PRICE CALLOUT */
+.price-callout{position:relative;border-radius:24px;overflow:hidden;background:linear-gradient(135deg,#FFF7ED 0%, #FFEDD5 50%, #FED7AA 100%);border:2px solid rgba(249,115,22,.2);padding:56px 48px;text-align:center;box-shadow:0 20px 50px rgba(249,115,22,.15)}
 @media(max-width:640px){.price-callout{padding:40px 24px;border-radius:18px}}
-.price-callout::before{
-  content:"";position:absolute;top:-40px;left:-40px;width:200px;height:200px;
-  background:radial-gradient(circle, rgba(249,115,22,.25), transparent 70%);
-  border-radius:50%;
-}
-.price-callout::after{
-  content:"🎉";position:absolute;top:24px;right:32px;font-size:42px;
-  animation:float 3s ease-in-out infinite;
-}
-@media(max-width:640px){.price-callout::after{display:none}}
+.price-callout::before{content:"";position:absolute;top:-40px;left:-40px;width:200px;height:200px;background:radial-gradient(circle, rgba(249,115,22,.25), transparent 70%);border-radius:50%}
 .price-callout > *{position:relative;z-index:1}
 .price-callout .sec-eyebrow{color:#EA580C}
-.price-callout h2{
-  font-size:clamp(26px,3.6vw,42px);font-weight:700;letter-spacing:-.035em;line-height:1.1;
-  color:var(--ink);margin-bottom:14px;
-}
-.price-callout .price-big{
-  display:inline-block;
-  font-size:clamp(52px,7vw,84px);font-weight:800;letter-spacing:-.05em;
-  background:linear-gradient(135deg,#EA580C 0%, #F97316 60%, #FB923C 100%);
-  -webkit-background-clip:text;background-clip:text;color:transparent;
-  line-height:1;margin:8px 0;
-}
-.price-callout .price-sub{
-  font-size:15px;color:#7C2D12;font-weight:600;margin-top:4px;
-  letter-spacing:-.01em;
-}
-.price-callout p.desc{
-  font-size:16px;color:#78350F;line-height:1.65;max-width:560px;margin:18px auto 28px;
-}
+.price-callout h2{font-size:clamp(26px,3.6vw,42px);font-weight:700;letter-spacing:-.035em;line-height:1.1;color:var(--ink);margin-bottom:14px}
+.price-callout .price-big{display:inline-block;font-size:clamp(52px,7vw,84px);font-weight:800;letter-spacing:-.05em;background:linear-gradient(135deg,#EA580C 0%, #F97316 60%, #FB923C 100%);-webkit-background-clip:text;background-clip:text;color:transparent;line-height:1;margin:8px 0}
+.price-callout .price-sub{font-size:15px;color:#7C2D12;font-weight:600;margin-top:4px;letter-spacing:-.01em}
+.price-callout p.desc{font-size:16px;color:#78350F;line-height:1.65;max-width:560px;margin:18px auto 28px}
 .price-callout .btn-group{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
-.tnc-link{
-  display:inline-flex;align-items:center;gap:6px;
-  font-size:13px;color:#7C2D12;font-weight:600;margin-top:22px;
-  text-decoration:underline;text-decoration-color:rgba(124,45,18,.4);
-  text-underline-offset:3px;
-}
+.tnc-link{display:inline-flex;align-items:center;gap:6px;font-size:13px;color:#7C2D12;font-weight:600;margin-top:22px;text-decoration:underline;text-decoration-color:rgba(124,45,18,.4);text-underline-offset:3px}
 .tnc-link:hover{color:#EA580C;text-decoration-color:#EA580C}
 
-/* ---------- STATS STRIP ---------- */
-.stats-strip{
-  background:linear-gradient(120deg,var(--blue-deep) 0%, var(--blue) 60%, #2E5AC7 100%);
-  color:#fff;padding:56px 0;position:relative;overflow:hidden;
-}
-.stats-strip::before{
-  content:"";position:absolute;inset:0;
-  background:radial-gradient(600px 300px at 90% 50%, rgba(249,115,22,.25), transparent 60%);
-}
-.stats-grid{
-  display:grid;grid-template-columns:repeat(4,1fr);gap:20px;
-  position:relative;text-align:center;
-}
+/* STATS */
+.stats-strip{background:linear-gradient(120deg,var(--blue-deep) 0%, var(--blue) 60%, #2E5AC7 100%);color:#fff;padding:56px 0;position:relative;overflow:hidden}
+.stats-strip::before{content:"";position:absolute;inset:0;background:radial-gradient(600px 300px at 90% 50%, rgba(249,115,22,.25), transparent 60%)}
+.stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;position:relative;text-align:center}
 @media(max-width:768px){.stats-grid{grid-template-columns:repeat(2,1fr);gap:36px}}
 .stat-num{font-size:clamp(32px,4vw,46px);font-weight:700;letter-spacing:-.03em;line-height:1}
 .stat-lbl{font-size:13.5px;color:rgba(255,255,255,.75);margin-top:10px;font-weight:500}
 
-/* ---------- HOW IT WORKS ---------- */
+/* STEPS */
 .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;position:relative}
 @media(max-width:900px){.steps{grid-template-columns:1fr;gap:32px}}
 .step{position:relative;padding-top:12px}
-.step-num{
-  width:52px;height:52px;border-radius:14px;
-  background:#fff;border:2px solid var(--line);
-  display:flex;align-items:center;justify-content:center;
-  font-weight:700;font-size:19px;color:var(--blue);
-  margin-bottom:20px;transition:.3s var(--ease);
-  position:relative;z-index:1;
-}
+.step-num{width:52px;height:52px;border-radius:14px;background:#fff;border:2px solid var(--line);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:19px;color:var(--blue);margin-bottom:20px;transition:.3s var(--ease);position:relative;z-index:1}
 .step:hover .step-num{background:var(--blue);color:#fff;border-color:var(--blue);transform:scale(1.06)}
 .step h3{font-size:17px;font-weight:600;letter-spacing:-.015em;margin-bottom:10px}
 .step p{font-size:14px;color:var(--muted);line-height:1.6}
-.step-line{
-  position:absolute;top:38px;left:52px;right:-24px;height:2px;
-  background:repeating-linear-gradient(to right,var(--line) 0 6px, transparent 6px 12px);
-}
+.step-line{position:absolute;top:38px;left:52px;right:-24px;height:2px;background:repeating-linear-gradient(to right,var(--line) 0 6px, transparent 6px 12px)}
 @media(max-width:900px){.step-line{display:none}}
 
-/* ---------- WHY US ---------- */
+/* WHY */
 .why-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
 @media(max-width:900px){.why-grid{grid-template-columns:1fr;gap:40px}}
 .why-list{display:flex;flex-direction:column;gap:22px;margin-top:32px}
 .why-item{display:flex;gap:16px;align-items:flex-start}
-.why-check{
-  width:28px;height:28px;border-radius:8px;flex:none;
-  background:linear-gradient(135deg,var(--green),#059669);
-  display:flex;align-items:center;justify-content:center;color:#fff;
-  box-shadow:0 4px 10px rgba(16,185,129,.25);
-}
+.why-check{width:28px;height:28px;border-radius:8px;flex:none;background:linear-gradient(135deg,var(--green),#059669);display:flex;align-items:center;justify-content:center;color:#fff;box-shadow:0 4px 10px rgba(16,185,129,.25)}
 .why-check svg{width:14px;height:14px}
 .why-item h4{font-size:15.5px;font-weight:600;margin-bottom:4px;letter-spacing:-.01em}
 .why-item p{font-size:13.5px;color:var(--muted);line-height:1.55}
-.why-visual{
-  background:linear-gradient(135deg,#EFF4FF 0%, #FFF7ED 100%);
-  border-radius:24px;padding:40px;position:relative;overflow:hidden;
-  min-height:400px;
-  display:flex;align-items:center;justify-content:center;
-}
-.why-visual-card{
-  background:#fff;border-radius:18px;padding:24px;width:100%;max-width:340px;
-  box-shadow:var(--shadow-lg);
-}
+.why-visual{background:linear-gradient(135deg,#EFF4FF 0%, #FFF7ED 100%);border-radius:24px;padding:40px;position:relative;overflow:hidden;min-height:400px;display:flex;align-items:center;justify-content:center}
+.why-visual-card{background:#fff;border-radius:18px;padding:24px;width:100%;max-width:340px;box-shadow:var(--shadow-lg)}
 .why-visual-card h5{font-size:14px;font-weight:600;margin-bottom:16px;letter-spacing:-.01em}
 .mini-row{display:flex;align-items:center;justify-content:space-between;padding:11px 0;border-bottom:1px solid var(--line);font-size:13.5px}
 .mini-row:last-child{border-bottom:0;padding-bottom:0}
@@ -426,41 +248,23 @@ h1.hero-title{
 .mini-row span:last-child{font-weight:600;color:var(--ink)}
 .mini-row .up{color:var(--green)}
 
-/* ---------- TESTIMONIALS ---------- */
+/* TESTIMONIALS */
 .tst-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:22px}
 @media(max-width:900px){.tst-grid{grid-template-columns:1fr}}
-.tst{
-  background:#fff;border:1px solid var(--line);border-radius:var(--radius);
-  padding:28px 24px;display:flex;flex-direction:column;
-  transition:transform .35s var(--ease), box-shadow .35s;
-}
+.tst{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:28px 24px;display:flex;flex-direction:column;transition:transform .35s var(--ease), box-shadow .35s}
 .tst:hover{transform:translateY(-6px);box-shadow:var(--shadow-md)}
 .tst-stars{color:#FBBF24;font-size:15px;letter-spacing:2px;margin-bottom:16px}
 .tst-quote{font-size:14.5px;line-height:1.65;color:#334155;flex:1;margin-bottom:22px}
 .tst-author{display:flex;align-items:center;gap:12px}
-.tst-avatar{
-  width:44px;height:44px;border-radius:50%;flex:none;
-  display:flex;align-items:center;justify-content:center;
-  font-weight:700;color:#fff;font-size:16px;
-}
+.tst-avatar{width:44px;height:44px;border-radius:50%;flex:none;display:flex;align-items:center;justify-content:center;font-weight:700;color:#fff;font-size:16px}
 .tst-author strong{font-size:14px;font-weight:600;display:block;letter-spacing:-.01em}
 .tst-author span{font-size:12.5px;color:var(--muted)}
 
-/* ---------- CTA BLOCK ---------- */
-.cta-block{
-  background:linear-gradient(120deg,var(--blue-deep) 0%, var(--blue) 55%, #2E5AC7 100%);
-  border-radius:24px;padding:72px 56px;position:relative;overflow:hidden;
-  color:#fff;text-align:center;
-}
+/* CTA BLOCK */
+.cta-block{background:linear-gradient(120deg,var(--blue-deep) 0%, var(--blue) 55%, #2E5AC7 100%);border-radius:24px;padding:72px 56px;position:relative;overflow:hidden;color:#fff;text-align:center}
 @media(max-width:640px){.cta-block{padding:48px 28px;border-radius:18px}}
-.cta-block::before{
-  content:"";position:absolute;top:-100px;right:-100px;width:400px;height:400px;
-  background:radial-gradient(circle, rgba(249,115,22,.4), transparent 60%);
-}
-.cta-block::after{
-  content:"";position:absolute;bottom:-100px;left:-100px;width:400px;height:400px;
-  background:radial-gradient(circle, rgba(16,185,129,.25), transparent 60%);
-}
+.cta-block::before{content:"";position:absolute;top:-100px;right:-100px;width:400px;height:400px;background:radial-gradient(circle, rgba(249,115,22,.4), transparent 60%)}
+.cta-block::after{content:"";position:absolute;bottom:-100px;left:-100px;width:400px;height:400px;background:radial-gradient(circle, rgba(16,185,129,.25), transparent 60%)}
 .cta-block > *{position:relative;z-index:1}
 .cta-block h2{font-size:clamp(24px,3.2vw,36px);font-weight:700;letter-spacing:-.03em;margin-bottom:16px;line-height:1.2}
 .cta-block p{font-size:16px;color:rgba(255,255,255,.85);max-width:540px;margin:0 auto 32px;line-height:1.6}
@@ -468,137 +272,73 @@ h1.hero-title{
 .cta-block .btn-ghost{background:rgba(255,255,255,.1);color:#fff;border-color:rgba(255,255,255,.3)}
 .cta-block .btn-ghost:hover{background:rgba(255,255,255,.18);color:#fff}
 
-/* ---------- PAGE HERO (inner pages) ---------- */
-.page-hero{
-  padding:64px 0 48px;text-align:center;
-  background:linear-gradient(180deg, var(--blue-soft), transparent);
-}
+/* PAGE HERO */
+.page-hero{padding:64px 0 48px;text-align:center;background:linear-gradient(180deg, var(--blue-soft), transparent)}
 .page-hero h1{font-size:clamp(30px,4vw,48px);font-weight:700;letter-spacing:-.03em;line-height:1.1;margin-bottom:16px}
 .page-hero p{font-size:17px;color:#475569;max-width:640px;margin:0 auto;line-height:1.6}
 
-/* ---------- SERVICE DETAIL CARDS ---------- */
-.svc-detail{
-  display:grid;grid-template-columns:80px 1fr auto;gap:24px;align-items:center;
-  background:#fff;border:1px solid var(--line);border-radius:var(--radius);
-  padding:24px 28px;margin-bottom:14px;
-  transition:transform .3s var(--ease), box-shadow .3s, border-color .3s;
-}
+/* SERVICE DETAILS */
+.svc-detail{display:grid;grid-template-columns:80px 1fr auto;gap:24px;align-items:center;background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:24px 28px;margin-bottom:14px;transition:transform .3s var(--ease), box-shadow .3s, border-color .3s}
 .svc-detail:hover{transform:translateX(4px);box-shadow:var(--shadow-md);border-color:transparent}
 .svc-detail.featured{border-color:var(--orange);background:linear-gradient(135deg,#FFFBEB 0%, #FFF7ED 100%)}
 @media(max-width:720px){.svc-detail{grid-template-columns:60px 1fr;gap:16px}.svc-detail .btn{grid-column:1/-1;width:100%;justify-content:center}}
-.svc-detail-icon{
-  width:64px;height:64px;border-radius:14px;display:flex;align-items:center;justify-content:center;
-}
+.svc-detail-icon{width:64px;height:64px;border-radius:14px;display:flex;align-items:center;justify-content:center}
 .svc-detail h3{font-size:17px;font-weight:600;letter-spacing:-.015em;margin-bottom:6px;display:flex;align-items:center;gap:10px;flex-wrap:wrap}
-.svc-detail h3 .badge-new{
-  font-size:10px;font-weight:700;letter-spacing:.06em;background:linear-gradient(135deg,var(--orange),#EA580C);
-  color:#fff;padding:3px 8px;border-radius:999px;
-}
+.svc-detail h3 .badge-new{font-size:10px;font-weight:700;letter-spacing:.06em;background:linear-gradient(135deg,var(--orange),#EA580C);color:#fff;padding:3px 8px;border-radius:999px}
 .svc-detail p{font-size:14px;color:var(--muted);line-height:1.55}
 
-/* ---------- CONTACT ---------- */
+/* CONTACT */
 .contact-grid{display:grid;grid-template-columns:1fr 1.2fr;gap:60px}
 @media(max-width:900px){.contact-grid{grid-template-columns:1fr;gap:40px}}
 .contact-info{display:flex;flex-direction:column;gap:24px}
 .contact-item{display:flex;gap:16px;align-items:flex-start}
-.contact-item-icon{
-  width:44px;height:44px;border-radius:12px;flex:none;
-  display:flex;align-items:center;justify-content:center;
-}
+.contact-item-icon{width:44px;height:44px;border-radius:12px;flex:none;display:flex;align-items:center;justify-content:center}
 .contact-item h4{font-size:15px;font-weight:600;margin-bottom:4px;letter-spacing:-.01em}
 .contact-item p, .contact-item a{font-size:14px;color:var(--muted);line-height:1.55}
 .contact-item a:hover{color:var(--blue)}
-.form-card{
-  background:#fff;border:1px solid var(--line);border-radius:var(--radius);
-  padding:32px;box-shadow:var(--shadow-sm);
-}
+.form-card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:32px;box-shadow:var(--shadow-sm)}
 .form-card h3{font-size:19px;font-weight:600;letter-spacing:-.02em;margin-bottom:8px}
 .form-card > p{font-size:14px;color:var(--muted);margin-bottom:24px}
 .field{margin-bottom:18px}
 .field label{display:block;font-size:13px;font-weight:500;color:#334155;margin-bottom:7px}
-.field input, .field textarea, .field select{
-  width:100%;padding:12px 14px;border-radius:10px;
-  border:1.5px solid var(--line);background:#fff;
-  font-family:inherit;font-size:14.5px;color:var(--ink);
-  transition:border-color .2s, box-shadow .2s;
-}
-.field input:focus, .field textarea:focus, .field select:focus{
-  outline:none;border-color:var(--blue);
-  box-shadow:0 0 0 4px rgba(30,64,175,.1);
-}
+.field input, .field textarea, .field select{width:100%;padding:12px 14px;border-radius:10px;border:1.5px solid var(--line);background:#fff;font-family:inherit;font-size:14.5px;color:var(--ink);transition:border-color .2s, box-shadow .2s}
+.field input:focus, .field textarea:focus, .field select:focus{outline:none;border-color:var(--blue);box-shadow:0 0 0 4px rgba(30,64,175,.1)}
 .field textarea{resize:vertical;min-height:110px}
 .form-card .btn{width:100%;justify-content:center}
 
-/* ---------- FAQ ---------- */
+/* FAQ */
 .faq-list{max-width:780px;margin:0 auto;display:flex;flex-direction:column;gap:12px}
-.faq{
-  background:#fff;border:1px solid var(--line);border-radius:14px;
-  overflow:hidden;transition:box-shadow .3s, border-color .3s;
-}
+.faq{background:#fff;border:1px solid var(--line);border-radius:14px;overflow:hidden;transition:box-shadow .3s, border-color .3s}
 .faq[open]{box-shadow:var(--shadow-sm);border-color:transparent}
-.faq summary{
-  padding:20px 24px;font-size:15.5px;font-weight:600;letter-spacing:-.01em;
-  cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:16px;
-  transition:color .2s;
-}
+.faq summary{padding:20px 24px;font-size:15.5px;font-weight:600;letter-spacing:-.01em;cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:16px;transition:color .2s}
 .faq summary::-webkit-details-marker{display:none}
 .faq summary:hover{color:var(--blue)}
-.faq summary::after{
-  content:"+";font-size:22px;font-weight:400;color:var(--muted);
-  transition:transform .3s var(--ease);flex:none;
-}
+.faq summary::after{content:"+";font-size:22px;font-weight:400;color:var(--muted);transition:transform .3s var(--ease);flex:none}
 .faq[open] summary::after{transform:rotate(45deg);color:var(--blue)}
 .faq-body{padding:0 24px 22px;font-size:14.5px;color:var(--muted);line-height:1.65}
 
-/* ---------- T&C PAGE ---------- */
+/* T&C */
 .tnc-content{max-width:820px;margin:0 auto}
-.tnc-content h2{
-  font-size:22px;font-weight:700;letter-spacing:-.02em;color:var(--ink);
-  margin:40px 0 16px;padding-bottom:12px;border-bottom:1px solid var(--line);
-}
+.tnc-content h2{font-size:22px;font-weight:700;letter-spacing:-.02em;color:var(--ink);margin:40px 0 16px;padding-bottom:12px;border-bottom:1px solid var(--line)}
 .tnc-content h2:first-child{margin-top:0}
 .tnc-content p{font-size:15px;color:#475569;line-height:1.75;margin-bottom:14px}
 .tnc-content ul{list-style:none;padding:0;margin:14px 0 22px}
-.tnc-content li{
-  font-size:15px;color:#475569;line-height:1.75;
-  padding-left:26px;position:relative;margin-bottom:10px;
-}
-.tnc-content li::before{
-  content:"";position:absolute;left:0;top:11px;width:8px;height:8px;border-radius:50%;
-  background:var(--orange);
-}
+.tnc-content li{font-size:15px;color:#475569;line-height:1.75;padding-left:26px;position:relative;margin-bottom:10px}
+.tnc-content li::before{content:"";position:absolute;left:0;top:11px;width:8px;height:8px;border-radius:50%;background:var(--orange)}
 .tnc-content strong{color:var(--ink);font-weight:600}
-.pricing-table{
-  width:100%;border-collapse:collapse;margin:24px 0;font-size:14.5px;
-  border:1px solid var(--line);border-radius:12px;overflow:hidden;
-}
-.pricing-table th, .pricing-table td{
-  padding:16px 20px;text-align:left;border-bottom:1px solid var(--line);
-}
-.pricing-table th{
-  background:var(--blue-soft);font-weight:600;color:var(--blue);
-  font-size:13px;letter-spacing:.04em;text-transform:uppercase;
-}
+.pricing-table{width:100%;border-collapse:collapse;margin:24px 0;font-size:14.5px;border:1px solid var(--line);border-radius:12px;overflow:hidden}
+.pricing-table th, .pricing-table td{padding:16px 20px;text-align:left;border-bottom:1px solid var(--line)}
+.pricing-table th{background:var(--blue-soft);font-weight:600;color:var(--blue);font-size:13px;letter-spacing:.04em;text-transform:uppercase}
 .pricing-table tr:last-child td{border-bottom:0}
 .pricing-table td:last-child{text-align:right;font-weight:600;color:var(--ink)}
-.pricing-table .total-row td{
-  background:#FFF7ED;color:#7C2D12;font-weight:700;font-size:15.5px;
-}
-@media(max-width:600px){
-  .pricing-table th, .pricing-table td{padding:12px 14px;font-size:13px}
-}
-.note-box{
-  background:#FFF7ED;border-left:4px solid var(--orange);
-  border-radius:10px;padding:18px 22px;margin:24px 0;
-}
+.pricing-table .total-row td{background:#FFF7ED;color:#7C2D12;font-weight:700;font-size:15.5px}
+@media(max-width:600px){.pricing-table th, .pricing-table td{padding:12px 14px;font-size:13px}}
+.note-box{background:#FFF7ED;border-left:4px solid var(--orange);border-radius:10px;padding:18px 22px;margin:24px 0}
 .note-box p{margin:0;font-size:14.5px;color:#7C2D12;line-height:1.7}
 .note-box strong{color:#7C2D12}
 
-/* ---------- FOOTER ---------- */
-.footer{
-  background:var(--blue-deep);color:rgba(255,255,255,.75);
-  padding:64px 0 32px;margin-top:80px;
-}
+/* FOOTER */
+.footer{background:var(--blue-deep);color:rgba(255,255,255,.75);padding:64px 0 32px;margin-top:80px}
 .footer-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:48px;margin-bottom:48px}
 @media(max-width:820px){.footer-grid{grid-template-columns:1fr 1fr;gap:36px}}
 @media(max-width:520px){.footer-grid{grid-template-columns:1fr}}
@@ -609,20 +349,10 @@ h1.hero-title{
 .footer ul{list-style:none;display:flex;flex-direction:column;gap:10px}
 .footer ul a{font-size:14px;color:rgba(255,255,255,.65);transition:color .2s}
 .footer ul a:hover{color:#fff}
-.footer-bottom{
-  padding-top:28px;border-top:1px solid rgba(255,255,255,.1);
-  display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;
-  font-size:13px;color:rgba(255,255,255,.5);
-}
-.footer-bottom a{color:rgba(255,255,255,.65)}
-.footer-bottom a:hover{color:#fff}
+.footer-bottom{padding-top:28px;border-top:1px solid rgba(255,255,255,.1);display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;font-size:13px;color:rgba(255,255,255,.5)}
 
-/* ---------- REVEAL ANIMATION (BULLETPROOF) ---------- */
-[data-reveal]{
-  opacity:1;transform:none;
-  transition:opacity .8s var(--ease), transform .8s var(--ease);
-  transition-delay:var(--d,0s);
-}
+/* REVEAL */
+[data-reveal]{opacity:1;transform:none;transition:opacity .8s var(--ease), transform .8s var(--ease);transition-delay:var(--d,0s)}
 html.js-ready [data-reveal]:not(.in-view){opacity:0;transform:translateY(24px)}
 html.js-ready [data-reveal].in-view{opacity:1;transform:none}
 @media(prefers-reduced-motion:reduce){
@@ -631,25 +361,18 @@ html.js-ready [data-reveal].in-view{opacity:1;transform:none}
   *{scroll-behavior:auto !important}
 }
 
-/* ---------- WHATSAPP FLOAT ---------- */
-.wa-float{
-  position:fixed;bottom:24px;right:24px;z-index:90;
-  width:56px;height:56px;border-radius:50%;
-  background:#25D366;color:#fff;
-  display:flex;align-items:center;justify-content:center;
-  box-shadow:0 8px 24px rgba(37,211,102,.4);
-  transition:transform .3s var(--ease), box-shadow .3s;
-}
+/* WHATSAPP FLOAT */
+.wa-float{position:fixed;bottom:24px;right:24px;z-index:90;width:56px;height:56px;border-radius:50%;background:#25D366;color:#fff;display:flex;align-items:center;justify-content:center;box-shadow:0 8px 24px rgba(37,211,102,.4);transition:transform .3s var(--ease), box-shadow .3s}
 .wa-float:hover{transform:translateY(-3px) scale(1.05);box-shadow:0 12px 30px rgba(37,211,102,.5)}
 .wa-float svg{width:28px;height:28px}
 @media(max-width:640px){.wa-float{bottom:16px;right:16px;width:52px;height:52px}}
 
-/* ---------- PRICING POPUP ---------- */
+/* PRICING POPUP */
 .price-popup{
   position:fixed;left:24px;bottom:24px;z-index:95;
   width:320px;max-width:calc(100vw - 48px);
   background:#fff;border-radius:18px;overflow:hidden;
-  box-shadow:0 20px 50px rgba(15,23,42,.2), 0 0 0 1px rgba(249,115,22,.15);
+  box-shadow:0 20px 50px rgba(15,23,42,.22), 0 0 0 1px rgba(249,115,22,.15);
   transform:translateY(30px) scale(.95);opacity:0;visibility:hidden;
   transition:opacity .4s var(--ease), transform .4s var(--ease), visibility .4s;
 }
@@ -660,67 +383,50 @@ html.js-ready [data-reveal].in-view{opacity:1;transform:none}
   display:flex;align-items:center;justify-content:space-between;
   font-size:13px;font-weight:700;letter-spacing:.02em;text-transform:uppercase;
 }
-.price-popup-close{
-  color:#fff;font-size:20px;line-height:1;opacity:.9;padding:2px 6px;
-}
+.price-popup-close{color:#fff;font-size:20px;line-height:1;opacity:.9;padding:2px 6px;cursor:pointer}
 .price-popup-close:hover{opacity:1}
 .price-popup-body{padding:20px 20px 18px}
-.price-popup-body h4{
-  font-size:15px;font-weight:600;letter-spacing:-.01em;color:var(--ink);
-  margin-bottom:6px;line-height:1.35;
-}
-.price-popup-body .pop-price{
-  font-size:38px;font-weight:800;letter-spacing:-.04em;line-height:1;
-  background:linear-gradient(135deg,#EA580C,#F97316);
-  -webkit-background-clip:text;background-clip:text;color:transparent;
-  margin:8px 0 4px;
-}
-.price-popup-body .pop-sub{
-  font-size:12.5px;color:var(--muted);margin-bottom:14px;font-weight:500;
-}
-.price-popup-body .pop-btn{
-  display:flex;align-items:center;justify-content:center;gap:6px;
-  width:100%;padding:11px;border-radius:10px;
-  background:linear-gradient(135deg,var(--orange),#EA580C);
-  color:#fff;font-size:14px;font-weight:600;
-  transition:transform .25s var(--ease), box-shadow .25s;
-  box-shadow:0 6px 18px rgba(249,115,22,.3);
-}
+.price-popup-body h4{font-size:15px;font-weight:600;letter-spacing:-.01em;color:var(--ink);margin-bottom:6px;line-height:1.35}
+.price-popup-body .pop-price{font-size:38px;font-weight:800;letter-spacing:-.04em;line-height:1;background:linear-gradient(135deg,#EA580C,#F97316);-webkit-background-clip:text;background-clip:text;color:transparent;margin:8px 0 4px}
+.price-popup-body .pop-sub{font-size:12.5px;color:var(--muted);margin-bottom:14px;font-weight:500}
+.price-popup-body .pop-btn{display:flex;align-items:center;justify-content:center;gap:6px;width:100%;padding:11px;border-radius:10px;background:linear-gradient(135deg,var(--orange),#EA580C);color:#fff;font-size:14px;font-weight:600;transition:transform .25s var(--ease), box-shadow .25s;box-shadow:0 6px 18px rgba(249,115,22,.3)}
 .price-popup-body .pop-btn:hover{transform:translateY(-2px);box-shadow:0 10px 24px rgba(249,115,22,.4)}
-.price-popup-body .pop-tnc{
-  display:block;text-align:center;font-size:11.5px;color:var(--muted);
-  margin-top:10px;text-decoration:underline;text-underline-offset:2px;
-}
+.price-popup-body .pop-tnc{display:block;text-align:center;font-size:11.5px;color:var(--muted);margin-top:10px;text-decoration:underline;text-underline-offset:2px}
 .price-popup-body .pop-tnc:hover{color:var(--orange)}
-@media(max-width:640px){
-  .price-popup{left:16px;right:16px;bottom:80px;width:auto;max-width:none}
-}
+@media(max-width:640px){.price-popup{left:16px;right:16px;bottom:80px;width:auto;max-width:none}}
 </style>
 </head>
 <body>
 
-<!-- ================= PRICING TOP BAR ================= -->
+<!-- PRICE BAR -->
 <div class="price-bar" id="priceBar">
-  <span>🎉 Limited Time — Sirf <strong>₹1499</strong> se apna digital counter shuru karein!</span>
-  <a href="#/pricing">Details →</a>
-  <button class="close-x" aria-label="Close" onclick="document.getElementById('priceBar').classList.add('hide')">×</button>
+  <span>Limited Time — Start your digital counter at just <strong>₹1,499</strong>!</span>
+  <a href="#/pricing">View Details →</a>
+  <button class="close-x" aria-label="Close" type="button" onclick="document.getElementById('priceBar').classList.add('hide')">×</button>
 </div>
 
-<!-- ================= HEADER ================= -->
+<!-- HEADER -->
 <header class="header" id="header">
   <div class="container header-inner">
     <a href="#/" class="brand">
-      <svg class="brand-mark" viewBox="0 0 48 48" fill="none" aria-hidden="true">
-        <circle cx="24" cy="24" r="22" fill="#fff" stroke="#0F1B31" stroke-width="2.5"/>
-        <g clip-path="url(#brandClip)">
-          <clipPath id="brandClip"><circle cx="24" cy="24" r="21"/></clipPath>
-          <rect x="13.5" y="22.5" width="4.6" height="7.5" rx="1" fill="#F97316"/>
-          <rect x="20.2" y="17.5" width="4.6" height="12.5" rx="1" fill="#F97316"/>
-          <rect x="26.9" y="11.5" width="4.6" height="18.5" rx="1" fill="#F97316"/>
-          <path d="M10 25 Q 20 19.5 32.5 11.5" stroke="#F97316" stroke-width="2.4" fill="none" stroke-linecap="round"/>
-          <path d="M28.5 9.5 L 33.5 11.5 L 33 16.5" stroke="#F97316" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
-          <path d="M6.5 34 L 15.5 30 Q 20 32.5 24 31 Q 28 32.5 32.5 30 L 41.5 34" stroke="#0F1B31" stroke-width="2.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
-          <path d="M15.5 30 Q 20 34 24 34 Q 28 34 32.5 30" stroke="#0F1B31" stroke-width="2.2" fill="none" stroke-linecap="round"/>
+      <svg class="brand-mark" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <circle cx="24" cy="24" r="21.5" fill="#fff" stroke="#0F1B31" stroke-width="2"/>
+        <g clip-path="url(#logoClip1)">
+          <clipPath id="logoClip1"><circle cx="24" cy="24" r="20.5"/></clipPath>
+          <!-- Orange bars -->
+          <rect x="13" y="21" width="3.4" height="6.5" rx="0.6" fill="#F97316"/>
+          <rect x="17.4" y="17" width="3.4" height="10.5" rx="0.6" fill="#F97316"/>
+          <rect x="21.8" y="13" width="3.4" height="14.5" rx="0.6" fill="#F97316"/>
+          <!-- Orange arrow -->
+          <path d="M11 22.5 Q 17 20 26.5 11.5" stroke="#F97316" stroke-width="2.3" fill="none" stroke-linecap="round"/>
+          <path d="M22 9.5 L 28 11 L 27 16.5" stroke="#F97316" stroke-width="2.3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+          <!-- Navy handshake -->
+          <g fill="#0F1B31">
+            <path d="M4 32 L 10 29.5 C 12.5 28.3 15 28.3 17 29.8 L 20.5 32.3 L 21.5 35.5 L 19 36.5 L 16.5 34.5 C 15.5 33.7 14.3 33.5 13 33.8 L 7.5 35.5 Z"/>
+            <path d="M44 32 L 38 29.5 C 35.5 28.3 33 28.3 31 29.8 L 27.5 32.3 L 26.5 35.5 L 29 36.5 L 31.5 34.5 C 32.5 33.7 33.7 33.5 35 33.8 L 40.5 35.5 Z"/>
+            <path d="M18.5 31.5 Q 21 30 24 30 Q 27 30 29.5 31.5 L 30 34 Q 27 35.5 24 35.5 Q 21 35.5 18 34 Z"/>
+            <path d="M21 34.5 Q 22 37 22 38 M23.5 35 Q 24 37 24 38 M26 35 Q 26 37 25.5 38" stroke="#0F1B31" stroke-width="1.3" fill="none" stroke-linecap="round"/>
+          </g>
         </g>
       </svg>
       <div class="brand-text">
@@ -728,7 +434,7 @@ html.js-ready [data-reveal].in-view{opacity:1;transform:none}
         <small>Service Center</small>
       </div>
     </a>
-    <nav class="nav" id="mainNav">
+    <nav class="nav">
       <a href="#/" data-nav="/">Home</a>
       <a href="#/services" data-nav="/services">Services</a>
       <a href="#/pricing" data-nav="/pricing">Pricing</a>
@@ -741,7 +447,7 @@ html.js-ready [data-reveal].in-view{opacity:1;transform:none}
       Become a Partner
       <svg viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
     </a>
-    <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
+    <button class="burger" id="burger" type="button" aria-label="Open menu" aria-expanded="false">
       <span></span><span></span><span></span>
     </button>
   </div>
@@ -758,11 +464,10 @@ html.js-ready [data-reveal].in-view{opacity:1;transform:none}
   <a href="#/contact" class="btn btn-primary">Become a Partner</a>
 </div>
 
-<!-- ================= PAGES ================= -->
 <main id="main">
 
-<!-- ---------- HOME ---------- -->
-<div class="page" data-page="/" data-active>
+<!-- HOME -->
+<div class="page" data-page="/" data-active="true">
   <section class="hero">
     <div class="container hero-grid">
       <div>
@@ -771,16 +476,16 @@ html.js-ready [data-reveal].in-view{opacity:1;transform:none}
           Trusted by 10,000+ retailers across India
         </div>
         <h1 class="hero-title" data-reveal style="--d:.08s">
-          Aapke counter ko banayein<br>
+          Turn your counter into a<br>
           <span class="grad">digital business hub.</span>
         </h1>
         <p class="hero-sub" data-reveal style="--d:.16s">
-          Railway ticket, BBPS, money transfer, mobile recharge, PAN card aur bahut kuch —
-          ek hi platform par. Sirf ₹1499 se shuru.
+          Railway tickets, BBPS, money transfer, mobile recharge, PAN card and more —
+          all on one platform. Built for kirana stores, cyber cafes and agents.
         </p>
         <div class="hero-cta" data-reveal style="--d:.24s">
-          <a href="#/pricing" class="btn btn-primary btn-lg">
-            Sirf ₹1499 Mein Shuru Karein
+          <a href="#/contact" class="btn btn-primary btn-lg">
+            Become a Partner
             <svg viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </a>
           <a href="#/services" class="btn btn-ghost btn-lg">Explore Services</a>
@@ -795,30 +500,22 @@ html.js-ready [data-reveal].in-view{opacity:1;transform:none}
       <div class="hero-visual">
         <div class="hv-glow"></div>
         <div class="hv-card hv-1">
-          <div class="hv-icon">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><rect x="4" y="4" width="16" height="16" rx="3" stroke="currentColor" stroke-width="2"/><path d="M4 9h16M9 4v16" stroke="currentColor" stroke-width="2"/></svg>
-          </div>
+          <div class="hv-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><rect x="4" y="4" width="16" height="16" rx="3" stroke="currentColor" stroke-width="2"/><path d="M4 9h16M9 4v16" stroke="currentColor" stroke-width="2"/></svg></div>
           <h4>Railway Ticket</h4>
-          <p>IRCTC authorized — instant booking.</p>
+          <p>IRCTC booking — instant PNR.</p>
         </div>
         <div class="hv-card hv-2">
-          <div class="hv-icon">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><rect x="3" y="6" width="18" height="13" rx="2" stroke="currentColor" stroke-width="2"/><path d="M3 10h18" stroke="currentColor" stroke-width="2"/></svg>
-          </div>
+          <div class="hv-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><rect x="3" y="6" width="18" height="13" rx="2" stroke="currentColor" stroke-width="2"/><path d="M3 10h18" stroke="currentColor" stroke-width="2"/></svg></div>
           <h4>BBPS Bill Pay</h4>
-          <p>Electricity, water, gas — sab ek jagah.</p>
+          <p>Electricity, water, gas — all in one.</p>
         </div>
         <div class="hv-card hv-3">
-          <div class="hv-icon">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><rect x="6" y="2" width="12" height="20" rx="2" stroke="currentColor" stroke-width="2"/><path d="M12 18h.01" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
-          </div>
+          <div class="hv-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><rect x="6" y="2" width="12" height="20" rx="2" stroke="currentColor" stroke-width="2"/><path d="M12 18h.01" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></div>
           <h4>Mobile Recharge</h4>
           <p>All networks, instant commission.</p>
         </div>
         <div class="hv-card hv-4">
-          <div class="hv-icon">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 2 4 6v6c0 5 3.4 9.4 8 10 4.6-.6 8-5 8-10V6z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
-          </div>
+          <div class="hv-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 2 4 6v6c0 5 3.4 9.4 8 10 4.6-.6 8-5 8-10V6z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg></div>
           <h4>Secure & Safe</h4>
           <p>Bank-grade encryption.</p>
         </div>
@@ -826,17 +523,15 @@ html.js-ready [data-reveal].in-view{opacity:1;transform:none}
     </div>
   </section>
 
-  <!-- RAILWAY BANNER -->
   <section class="section-tight">
     <div class="container">
       <div class="rail-banner" data-reveal>
         <div>
           <span class="rail-tag"><span class="dot"></span> NEW SERVICE</span>
           <h2>Indian Railway Ticket Booking</h2>
-          <p>Ab apne counter se hi customers ke liye train tickets book karein. IRCTC authorized platform, instant confirmation, aur har ticket par attractive commission.</p>
+          <p>Book train tickets for your customers right from your counter. Instant confirmation, PNR status and refund support — with attractive commission on every booking.</p>
           <div class="rail-feats">
             <div><svg viewBox="0 0 16 16" fill="none"><path d="m2 8 4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> Instant Booking</div>
-            <div><svg viewBox="0 0 16 16" fill="none"><path d="m2 8 4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> IRCTC Authorized</div>
             <div><svg viewBox="0 0 16 16" fill="none"><path d="m2 8 4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> PNR Status</div>
             <div><svg viewBox="0 0 16 16" fill="none"><path d="m2 8 4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> Refund Support</div>
           </div>
@@ -845,62 +540,45 @@ html.js-ready [data-reveal].in-view{opacity:1;transform:none}
               Activate Now
               <svg viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
             </a>
-            <a href="#/services" class="btn btn-ghost btn-lg">Aur Jaanein</a>
+            <a href="#/services" class="btn btn-ghost btn-lg">Learn More</a>
           </div>
         </div>
         <div class="rail-visual">
           <svg class="train-art" viewBox="0 0 400 260" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <!-- Rails -->
             <path d="M20 220 L 380 220" stroke="#FB923C" stroke-width="4" stroke-linecap="round"/>
             <path d="M20 234 L 380 234" stroke="#FB923C" stroke-width="4" stroke-linecap="round"/>
             <g stroke="#FB923C" stroke-width="3" opacity=".5">
-              <path d="M40 220 L 55 234"/>
-              <path d="M90 220 L 105 234"/>
-              <path d="M140 220 L 155 234"/>
-              <path d="M190 220 L 205 234"/>
-              <path d="M240 220 L 255 234"/>
-              <path d="M290 220 L 305 234"/>
+              <path d="M40 220 L 55 234"/><path d="M90 220 L 105 234"/><path d="M140 220 L 155 234"/>
+              <path d="M190 220 L 205 234"/><path d="M240 220 L 255 234"/><path d="M290 220 L 305 234"/>
               <path d="M340 220 L 355 234"/>
             </g>
-            <!-- Train body -->
             <rect x="60" y="90" width="240" height="110" rx="18" fill="#fff" opacity=".95"/>
             <rect x="60" y="90" width="240" height="110" rx="18" stroke="#0B1E5C" stroke-width="3"/>
-            <!-- Engine nose -->
             <path d="M300 100 Q 340 120 340 145 Q 340 170 300 190" stroke="#0B1E5C" stroke-width="3" fill="#fff" opacity=".95"/>
-            <!-- Windows -->
             <g fill="#1E40AF">
               <rect x="80" y="110" width="34" height="34" rx="5"/>
               <rect x="126" y="110" width="34" height="34" rx="5"/>
               <rect x="172" y="110" width="34" height="34" rx="5"/>
               <rect x="218" y="110" width="34" height="34" rx="5"/>
             </g>
-            <!-- Orange stripe -->
             <rect x="60" y="158" width="240" height="12" fill="#F97316"/>
-            <!-- Chimney -->
             <rect x="250" y="60" width="26" height="32" rx="4" fill="#0B1E5C"/>
             <rect x="242" y="52" width="42" height="14" rx="5" fill="#F97316"/>
-            <!-- Steam -->
             <g opacity=".7">
               <circle cx="255" cy="38" r="8" fill="#FB923C"/>
               <circle cx="272" cy="24" r="11" fill="#FB923C" opacity=".6"/>
               <circle cx="292" cy="14" r="7" fill="#FB923C" opacity=".4"/>
             </g>
-            <!-- Wheels -->
             <g fill="#0B1E5C">
-              <circle cx="100" cy="205" r="11"/>
-              <circle cx="140" cy="205" r="11"/>
-              <circle cx="200" cy="205" r="11"/>
-              <circle cx="240" cy="205" r="11"/>
+              <circle cx="100" cy="205" r="11"/><circle cx="140" cy="205" r="11"/>
+              <circle cx="200" cy="205" r="11"/><circle cx="240" cy="205" r="11"/>
               <circle cx="290" cy="205" r="11"/>
             </g>
             <g fill="#fff">
-              <circle cx="100" cy="205" r="4"/>
-              <circle cx="140" cy="205" r="4"/>
-              <circle cx="200" cy="205" r="4"/>
-              <circle cx="240" cy="205" r="4"/>
+              <circle cx="100" cy="205" r="4"/><circle cx="140" cy="205" r="4"/>
+              <circle cx="200" cy="205" r="4"/><circle cx="240" cy="205" r="4"/>
               <circle cx="290" cy="205" r="4"/>
             </g>
-            <!-- Headlight -->
             <circle cx="336" cy="145" r="6" fill="#FBBF24"/>
           </svg>
         </div>
@@ -912,18 +590,18 @@ html.js-ready [data-reveal].in-view{opacity:1;transform:none}
     <div class="container">
       <div class="sec-head" data-reveal>
         <span class="sec-eyebrow">Our Services</span>
-        <h2 class="sec-title">Sab kuch ek hi platform par</h2>
-        <p class="sec-sub">Jo bhi aapke customers ko chahiye — sab yahin milega. Ek registration, hazaar services.</p>
+        <h2 class="sec-title">Everything on one platform</h2>
+        <p class="sec-sub">Whatever your customers need — it's all here. One registration, a thousand services.</p>
       </div>
       <div class="services-grid">
         <div class="svc featured" data-reveal style="--d:.05s">
           <div class="svc-icon i-orange"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><rect x="4" y="4" width="16" height="16" rx="3" stroke="currentColor" stroke-width="2"/><path d="M4 9h16M9 4v16" stroke="currentColor" stroke-width="2"/></svg></div>
-          <h3>Railway Ticket</h3><p>IRCTC authorized platform — instant train booking, PNR status aur refund support.</p>
+          <h3>Railway Ticket</h3><p>Book train tickets, check PNR, handle refunds — all from your counter.</p>
           <span class="svc-tag">New</span>
         </div>
         <div class="svc" data-reveal style="--d:.1s">
           <div class="svc-icon i-orange"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><rect x="3" y="6" width="18" height="13" rx="2" stroke="currentColor" stroke-width="2"/><path d="M3 10h18" stroke="currentColor" stroke-width="2"/></svg></div>
-          <h3>BBPS Bills</h3><p>Bijli, paani, gas, DTH, broadband — sab bills ek jagah.</p>
+          <h3>BBPS Bills</h3><p>Electricity, water, gas, DTH, broadband — all in one place.</p>
           <span class="svc-tag">20+ Billers</span>
         </div>
         <div class="svc" data-reveal style="--d:.15s">
@@ -933,54 +611,53 @@ html.js-ready [data-reveal].in-view{opacity:1;transform:none}
         </div>
         <div class="svc" data-reveal style="--d:.2s">
           <div class="svc-icon i-purple"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><rect x="6" y="2" width="12" height="20" rx="2" stroke="currentColor" stroke-width="2"/><path d="M12 18h.01" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></div>
-          <h3>Recharge</h3><p>Mobile, DTH aur data card recharge — sab operators.</p>
+          <h3>Recharge</h3><p>Mobile, DTH and data card recharge — all operators.</p>
           <span class="svc-tag">Instant</span>
         </div>
         <div class="svc" data-reveal style="--d:.25s">
           <div class="svc-icon i-blue"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><rect x="3" y="4" width="18" height="16" rx="2" stroke="currentColor" stroke-width="2"/><circle cx="9" cy="10" r="2" stroke="currentColor" stroke-width="2"/></svg></div>
-          <h3>PAN Card</h3><p>New PAN aur correction — NSDL & UTI se apply karein.</p>
+          <h3>PAN Card</h3><p>New PAN and correction — apply via NSDL &amp; UTI.</p>
           <span class="svc-tag">7-10 Days</span>
         </div>
         <div class="svc" data-reveal style="--d:.3s">
           <div class="svc-icon i-orange"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M12 2 4 6v6c0 5 3.4 9.4 8 10 4.6-.6 8-5 8-10V6z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="m9 12 2 2 4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-          <h3>Insurance</h3><p>Two-wheeler, car aur health insurance — instant quotes.</p>
+          <h3>Insurance</h3><p>Two-wheeler, car and health insurance — instant quotes.</p>
           <span class="svc-tag">IRDAI</span>
         </div>
         <div class="svc" data-reveal style="--d:.35s">
-          <div class="svc-icon i-green"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M2 12h20M12 2a15 15 0 0 1 0 20M12 2a15 15 0 0 0 0 20" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/></svg></div>
-          <h3>Travel Booking</h3><p>Bus aur flight tickets — instant confirmation.</p>
+          <div class="svc-icon i-green"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/><path d="M2 12h20M12 2a15 15 0 0 1 0 20M12 2a15 15 0 0 0 0 20" stroke="currentColor" stroke-width="2"/></svg></div>
+          <h3>Travel Booking</h3><p>Bus and flight tickets — instant confirmation.</p>
           <span class="svc-tag">Live</span>
         </div>
         <div class="svc" data-reveal style="--d:.4s">
           <div class="svc-icon i-purple"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M3 3v18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="m7 14 4-4 3 3 5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-          <h3>More Services</h3><p>FASTag, gift cards, e-stamp — aur bahut kuch aa raha hai.</p>
+          <h3>More Services</h3><p>FASTag, gift cards, e-stamp — and much more coming.</p>
           <span class="svc-tag">Coming Soon</span>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- PRICING CALLOUT -->
   <section class="section" style="background:var(--bg-alt)">
     <div class="container">
       <div class="price-callout" data-reveal>
-        <span class="sec-eyebrow">🎉 Special Launch Offer</span>
-        <h2>Apna Digital Counter Shuru Karein</h2>
+        <span class="sec-eyebrow">Special Launch Offer</span>
+        <h2>Start Your Digital Counter</h2>
         <div class="price-big">₹1499</div>
         <div class="price-sub">Registration fee — one-time</div>
         <p class="desc">
-          Aaj hi juden 10,000+ retailers ke saath. Railway booking, BBPS, recharge, money transfer — sab kuch ek platform par. Free training aur 24×7 support included.
+          Join 10,000+ retailers today. Railway booking, BBPS, recharge, money transfer — everything on one platform. Free training and 24×7 support included.
         </p>
         <div class="btn-group">
           <a href="#/contact" class="btn btn-primary btn-lg">
-            Register Now
+            Become a Partner
             <svg viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </a>
-          <a href="https://wa.me/918685820290" class="btn btn-ghost btn-lg">WhatsApp Par Poochhein</a>
+          <a href="https://wa.me/918685820290" class="btn btn-ghost btn-lg">Chat on WhatsApp</a>
         </div>
         <a href="#/pricing" class="tnc-link">
           <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="6.5" stroke="currentColor" stroke-width="1.5"/><path d="M8 4.5v4M8 11h.01" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
-          Pricing details &amp; T&C padhein
+          View Pricing Details &amp; T&amp;C
         </a>
       </div>
     </div>
@@ -998,33 +675,33 @@ html.js-ready [data-reveal].in-view{opacity:1;transform:none}
   <section class="section">
     <div class="container">
       <div class="sec-head" data-reveal>
-        <span class="sec-eyebrow">Kaise Kaam Karta Hai</span>
-        <h2 class="sec-title">4 aasan steps mein partner banein</h2>
-        <p class="sec-sub">Registration se earning tak — pura process simple aur transparent hai.</p>
+        <span class="sec-eyebrow">How It Works</span>
+        <h2 class="sec-title">Become a partner in 4 easy steps</h2>
+        <p class="sec-sub">From registration to earning — the whole process is simple and transparent.</p>
       </div>
       <div class="steps">
         <div class="step" data-reveal style="--d:.05s">
           <div class="step-num">1</div>
           <div class="step-line"></div>
-          <h3>Register Karein</h3>
-          <p>Aadhaar, PAN aur bank details ke saath online form bharein.</p>
+          <h3>Register</h3>
+          <p>Fill the online form with Aadhaar, PAN and bank details.</p>
         </div>
         <div class="step" data-reveal style="--d:.15s">
           <div class="step-num">2</div>
           <div class="step-line"></div>
           <h3>KYC Verify</h3>
-          <p>24 ghante ke andar verification complete — turant approval.</p>
+          <p>Verification completes within 24 hours — instant approval.</p>
         </div>
         <div class="step" data-reveal style="--d:.25s">
           <div class="step-num">3</div>
           <div class="step-line"></div>
           <h3>Dashboard Login</h3>
-          <p>Apna counter set karein aur services activate karein.</p>
+          <p>Set up your counter and activate services.</p>
         </div>
         <div class="step" data-reveal style="--d:.35s">
           <div class="step-num">4</div>
-          <h3>Earning Start</h3>
-          <p>Har transaction par commission kamayein — daily payout.</p>
+          <h3>Start Earning</h3>
+          <p>Earn commission on every transaction — daily payout.</p>
         </div>
       </div>
     </div>
@@ -1034,30 +711,30 @@ html.js-ready [data-reveal].in-view{opacity:1;transform:none}
     <div class="container why-grid">
       <div data-reveal>
         <span class="sec-eyebrow">Why Choose Us</span>
-        <h2 class="sec-title" style="text-align:left">Kyun 10,000+ retailers humein chunte hain</h2>
-        <p class="sec-sub" style="text-align:left">Sirf ek platform nahi — ek pura ecosystem jo aapke business ko grow karta hai.</p>
+        <h2 class="sec-title" style="text-align:left">Why 10,000+ retailers choose us</h2>
+        <p class="sec-sub" style="text-align:left">Not just a platform — a full ecosystem that grows your business.</p>
         <div class="why-list">
           <div class="why-item">
             <div class="why-check"><svg viewBox="0 0 14 14" fill="none"><path d="m2 7 3.5 3.5L12 3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-            <div><h4>Highest Commission</h4><p>Industry mein sabse competitive rates — per transaction, per day payout.</p></div>
+            <div><h4>Highest Commission</h4><p>Industry's most competitive rates — per transaction, per day payout.</p></div>
           </div>
           <div class="why-item">
             <div class="why-check"><svg viewBox="0 0 14 14" fill="none"><path d="m2 7 3.5 3.5L12 3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-            <div><h4>Instant Settlement</h4><p>Paise wahin, usi waqt. Koi wait nahi, koi tension nahi.</p></div>
+            <div><h4>Instant Settlement</h4><p>Money credited instantly. No waiting, no tension.</p></div>
           </div>
           <div class="why-item">
             <div class="why-check"><svg viewBox="0 0 14 14" fill="none"><path d="m2 7 3.5 3.5L12 3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-            <div><h4>Transparent Pricing</h4><p>Koi hidden charges nahi. Sab kuch clearly website par likha hai.</p></div>
+            <div><h4>Transparent Pricing</h4><p>No hidden charges. Everything clearly listed on the website.</p></div>
           </div>
           <div class="why-item">
             <div class="why-check"><svg viewBox="0 0 14 14" fill="none"><path d="m2 7 3.5 3.5L12 3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-            <div><h4>24×7 Support</h4><p>Hindi mein support, WhatsApp par — jab chahiye, tab.</p></div>
+            <div><h4>24×7 Support</h4><p>Support on WhatsApp — whenever you need it.</p></div>
           </div>
         </div>
       </div>
       <div class="why-visual" data-reveal style="--d:.15s">
         <div class="why-visual-card">
-          <h5>Aaj Ka Performance</h5>
+          <h5>Today's Performance</h5>
           <div class="mini-row"><span>Railway Tickets</span><span>64</span></div>
           <div class="mini-row"><span>Recharges</span><span>156</span></div>
           <div class="mini-row"><span>Bill Payments</span><span>89</span></div>
@@ -1072,12 +749,12 @@ html.js-ready [data-reveal].in-view{opacity:1;transform:none}
     <div class="container">
       <div class="sec-head" data-reveal>
         <span class="sec-eyebrow">Testimonials</span>
-        <h2 class="sec-title">Hamare partners kya kehte hain</h2>
+        <h2 class="sec-title">What our partners say</h2>
       </div>
       <div class="tst-grid">
         <div class="tst" data-reveal style="--d:.05s">
           <div class="tst-stars">★★★★★</div>
-          <p class="tst-quote">"Pehle sirf kirana chalata tha. Ab recharge aur railway ticket se mahine ka ₹15,000 extra kama raha hoon. Platform bahut simple hai."</p>
+          <p class="tst-quote">"I used to only run a kirana store. Now with recharge and railway tickets, I earn ₹15,000 extra every month. The platform is very simple."</p>
           <div class="tst-author">
             <div class="tst-avatar" style="background:linear-gradient(135deg,#1E40AF,#3B82F6)">RK</div>
             <div><strong>Ramesh Kumar</strong><span>Kirana Store, Patna</span></div>
@@ -1085,7 +762,7 @@ html.js-ready [data-reveal].in-view{opacity:1;transform:none}
         </div>
         <div class="tst" data-reveal style="--d:.12s">
           <div class="tst-stars">★★★★★</div>
-          <p class="tst-quote">"Commission sabse zyada yahin milta hai. Payout daily aata hai — koi rukna nahi. Support team bhi turant reply karti hai."</p>
+          <p class="tst-quote">"The commission here is the highest. Payout comes daily — no delay. Support team replies instantly too."</p>
           <div class="tst-author">
             <div class="tst-avatar" style="background:linear-gradient(135deg,#F97316,#FB923C)">PS</div>
             <div><strong>Priya Sharma</strong><span>Cyber Cafe, Lucknow</span></div>
@@ -1093,7 +770,7 @@ html.js-ready [data-reveal].in-view{opacity:1;transform:none}
         </div>
         <div class="tst" data-reveal style="--d:.19s">
           <div class="tst-stars">★★★★★</div>
-          <p class="tst-quote">"Registration se activation sirf 1 din mein ho gaya. Ab mere customers ko kahin jaana nahi padta — sab kuch yahin mil jata hai."</p>
+          <p class="tst-quote">"Activation took just one day after registration. Now my customers don't have to go anywhere — they get everything here."</p>
           <div class="tst-author">
             <div class="tst-avatar" style="background:linear-gradient(135deg,#10B981,#34D399)">AY</div>
             <div><strong>Arjun Yadav</strong><span>CSC Agent, Jaipur</span></div>
@@ -1101,7 +778,7 @@ html.js-ready [data-reveal].in-view{opacity:1;transform:none}
         </div>
         <div class="tst" data-reveal style="--d:.26s">
           <div class="tst-stars">★★★★★</div>
-          <p class="tst-quote">"Railway ticket booking service ne mera business double kar diya. Customers ab door ke station jaane ke bajaye mere counter par aate hain."</p>
+          <p class="tst-quote">"The railway ticket service doubled my business. Customers now come to my counter instead of going to the station."</p>
           <div class="tst-author">
             <div class="tst-avatar" style="background:linear-gradient(135deg,#7C3AED,#A78BFA)">SM</div>
             <div><strong>Sunita Mehta</strong><span>Mobile Shop, Indore</span></div>
@@ -1114,81 +791,79 @@ html.js-ready [data-reveal].in-view{opacity:1;transform:none}
   <section class="section-tight">
     <div class="container">
       <div class="cta-block" data-reveal>
-        <h2>Aaj hi apna digital counter shuru karein</h2>
-        <p>Sirf ₹1499 registration fee. Zero hidden charges. Instant activation. Aur hazaar retailers ke saath juden.</p>
+        <h2>Start your digital counter today</h2>
+        <p>Registration fee ₹1,499. No hidden charges. Instant activation. Join thousands of retailers.</p>
         <div class="cta-btns">
-          <a href="#/pricing" class="btn btn-primary btn-lg">
-            Pricing Dekhein
+          <a href="#/contact" class="btn btn-primary btn-lg">
+            Become a Partner
             <svg viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </a>
-          <a href="https://wa.me/918685820290" class="btn btn-ghost btn-lg">WhatsApp Par Baat Karein</a>
+          <a href="https://wa.me/918685820290" class="btn btn-ghost btn-lg">Chat on WhatsApp</a>
         </div>
       </div>
     </div>
   </section>
 </div>
 
-<!-- ---------- SERVICES ---------- -->
+<!-- SERVICES -->
 <div class="page" data-page="/services">
   <section class="page-hero">
     <div class="container">
       <span class="sec-eyebrow" data-reveal>Services</span>
-      <h1 data-reveal style="--d:.08s">Sabhi services, ek hi jagah</h1>
-      <p data-reveal style="--d:.16s">Retailers aur agents ke liye pura digital toolkit — railway booking se lekar bill payment tak.</p>
+      <h1 data-reveal style="--d:.08s">All services, one place</h1>
+      <p data-reveal style="--d:.16s">The complete digital toolkit for retailers and agents — from railway booking to bill payment.</p>
     </div>
   </section>
 
   <section class="section-tight">
     <div class="container">
-
       <div class="svc-detail featured" data-reveal>
         <div class="svc-detail-icon i-orange"><svg width="28" height="28" viewBox="0 0 24 24" fill="none"><rect x="4" y="4" width="16" height="16" rx="3" stroke="currentColor" stroke-width="2"/><path d="M4 9h16M9 4v16" stroke="currentColor" stroke-width="2"/></svg></div>
-        <div><h3>Indian Railway Ticket Booking <span class="badge-new">NEW</span></h3><p>IRCTC authorized platform par train ticket booking, PNR status check, ticket cancel aur refund — sab kuch apne counter se. Har booking par attractive commission.</p></div>
+        <div><h3>Indian Railway Ticket Booking <span class="badge-new">NEW</span></h3><p>Train ticket booking, PNR status check, ticket cancellation and refund — all from your counter. Attractive commission on every booking.</p></div>
         <a href="#/contact" class="btn btn-blue">Activate</a>
       </div>
 
       <div class="svc-detail" data-reveal>
         <div class="svc-detail-icon i-orange"><svg width="28" height="28" viewBox="0 0 24 24" fill="none"><rect x="3" y="6" width="18" height="13" rx="2" stroke="currentColor" stroke-width="2"/><path d="M3 10h18" stroke="currentColor" stroke-width="2"/></svg></div>
-        <div><h3>BBPS — Bharat Bill Payment System</h3><p>Electricity, water, gas, DTH, broadband, LPG, insurance premium — 20,000+ billers ka direct payment.</p></div>
+        <div><h3>BBPS — Bharat Bill Payment System</h3><p>Electricity, water, gas, DTH, broadband, LPG, insurance premium — 20,000+ billers, direct payment.</p></div>
         <a href="#/contact" class="btn btn-blue">Activate</a>
       </div>
 
       <div class="svc-detail" data-reveal>
         <div class="svc-detail-icon i-green"><svg width="28" height="28" viewBox="0 0 24 24" fill="none"><path d="M12 1v22M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></div>
-        <div><h3>Domestic Money Transfer (DMT)</h3><p>Kisi bhi bank account mein instant transfer — 24×7 available. IMPS, NEFT aur RTGS support.</p></div>
+        <div><h3>Domestic Money Transfer (DMT)</h3><p>Instant transfer to any bank account — available 24×7. IMPS, NEFT and RTGS supported.</p></div>
         <a href="#/contact" class="btn btn-blue">Activate</a>
       </div>
 
       <div class="svc-detail" data-reveal>
         <div class="svc-detail-icon i-purple"><svg width="28" height="28" viewBox="0 0 24 24" fill="none"><rect x="6" y="2" width="12" height="20" rx="2" stroke="currentColor" stroke-width="2"/><path d="M12 18h.01" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></div>
-        <div><h3>Mobile & DTH Recharge</h3><p>Jio, Airtel, Vi, BSNL, Tata Play, Airtel DTH, Dish TV — sab operators. Instant commission.</p></div>
+        <div><h3>Mobile &amp; DTH Recharge</h3><p>Jio, Airtel, Vi, BSNL, Tata Play, Airtel DTH, Dish TV — all operators. Instant commission.</p></div>
         <a href="#/contact" class="btn btn-blue">Activate</a>
       </div>
 
       <div class="svc-detail" data-reveal>
         <div class="svc-detail-icon i-blue"><svg width="28" height="28" viewBox="0 0 24 24" fill="none"><rect x="3" y="4" width="18" height="16" rx="2" stroke="currentColor" stroke-width="2"/><circle cx="9" cy="10" r="2" stroke="currentColor" stroke-width="2"/></svg></div>
-        <div><h3>PAN Card Services</h3><p>New PAN application, correction aur reprint — NSDL & UTI ke through. 7-10 din mein delivery.</p></div>
+        <div><h3>PAN Card Services</h3><p>New PAN application, correction and reprint — via NSDL &amp; UTI. Delivery in 7-10 days.</p></div>
         <a href="#/contact" class="btn btn-blue">Activate</a>
       </div>
 
       <div class="svc-detail" data-reveal>
         <div class="svc-detail-icon i-orange"><svg width="28" height="28" viewBox="0 0 24 24" fill="none"><path d="M12 2 4 6v6c0 5 3.4 9.4 8 10 4.6-.6 8-5 8-10V6z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg></div>
-        <div><h3>Insurance</h3><p>Two-wheeler, car aur health insurance — IRDAI-approved. Instant quote aur policy issuance.</p></div>
+        <div><h3>Insurance</h3><p>Two-wheeler, car and health insurance — IRDAI-approved. Instant quotes and policy issuance.</p></div>
         <a href="#/contact" class="btn btn-blue">Activate</a>
       </div>
 
       <div class="svc-detail" data-reveal>
         <div class="svc-detail-icon i-green"><svg width="28" height="28" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/><path d="M2 12h20M12 2a15 15 0 0 1 0 20M12 2a15 15 0 0 0 0 20" stroke="currentColor" stroke-width="2"/></svg></div>
-        <div><h3>Travel Booking (Bus & Flight)</h3><p>Bus aur flight tickets — instant confirmation. Cancel aur refund bhi same platform se.</p></div>
+        <div><h3>Travel Booking (Bus &amp; Flight)</h3><p>Bus and flight tickets — instant confirmation. Cancellation and refund also available.</p></div>
         <a href="#/contact" class="btn btn-blue">Activate</a>
       </div>
 
       <div class="svc-detail" data-reveal>
         <div class="svc-detail-icon i-purple"><svg width="28" height="28" viewBox="0 0 24 24" fill="none"><path d="M3 3v18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="m7 14 4-4 3 3 5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-        <div><h3>FASTag, Gift Cards & More</h3><p>FASTag recharge, Amazon/Flipkart gift cards, e-stamp paper — aur bahut kuch aa raha hai.</p></div>
+        <div><h3>FASTag, Gift Cards &amp; More</h3><p>FASTag recharge, Amazon/Flipkart gift cards, e-stamp paper — and much more coming soon.</p></div>
         <a href="#/contact" class="btn btn-blue">Activate</a>
       </div>
-
     </div>
   </section>
 
@@ -1196,119 +871,106 @@ html.js-ready [data-reveal].in-view{opacity:1;transform:none}
     <div class="container">
       <div class="cta-block" data-reveal>
         <h2>Ready to start earning?</h2>
-        <p>Aaj hi register karein — sirf ₹1499 se shuru.</p>
+        <p>Register today — starting at ₹1,499.</p>
         <div class="cta-btns">
-          <a href="#/pricing" class="btn btn-primary btn-lg">Pricing Dekhein</a>
+          <a href="#/contact" class="btn btn-primary btn-lg">Become a Partner</a>
         </div>
       </div>
     </div>
   </section>
 </div>
 
-<!-- ---------- PRICING / T&C ---------- -->
+<!-- PRICING -->
 <div class="page" data-page="/pricing">
   <section class="page-hero">
     <div class="container">
       <span class="sec-eyebrow" data-reveal>Pricing &amp; T&amp;C</span>
       <h1 data-reveal style="--d:.08s">Transparent Pricing</h1>
-      <p data-reveal style="--d:.16s">Koi hidden charges nahi. Sab kuch clearly neeche diya gaya hai. Jo dikhta hai, wahi lagta hai.</p>
+      <p data-reveal style="--d:.16s">No hidden charges. Everything clearly listed below. What you see is what you pay.</p>
     </div>
   </section>
 
   <section class="section-tight">
     <div class="container">
       <div class="tnc-content" data-reveal>
-
-        <h2>💰 Registration Fee — ₹1499 (One-time)</h2>
-        <p>
-          Hamare platform par partner banne ke liye ek baar <strong>₹1,499</strong> ka registration fee dena hota hai. Isme ye sab included hai:
-        </p>
+        <h2>Registration Fee — ₹1,499 (One-time)</h2>
+        <p>To become a partner on our platform, there is a one-time <strong>₹1,499</strong> registration fee. This includes:</p>
         <ul>
-          <li>KYC verification &amp; documentation</li>
-          <li>Dashboard access — lifetime</li>
-          <li>Free training aur onboarding support</li>
+          <li>KYC verification and documentation</li>
+          <li>Lifetime dashboard access</li>
+          <li>Free training and onboarding support</li>
           <li>24×7 WhatsApp support</li>
-          <li>Sabhi services ka activation</li>
+          <li>Activation of all services</li>
         </ul>
 
-        <h2>💳 Alag Se Lagne Wale Charges</h2>
-        <p>
-          Registration ke baad, kuch services ko use karne ke liye wallet mein paise daalne hote hain. Yeh charges alag hain aur aapki transaction ke liye hain — hamare paas nahi jaate:
-        </p>
+        <h2>Additional Charges</h2>
+        <p>After registration, some services require you to load money into your wallet. These charges are separate and are used for your own transactions — they don't go to us:</p>
 
         <table class="pricing-table">
           <thead>
-            <tr>
-              <th>Item</th>
-              <th>Amount</th>
-            </tr>
+            <tr><th>Item</th><th>Amount</th></tr>
           </thead>
           <tbody>
             <tr><td>Registration Fee (one-time)</td><td>₹1,499</td></tr>
             <tr><td>Wallet Load (minimum)</td><td>₹500</td></tr>
             <tr><td>Platform Monthly Fee</td><td>₹0</td></tr>
             <tr><td>Transaction Charges</td><td>As per service</td></tr>
-            <tr class="total-row"><td>Total Shuru Karne Ke Liye</td><td>₹1,999</td></tr>
+            <tr class="total-row"><td>Total to Get Started</td><td>₹1,999</td></tr>
           </tbody>
         </table>
 
         <div class="note-box">
-          <p>
-            <strong>📌 Note:</strong> Wallet mein daale gaye paise aapke hi hain — yeh transaction ke liye use hote hain, aur commission ke roop mein aapko wapas milte hain. Yeh koi extra charge nahi hai.
-          </p>
+          <p><strong>Note:</strong> Wallet money belongs to you — it's used for transactions and comes back to you as commission. It is not an extra charge.</p>
         </div>
 
-        <h2>📊 Commission Structure</h2>
-        <p>Har service ka commission alag hai. Detailed chart activation ke baad dashboard mein milega:</p>
+        <h2>Commission Structure</h2>
+        <p>Each service has a different commission. Detailed chart is provided in your dashboard after activation:</p>
         <ul>
-          <li><strong>Railway Ticket:</strong> ₹20-40 per ticket</li>
-          <li><strong>Recharge:</strong> 1-3% per transaction</li>
-          <li><strong>BBPS Bills:</strong> ₹5-15 per bill</li>
-          <li><strong>Money Transfer:</strong> 0.5-1% per transaction</li>
-          <li><strong>Insurance:</strong> 10-20% of premium</li>
+          <li><strong>Railway Ticket:</strong> ₹20–40 per ticket</li>
+          <li><strong>Recharge:</strong> 1–3% per transaction</li>
+          <li><strong>BBPS Bills:</strong> ₹5–15 per bill</li>
+          <li><strong>Money Transfer:</strong> 0.5–1% per transaction</li>
+          <li><strong>Insurance:</strong> 10–20% of premium</li>
         </ul>
 
-        <h2>💸 Payout Policy</h2>
+        <h2>Payout Policy</h2>
         <ul>
-          <li>Commission turant wallet mein add hoti hai</li>
-          <li>Bank transfer same-day ya next-day</li>
+          <li>Commission credited instantly to your wallet</li>
+          <li>Bank transfer same-day or next-day</li>
           <li>Minimum payout: ₹100</li>
           <li>Payout charges: Nil</li>
         </ul>
 
-        <h2>⚠️ Important Terms</h2>
+        <h2>Important Terms</h2>
         <ul>
-          <li>Registration fee <strong>non-refundable</strong> hai ek baar KYC approve hone ke baad</li>
-          <li>Wallet balance minimum ₹500 maintain karna hoga services active rakhne ke liye</li>
-          <li>Fake documents ya galat information par account suspend ho sakta hai</li>
-          <li>Commission rates company policy ke hisaab se change ho sakti hain — 30 days prior notice ke saath</li>
-          <li>Disputes ke case mein company ka decision final hoga</li>
+          <li>Registration fee is <strong>non-refundable</strong> once KYC is approved</li>
+          <li>Minimum wallet balance of ₹500 must be maintained to keep services active</li>
+          <li>Fake documents or incorrect information may lead to account suspension</li>
+          <li>Commission rates may change per company policy — with 30 days prior notice</li>
+          <li>In case of disputes, the company's decision is final</li>
         </ul>
 
-        <h2>📞 Sawaal?</h2>
-        <p>
-          Koi bhi confusion ho toh WhatsApp par pooch lein — <a href="https://wa.me/918685820290" style="color:var(--blue);font-weight:600">+91 99999 99999</a>. Hum har cheez clearly samjhayenge.
-        </p>
+        <h2>Questions?</h2>
+        <p>If anything is unclear, message us on WhatsApp at <a href="https://wa.me/918685820290" style="color:var(--blue);font-weight:600">+91 86858 20290</a>. We'll explain everything clearly.</p>
 
         <div style="text-align:center;margin-top:48px">
           <a href="#/contact" class="btn btn-primary btn-lg">
-            Register Now — ₹1499
+            Become a Partner
             <svg viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </a>
         </div>
-
       </div>
     </div>
   </section>
 </div>
 
-<!-- ---------- HOW IT WORKS ---------- -->
+<!-- HOW -->
 <div class="page" data-page="/how">
   <section class="page-hero">
     <div class="container">
       <span class="sec-eyebrow" data-reveal>How It Works</span>
-      <h1 data-reveal style="--d:.08s">Sirf 4 steps mein shuru</h1>
-      <p data-reveal style="--d:.16s">Registration se earning tak — pura process 24 ghante ke andar.</p>
+      <h1 data-reveal style="--d:.08s">Start in just 4 steps</h1>
+      <p data-reveal style="--d:.16s">From registration to earning — the whole process within 24 hours.</p>
     </div>
   </section>
 
@@ -1318,29 +980,29 @@ html.js-ready [data-reveal].in-view{opacity:1;transform:none}
         <div class="step" data-reveal style="display:grid;grid-template-columns:80px 1fr;gap:28px;align-items:flex-start;padding:28px 0;border-bottom:1px solid var(--line)">
           <div class="step-num" style="margin:0">1</div>
           <div>
-            <h3>Online registration form bharein</h3>
-            <p style="font-size:15px;margin-top:8px">Apna naam, mobile number, email aur Aadhaar/PAN details daalein. Form sirf 3 minute mein bhar jata hai. Registration fee ₹1,499.</p>
+            <h3>Fill the online registration form</h3>
+            <p style="font-size:15px;margin-top:8px">Enter your name, mobile number, email and Aadhaar/PAN details. Takes just 3 minutes. Registration fee is ₹1,499.</p>
           </div>
         </div>
         <div class="step" data-reveal style="display:grid;grid-template-columns:80px 1fr;gap:28px;align-items:flex-start;padding:28px 0;border-bottom:1px solid var(--line)">
           <div class="step-num" style="margin:0">2</div>
           <div>
-            <h3>Documents upload karein</h3>
-            <p style="font-size:15px;margin-top:8px">Aadhaar, PAN, bank passbook aur ek passport photo upload karein. Sab documents clear hone chahiye — verification fast hoga.</p>
+            <h3>Upload your documents</h3>
+            <p style="font-size:15px;margin-top:8px">Upload Aadhaar, PAN, bank passbook and one passport photo. Clear documents mean faster verification.</p>
           </div>
         </div>
         <div class="step" data-reveal style="display:grid;grid-template-columns:80px 1fr;gap:28px;align-items:flex-start;padding:28px 0;border-bottom:1px solid var(--line)">
           <div class="step-num" style="margin:0">3</div>
           <div>
             <h3>KYC verification (24 hours)</h3>
-            <p style="font-size:15px;margin-top:8px">Hamari team aapke documents verify karegi. Approval ke baad aapko login credentials milenge email aur SMS par.</p>
+            <p style="font-size:15px;margin-top:8px">Our team verifies your documents. After approval, you receive login credentials via email and SMS.</p>
           </div>
         </div>
         <div class="step" data-reveal style="display:grid;grid-template-columns:80px 1fr;gap:28px;align-items:flex-start;padding:28px 0">
           <div class="step-num" style="margin:0">4</div>
           <div>
-            <h3>Dashboard login aur earning start</h3>
-            <p style="font-size:15px;margin-top:8px">Apne dashboard mein login karein, wallet mein ₹500+ daalein, services activate karein, aur pehla transaction karein.</p>
+            <h3>Login and start earning</h3>
+            <p style="font-size:15px;margin-top:8px">Log into your dashboard, add ₹500+ to your wallet, activate services and make your first transaction.</p>
           </div>
         </div>
       </div>
@@ -1350,36 +1012,36 @@ html.js-ready [data-reveal].in-view{opacity:1;transform:none}
   <section class="section-tight">
     <div class="container">
       <div class="cta-block" data-reveal>
-        <h2>Shuru karne ke liye ready?</h2>
-        <p>Form sirf 3 minute ka hai. Registration fee ₹1499.</p>
+        <h2>Ready to start?</h2>
+        <p>The form takes just 3 minutes. Registration fee is ₹1,499.</p>
         <div class="cta-btns">
-          <a href="#/pricing" class="btn btn-primary btn-lg">Pricing Dekhein</a>
-          <a href="https://wa.me/918685820290" class="btn btn-ghost btn-lg">WhatsApp Par Poochhein</a>
+          <a href="#/contact" class="btn btn-primary btn-lg">Become a Partner</a>
+          <a href="https://wa.me/918685820290" class="btn btn-ghost btn-lg">Chat on WhatsApp</a>
         </div>
       </div>
     </div>
   </section>
 </div>
 
-<!-- ---------- ABOUT ---------- -->
+<!-- ABOUT -->
 <div class="page" data-page="/about">
   <section class="page-hero">
     <div class="container">
       <span class="sec-eyebrow" data-reveal>About Us</span>
-      <h1 data-reveal style="--d:.08s">Hum kaun hain</h1>
-      <p data-reveal style="--d:.16s">Grahak Service Center ek mission hai — Bharat ke har chhote retailer ko digital banane ka.</p>
+      <h1 data-reveal style="--d:.08s">Who we are</h1>
+      <p data-reveal style="--d:.16s">Grahak Service Center is on a mission — to make every small retailer in India digital.</p>
     </div>
   </section>
 
   <section class="section-tight">
     <div class="container" style="max-width:820px">
       <div data-reveal>
-        <h2 class="sec-title" style="text-align:left">Hamari kahani</h2>
+        <h2 class="sec-title" style="text-align:left">Our story</h2>
         <p style="font-size:16px;color:#475569;line-height:1.75;margin-bottom:20px">
-          2019 mein shuru hua Grahak Service Center ek simple soch se aaya — ki Bharat ke chhote kirana stores, cyber cafes aur CSC agents ko bhi wahi digital power mile jo bade businesses ke paas hai. Ek aisa platform jo unke counter ko ek complete digital service hub bana de.
+          Grahak Service Center started in 2019 with a simple idea — that small kirana stores, cyber cafes and CSC agents across India should have the same digital power that big businesses have. A platform that turns their counter into a complete digital service hub.
         </p>
         <p style="font-size:16px;color:#475569;line-height:1.75;margin-bottom:20px">
-          Aaj 10,000+ partners 28 states mein hamare platform se roz hazaar transactions karte hain — railway ticket se lekar bill payments tak. Har transaction ek chhote business ki income badhata hai, ek customer ka time bachata hai.
+          Today, 10,000+ partners across 28 states use our platform to run thousands of transactions every day — from railway tickets to bill payments. Every transaction adds income to a small business and saves a customer's time.
         </p>
       </div>
 
@@ -1399,23 +1061,23 @@ html.js-ready [data-reveal].in-view{opacity:1;transform:none}
       </div>
 
       <div style="margin-top:56px" data-reveal>
-        <h2 class="sec-title" style="text-align:left;margin-bottom:32px">Hamari values</h2>
+        <h2 class="sec-title" style="text-align:left;margin-bottom:32px">Our values</h2>
         <div class="why-list">
           <div class="why-item">
             <div class="why-check"><svg viewBox="0 0 14 14" fill="none"><path d="m2 7 3.5 3.5L12 3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-            <div><h4>Transparency</h4><p>Koi hidden charges nahi. Har commission, har fee clearly website par likhi hai.</p></div>
+            <div><h4>Transparency</h4><p>No hidden charges. Every commission and fee is clearly listed on the website.</p></div>
           </div>
           <div class="why-item">
             <div class="why-check"><svg viewBox="0 0 14 14" fill="none"><path d="m2 7 3.5 3.5L12 3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-            <div><h4>Bharat-first</h4><p>Hindi aur regional languages mein support. Chhote towns tak pahunch.</p></div>
+            <div><h4>India-first</h4><p>Support in Hindi and regional languages. Reaching small towns across the country.</p></div>
           </div>
           <div class="why-item">
             <div class="why-check"><svg viewBox="0 0 14 14" fill="none"><path d="m2 7 3.5 3.5L12 3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-            <div><h4>Security</h4><p>Bank-grade encryption, RBI-compliant partners, aur secure infrastructure.</p></div>
+            <div><h4>Security</h4><p>Bank-grade encryption, RBI-regulated partners and secure infrastructure.</p></div>
           </div>
           <div class="why-item">
             <div class="why-check"><svg viewBox="0 0 14 14" fill="none"><path d="m2 7 3.5 3.5L12 3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-            <div><h4>Partner growth</h4><p>Aapka business badhega toh humara bhi. Isliye sabse zyada commission.</p></div>
+            <div><h4>Partner growth</h4><p>When your business grows, so does ours. That's why we pay the highest commission.</p></div>
           </div>
         </div>
       </div>
@@ -1423,13 +1085,13 @@ html.js-ready [data-reveal].in-view{opacity:1;transform:none}
   </section>
 </div>
 
-<!-- ---------- FAQ ---------- -->
+<!-- FAQ -->
 <div class="page" data-page="/faq">
   <section class="page-hero">
     <div class="container">
       <span class="sec-eyebrow" data-reveal>FAQ</span>
-      <h1 data-reveal style="--d:.08s">Aksar poochhe jaane wale sawaal</h1>
-      <p data-reveal style="--d:.16s">Jo har naya partner poochta hai — sab jawab yahin.</p>
+      <h1 data-reveal style="--d:.08s">Frequently asked questions</h1>
+      <p data-reveal style="--d:.16s">Everything a new partner wants to know — answered here.</p>
     </div>
   </section>
 
@@ -1437,53 +1099,53 @@ html.js-ready [data-reveal].in-view{opacity:1;transform:none}
     <div class="container">
       <div class="faq-list">
         <details class="faq" data-reveal>
-          <summary>Registration ke liye kya documents chahiye?</summary>
-          <div class="faq-body">Aadhaar card, PAN card, bank passbook (front page) aur ek passport size photo. Sab documents clear aur valid hone chahiye. Ek baar verify hone ke baad dobara nahi maangte.</div>
+          <summary>What documents are needed for registration?</summary>
+          <div class="faq-body">Aadhaar card, PAN card, bank passbook (front page) and one passport-size photo. All documents must be clear and valid. Once verified, we don't ask for them again.</div>
         </details>
         <details class="faq" data-reveal>
-          <summary>Registration fee kitni hai? Koi hidden charges hain?</summary>
-          <div class="faq-body">Registration fee ₹1,499 hai — one-time. Iske baad wallet mein minimum ₹500 daalna hota hai (jo aapke hi paise hain, transactions ke liye). Koi hidden charge nahi. Poori pricing detail <a href="#/pricing" style="color:var(--blue);font-weight:600">Pricing page</a> par hai.</div>
+          <summary>What is the registration fee? Are there hidden charges?</summary>
+          <div class="faq-body">The registration fee is ₹1,499 — one-time. After that, you need to load a minimum of ₹500 into your wallet (which is your own money, used for transactions). No hidden charges. Full pricing details are on the <a href="#/pricing" style="color:var(--blue);font-weight:600">Pricing page</a>.</div>
         </details>
         <details class="faq" data-reveal>
-          <summary>Kya railway ticket booking available hai?</summary>
-          <div class="faq-body">Haan! Railway ticket booking hamari nayi service hai — IRCTC authorized platform par. Aap apne counter se train tickets book kar sakte hain, PNR status check kar sakte hain, aur cancel/refund bhi handle kar sakte hain.</div>
+          <summary>Is railway ticket booking available?</summary>
+          <div class="faq-body">Yes! Railway ticket booking is our newest service. You can book train tickets, check PNR status and handle cancellations and refunds — all from your counter.</div>
         </details>
         <details class="faq" data-reveal>
-          <summary>Commission kitna milta hai?</summary>
-          <div class="faq-body">Har service ka commission alag hai — recharge par 1-3%, railway ticket par ₹20-40, bill payments par per bill, money transfer par 0.5-1%. Detailed commission chart aapko activation ke baad dashboard mein milega.</div>
+          <summary>How much commission do I earn?</summary>
+          <div class="faq-body">Each service has a different commission — recharge pays 1-3%, railway tickets pay ₹20-40, bill payments pay per bill, money transfer pays 0.5-1%. Detailed chart is provided in your dashboard after activation.</div>
         </details>
         <details class="faq" data-reveal>
-          <summary>Payout kab milta hai?</summary>
-          <div class="faq-body">Daily payout. Aapke wallet mein commission turant add hoti hai, aur aap use apne bank account mein transfer kar sakte hain — usually usi din.</div>
+          <summary>When do I receive my payout?</summary>
+          <div class="faq-body">Daily payout. Commission is credited instantly to your wallet, and you can transfer it to your bank account — usually the same day.</div>
         </details>
         <details class="faq" data-reveal>
-          <summary>KYC verification mein kitna time lagta hai?</summary>
-          <div class="faq-body">Usually 24 ghante. Agar documents clear hain toh kuch cases mein same-day approval bhi mil jata hai. Verification complete hone par SMS aur email aata hai.</div>
+          <summary>How long does KYC verification take?</summary>
+          <div class="faq-body">Usually 24 hours. If documents are clear, some cases get same-day approval. You'll receive an SMS and email once verification is complete.</div>
         </details>
         <details class="faq" data-reveal>
-          <summary>Kya main mobile se bhi use kar sakta hoon?</summary>
-          <div class="faq-body">Haan. Platform mobile, tablet aur computer — sab par kaam karta hai. Android app bhi available hai Play Store par.</div>
+          <summary>Can I use it from my mobile?</summary>
+          <div class="faq-body">Yes. The platform works on mobile, tablet and computer. An Android app is also available on Play Store.</div>
         </details>
         <details class="faq" data-reveal>
-          <summary>Support kaise milega?</summary>
-          <div class="faq-body">24×7 WhatsApp support, phone support (10 AM - 7 PM) aur email. Hindi, English aur regional languages mein support available hai.</div>
+          <summary>How do I get support?</summary>
+          <div class="faq-body">24×7 WhatsApp support, phone support (10 AM – 7 PM) and email. Support is available in Hindi, English and regional languages.</div>
         </details>
         <details class="faq" data-reveal>
-          <summary>Kya transactions live hain?</summary>
-          <div class="faq-body">Haan. Hamare saare services RBI-compliant banking partners ke through live chalti hain. Real money, real transactions, real commissions.</div>
+          <summary>Are transactions live?</summary>
+          <div class="faq-body">Yes. All our services run live through RBI-regulated banking partners. Real money, real transactions, real commissions.</div>
         </details>
       </div>
     </div>
   </section>
 </div>
 
-<!-- ---------- CONTACT ---------- -->
+<!-- CONTACT -->
 <div class="page" data-page="/contact">
   <section class="page-hero">
     <div class="container">
       <span class="sec-eyebrow" data-reveal>Contact</span>
-      <h1 data-reveal style="--d:.08s">Aaiye, baat karte hain</h1>
-      <p data-reveal style="--d:.16s">Form bharein ya WhatsApp par message karein — hum 24 ghante mein reply karte hain.</p>
+      <h1 data-reveal style="--d:.08s">Let's talk</h1>
+      <p data-reveal style="--d:.16s">Fill the form or message us on WhatsApp — we reply within 24 hours.</p>
     </div>
   </section>
 
@@ -1515,12 +1177,12 @@ html.js-ready [data-reveal].in-view{opacity:1;transform:none}
 
         <div class="form-card" data-reveal style="--d:.15s">
           <h3>Partner registration form</h3>
-          <p>Details bharein — hum 24 ghante mein contact karenge. Registration fee ₹1499.</p>
-          <form onsubmit="event.preventDefault(); alert('Form submit ho gaya! Hum jaldi contact karenge. 😊'); this.reset();">
-            <div class="field"><label>Poora Naam *</label><input type="text" required placeholder="Aapka naam"></div>
+          <p>Fill in your details — we'll contact you within 24 hours. Registration fee is ₹1,499.</p>
+          <form id="partnerForm" onsubmit="event.preventDefault(); alert('Form submitted! We will contact you within 24 hours.'); this.reset();">
+            <div class="field"><label>Full Name *</label><input type="text" required placeholder="Your name"></div>
             <div class="field"><label>Mobile Number *</label><input type="tel" required pattern="[0-9]{10}" placeholder="10-digit mobile"></div>
-            <div class="field"><label>Email</label><input type="email" placeholder="aap@example.com"></div>
-            <div class="field"><label>Sheher / State *</label><input type="text" required placeholder="Jaise: Patna, Bihar"></div>
+            <div class="field"><label>Email</label><input type="email" placeholder="you@example.com"></div>
+            <div class="field"><label>City / State *</label><input type="text" required placeholder="e.g., Patna, Bihar"></div>
             <div class="field"><label>Business Type</label>
               <select>
                 <option>Kirana Store</option>
@@ -1530,7 +1192,7 @@ html.js-ready [data-reveal].in-view{opacity:1;transform:none}
                 <option>Other</option>
               </select>
             </div>
-            <div class="field"><label>Message</label><textarea placeholder="Koi sawaal ya note..."></textarea></div>
+            <div class="field"><label>Message</label><textarea placeholder="Any question or note..."></textarea></div>
             <button type="submit" class="btn btn-primary btn-lg">Submit Registration</button>
           </form>
         </div>
@@ -1541,28 +1203,32 @@ html.js-ready [data-reveal].in-view{opacity:1;transform:none}
 
 </main>
 
-<!-- ================= FOOTER ================= -->
+<!-- FOOTER -->
 <footer class="footer">
   <div class="container">
     <div class="footer-grid">
       <div>
         <div class="footer-brand">
-          <svg class="brand-mark" viewBox="0 0 48 48" fill="none" aria-hidden="true">
-            <circle cx="24" cy="24" r="22" fill="#fff" stroke="#0F1B31" stroke-width="2.5"/>
-            <g clip-path="url(#footClip)">
-              <clipPath id="footClip"><circle cx="24" cy="24" r="21"/></clipPath>
-              <rect x="13.5" y="22.5" width="4.6" height="7.5" rx="1" fill="#F97316"/>
-              <rect x="20.2" y="17.5" width="4.6" height="12.5" rx="1" fill="#F97316"/>
-              <rect x="26.9" y="11.5" width="4.6" height="18.5" rx="1" fill="#F97316"/>
-              <path d="M10 25 Q 20 19.5 32.5 11.5" stroke="#F97316" stroke-width="2.4" fill="none" stroke-linecap="round"/>
-              <path d="M28.5 9.5 L 33.5 11.5 L 33 16.5" stroke="#F97316" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
-              <path d="M6.5 34 L 15.5 30 Q 20 32.5 24 31 Q 28 32.5 32.5 30 L 41.5 34" stroke="#0F1B31" stroke-width="2.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
-              <path d="M15.5 30 Q 20 34 24 34 Q 28 34 32.5 30" stroke="#0F1B31" stroke-width="2.2" fill="none" stroke-linecap="round"/>
+          <svg class="brand-mark" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <circle cx="24" cy="24" r="21.5" fill="#fff" stroke="#0F1B31" stroke-width="2"/>
+            <g clip-path="url(#logoClip2)">
+              <clipPath id="logoClip2"><circle cx="24" cy="24" r="20.5"/></clipPath>
+              <rect x="13" y="21" width="3.4" height="6.5" rx="0.6" fill="#F97316"/>
+              <rect x="17.4" y="17" width="3.4" height="10.5" rx="0.6" fill="#F97316"/>
+              <rect x="21.8" y="13" width="3.4" height="14.5" rx="0.6" fill="#F97316"/>
+              <path d="M11 22.5 Q 17 20 26.5 11.5" stroke="#F97316" stroke-width="2.3" fill="none" stroke-linecap="round"/>
+              <path d="M22 9.5 L 28 11 L 27 16.5" stroke="#F97316" stroke-width="2.3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+              <g fill="#0F1B31">
+                <path d="M4 32 L 10 29.5 C 12.5 28.3 15 28.3 17 29.8 L 20.5 32.3 L 21.5 35.5 L 19 36.5 L 16.5 34.5 C 15.5 33.7 14.3 33.5 13 33.8 L 7.5 35.5 Z"/>
+                <path d="M44 32 L 38 29.5 C 35.5 28.3 33 28.3 31 29.8 L 27.5 32.3 L 26.5 35.5 L 29 36.5 L 31.5 34.5 C 32.5 33.7 33.7 33.5 35 33.8 L 40.5 35.5 Z"/>
+                <path d="M18.5 31.5 Q 21 30 24 30 Q 27 30 29.5 31.5 L 30 34 Q 27 35.5 24 35.5 Q 21 35.5 18 34 Z"/>
+                <path d="M21 34.5 Q 22 37 22 38 M23.5 35 Q 24 37 24 38 M26 35 Q 26 37 25.5 38" stroke="#0F1B31" stroke-width="1.3" fill="none" stroke-linecap="round"/>
+              </g>
             </g>
           </svg>
           Grahak Service Center
         </div>
-        <p>Bharat ke har chhote retailer ko digital banane ka mission. Ek platform, hazaar services, aur ek behtar kal.</p>
+        <p>On a mission to make every small retailer in India digital. One platform, a thousand services, a better tomorrow.</p>
       </div>
       <div>
         <h5>Services</h5>
@@ -1594,8 +1260,8 @@ html.js-ready [data-reveal].in-view{opacity:1;transform:none}
       </div>
     </div>
     <div class="footer-bottom">
-      <span>© 2026 Grahak Service Center. Sabhi adhikaar surakshit.</span>
-      <span>Made in Bharat 🇮🇳</span>
+      <span>© 2026 Grahak Service Center. All rights reserved.</span>
+      <span>Made in India 🇮🇳</span>
     </div>
   </div>
 </footer>
@@ -1604,30 +1270,29 @@ html.js-ready [data-reveal].in-view{opacity:1;transform:none}
   <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.1-1.7-.8-2-.9-.3-.1-.5-.1-.7.1s-.8.9-.9 1.1c-.2.2-.3.2-.6.1-.3-.1-1.2-.5-2.3-1.4-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.4.1-.6.1-.1.3-.4.5-.6.2-.2.2-.3.3-.5.1-.2.1-.4 0-.5s-.7-1.6-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.4s1 2.8 1.2 3c.1.2 2 3 4.8 4.2.7.3 1.2.5 1.6.6.7.2 1.3.2 1.8.1.6-.1 1.7-.7 2-1.4.2-.7.2-1.2.2-1.4-.1-.2-.3-.2-.6-.3zM12 2a10 10 0 0 0-8.5 15.2L2 22l4.9-1.3A10 10 0 1 0 12 2z"/></svg>
 </a>
 
-<!-- ================= PRICING POPUP ================= -->
+<!-- PRICING POPUP -->
 <div class="price-popup" id="pricePopup">
   <div class="price-popup-head">
-    <span>🎉 Limited Offer</span>
-    <button class="price-popup-close" aria-label="Close" onclick="document.getElementById('pricePopup').classList.remove('show')">×</button>
+    <span>Limited Offer</span>
+    <button class="price-popup-close" aria-label="Close" type="button" onclick="document.getElementById('pricePopup').classList.remove('show')">×</button>
   </div>
   <div class="price-popup-body">
-    <h4>Apna digital counter aaj hi shuru karein!</h4>
+    <h4>Start your digital counter today</h4>
     <div class="pop-price">₹1499</div>
     <div class="pop-sub">Registration fee · One-time</div>
     <a href="#/contact" class="pop-btn" onclick="document.getElementById('pricePopup').classList.remove('show')">
-      Register Now
+      Become a Partner
       <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
     </a>
-    <a href="#/pricing" class="pop-tnc" onclick="document.getElementById('pricePopup').classList.remove('show')">Pricing details dekhein →</a>
+    <a href="#/pricing" class="pop-tnc" onclick="document.getElementById('pricePopup').classList.remove('show')">View pricing details →</a>
   </div>
 </div>
 
 <script>
-/* ============================================================
-   BULLETPROOF INIT
-   ============================================================ */
+/* BULLETPROOF INIT */
 document.documentElement.classList.add('js-ready');
 
+/* Safety: reveal visible items after load */
 setTimeout(function(){
   document.querySelectorAll('[data-reveal]:not(.in-view)').forEach(function(el){
     var rect = el.getBoundingClientRect();
@@ -1635,11 +1300,11 @@ setTimeout(function(){
       el.classList.add('in-view');
     }
   });
-}, 1500);
+}, 1200);
 
-/* ---------- ROUTER ---------- */
+/* ROUTER */
 (function(){
-  var pages = document.querySelectorAll('[data-page]');
+  var pages = document.querySelectorAll('.page');
   var navLinks = document.querySelectorAll('[data-nav]');
 
   function getPath(){
@@ -1647,15 +1312,18 @@ setTimeout(function(){
     return h.charAt(0) === '/' ? h : '/' + h;
   }
 
-  function show(path){
+  function activatePage(path){
     var found = false;
     pages.forEach(function(p){
-      var active = p.getAttribute('data-page') === path;
-      if(active){ p.setAttribute('data-active',''); found = true; }
-      else p.removeAttribute('data-active');
+      if(p.getAttribute('data-page') === path){
+        p.classList.add('is-active');
+        found = true;
+      } else {
+        p.classList.remove('is-active');
+      }
     });
     if(!found){
-      pages[0].setAttribute('data-active','');
+      pages[0].classList.add('is-active');
       path = '/';
     }
     navLinks.forEach(function(a){
@@ -1664,109 +1332,136 @@ setTimeout(function(){
     });
     window.scrollTo(0,0);
 
-    var active = document.querySelector('[data-page][data-active]');
+    var active = document.querySelector('.page.is-active');
     if(active){
       active.querySelectorAll('[data-reveal]').forEach(function(el){
         el.classList.remove('in-view');
       });
-      requestAnimationFrame(function(){
+      /* re-observe */
+      setTimeout(function(){
         active.querySelectorAll('[data-reveal]').forEach(function(el){
-          revealObserver.observe(el);
+          if(revealObserver) revealObserver.observe(el);
         });
+        /* fallback */
         setTimeout(function(){
           active.querySelectorAll('[data-reveal]:not(.in-view)').forEach(function(el){
             el.classList.add('in-view');
           });
-        }, 800);
-      });
+        }, 600);
+      }, 30);
     }
-    closeMenu();
+    closeMobileMenu();
   }
 
-  window.addEventListener('hashchange', function(){ show(getPath()); });
-  show(getPath());
+  window.addEventListener('hashchange', function(){ activatePage(getPath()); });
+
+  /* Initial */
+  if(document.readyState === 'loading'){
+    document.addEventListener('DOMContentLoaded', function(){ activatePage(getPath()); });
+  } else {
+    activatePage(getPath());
+  }
 })();
 
-/* ---------- REVEAL ---------- */
-var revealObserver = new IntersectionObserver(function(entries){
-  entries.forEach(function(e){
-    if(e.isIntersecting){
-      e.target.classList.add('in-view');
-      revealObserver.unobserve(e.target);
-    }
-  });
-}, {threshold:0.05, rootMargin:'0px 0px -30px 0px'});
+/* REVEAL OBSERVER */
+var revealObserver = null;
+if('IntersectionObserver' in window){
+  revealObserver = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(e.isIntersecting){
+        e.target.classList.add('in-view');
+        revealObserver.unobserve(e.target);
+      }
+    });
+  }, {threshold:0.05, rootMargin:'0px 0px -30px 0px'});
+}
 
-/* ---------- HEADER SHADOW ---------- */
+function observeAllReveals(){
+  if(!revealObserver) return;
+  document.querySelectorAll('[data-reveal]:not(.in-view)').forEach(function(el){
+    revealObserver.observe(el);
+  });
+}
+if(document.readyState === 'loading'){
+  document.addEventListener('DOMContentLoaded', observeAllReveals);
+} else {
+  observeAllReveals();
+}
+
+/* HEADER SHADOW */
 window.addEventListener('scroll', function(){
   var h = document.getElementById('header');
   if(h) h.classList.toggle('scrolled', window.scrollY > 8);
 }, {passive:true});
 
-/* ---------- MOBILE MENU ---------- */
-var burger = document.getElementById('burger');
-var menu = document.getElementById('mobileMenu');
+/* MOBILE MENU */
+function closeMobileMenu(){
+  var b = document.getElementById('burger');
+  var m = document.getElementById('mobileMenu');
+  if(b) b.classList.remove('is-open');
+  if(b) b.setAttribute('aria-expanded','false');
+  if(m) m.classList.remove('is-open');
+}
 
-function closeMenu(){
+(function(){
+  var burger = document.getElementById('burger');
+  var menu = document.getElementById('mobileMenu');
   if(!burger || !menu) return;
-  burger.setAttribute('aria-expanded','false');
-  menu.removeAttribute('data-open');
-}
 
-if(burger && menu){
-  burger.addEventListener('click', function(e){
-    e.stopPropagation();
-    var open = burger.getAttribute('aria-expanded') === 'true';
-    burger.setAttribute('aria-expanded', String(!open));
-    if(!open) menu.setAttribute('data-open','');
-    else menu.removeAttribute('data-open');
-  });
+  function toggleMenu(e){
+    if(e) e.preventDefault();
+    var isOpen = burger.classList.contains('is-open');
+    if(isOpen){
+      closeMobileMenu();
+    } else {
+      burger.classList.add('is-open');
+      burger.setAttribute('aria-expanded','true');
+      menu.classList.add('is-open');
+    }
+  }
+
+  burger.addEventListener('click', toggleMenu);
+  burger.addEventListener('touchstart', function(e){ e.preventDefault(); toggleMenu(); }, {passive:false});
+
   menu.querySelectorAll('a').forEach(function(a){
-    a.addEventListener('click', closeMenu);
+    a.addEventListener('click', closeMobileMenu);
   });
-  document.addEventListener('click', function(e){
-    if(!menu.contains(e.target) && !burger.contains(e.target)) closeMenu();
-  });
+
   document.addEventListener('keydown', function(e){
-    if(e.key === 'Escape') closeMenu();
+    if(e.key === 'Escape') closeMobileMenu();
   });
-  window.matchMedia('(min-width: 901px)').addEventListener('change', function(e){
-    if(e.matches) closeMenu();
-  });
-}
 
-/* ---------- PRICING POPUP ---------- */
-var popupShown = false;
-function showPricingPopup(){
-  if(popupShown) return;
-  var p = document.getElementById('pricePopup');
-  if(!p) return;
-  popupShown = true;
-  p.classList.add('show');
-  setTimeout(function(){
-    p.classList.remove('show');
-    /* Show again after 45 seconds if user didn't interact */
-    setTimeout(function(){ popupShown = false; }, 45000);
-  }, 12000);
-}
-/* Show after 4 seconds */
-setTimeout(showPricingPopup, 4000);
-/* Or when user scrolls 50% of the page */
-window.addEventListener('scroll', function(){
-  if(popupShown) return;
-  var h = document.documentElement;
-  var scrolled = (h.scrollTop) / (h.scrollHeight - h.clientHeight);
-  if(scrolled > 0.5) showPricingPopup();
-}, {passive:true});
+  window.matchMedia('(min-width: 961px)').addEventListener('change', function(e){
+    if(e.matches) closeMobileMenu();
+  });
+})();
 
-/* ---------- START OBSERVING ---------- */
-document.addEventListener('DOMContentLoaded', function(){
-  document.querySelectorAll('[data-reveal]').forEach(function(el){
-    revealObserver.observe(el);
-  });
-});
-if(document.readyState !== 'loading'){
-  document.querySelectorAll('[data-reveal]').forEach(function(el){
-    revealObserver.observe(el);
-  });
-}
+/* PRICING POPUP */
+(function(){
+  var shown = false;
+  var popup = document.getElementById('pricePopup');
+  if(!popup) return;
+
+  function showPopup(){
+    if(shown) return;
+    shown = true;
+    popup.classList.add('show');
+    setTimeout(function(){
+      popup.classList.remove('show');
+    }, 12000);
+  }
+
+  /* Show after 8 seconds */
+  setTimeout(showPopup, 8000);
+
+  /* Or when scrolled to 40% */
+  window.addEventListener('scroll', function(){
+    if(shown) return;
+    var h = document.documentElement;
+    var scrolled = h.scrollTop / (h.scrollHeight - h.clientHeight);
+    if(scrolled > 0.4) showPopup();
+  }, {passive:true});
+})();
+</script>
+</body>
+</html>
