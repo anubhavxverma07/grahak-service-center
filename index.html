@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="theme-color" content="#1E40AF">
 <title>Grahak Service Center — Your Digital Business Partner</title>
-<meta name="description" content="Railway ticket, BBPS, money transfer, recharge, PAN and more — all on one platform. For retailers and agents across India.">
+<meta name="description" content="AEPS, railway ticket, BBPS, money transfer, recharge, PAN and more — all on one platform. For retailers and agents across India.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
@@ -36,32 +36,16 @@ img,svg{display:block;max-width:100%}
 @media(max-width:768px){.section{padding:64px 0}.section-tight{padding:48px 0}}
 
 /* TOP PRICE BAR */
-.price-bar{
-  background:linear-gradient(90deg,#EA580C 0%, var(--orange) 50%, #EA580C 100%);
-  color:#fff;text-align:center;padding:11px 44px 11px 16px;
-  font-size:14px;font-weight:600;letter-spacing:-.01em;
-  position:relative;
-}
+.price-bar{background:linear-gradient(90deg,#EA580C 0%, var(--orange) 50%, #EA580C 100%);color:#fff;text-align:center;padding:11px 44px 11px 16px;font-size:14px;font-weight:600;letter-spacing:-.01em;position:relative}
 .price-bar a{color:#fff;text-decoration:underline;margin-left:6px;font-weight:700;text-underline-offset:2px}
 .price-bar a:hover{opacity:.85}
-.price-bar .close-x{
-  position:absolute;right:10px;top:50%;transform:translateY(-50%);
-  color:#fff;font-size:20px;font-weight:400;line-height:1;
-  padding:6px 10px;opacity:.85;cursor:pointer;
-}
+.price-bar .close-x{position:absolute;right:10px;top:50%;transform:translateY(-50%);color:#fff;font-size:20px;font-weight:400;line-height:1;padding:6px 10px;opacity:.85;cursor:pointer}
 .price-bar .close-x:hover{opacity:1}
 .price-bar.hide{display:none}
 @media(max-width:640px){.price-bar{font-size:12.5px;padding:10px 40px 10px 12px}}
 
 /* HEADER */
-.header{
-  position:sticky;top:0;z-index:100;
-  background:rgba(255,255,255,.88);
-  -webkit-backdrop-filter:blur(16px) saturate(180%);
-  backdrop-filter:blur(16px) saturate(180%);
-  border-bottom:1px solid rgba(226,232,240,.7);
-  transition:box-shadow .3s var(--ease);
-}
+.header{position:sticky;top:0;z-index:100;background:rgba(255,255,255,.88);-webkit-backdrop-filter:blur(16px) saturate(180%);backdrop-filter:blur(16px) saturate(180%);border-bottom:1px solid rgba(226,232,240,.7);transition:box-shadow .3s var(--ease)}
 .header.scrolled{box-shadow:var(--shadow-sm)}
 .header-inner{display:flex;align-items:center;justify-content:space-between;height:72px;gap:12px}
 .brand{display:flex;align-items:center;gap:10px;font-weight:700;font-size:17px;letter-spacing:-.02em;flex:none}
@@ -84,13 +68,7 @@ img,svg{display:block;max-width:100%}
 .btn-lg{padding:15px 26px;font-size:15.5px;border-radius:12px}
 .btn svg{width:16px;height:16px}
 
-.burger{
-  display:none;width:44px;height:44px;border-radius:10px;
-  flex-direction:column;gap:5px;align-items:center;justify-content:center;
-  background:#fff;border:1.5px solid var(--line);cursor:pointer;
-  padding:0;flex:none;
-  -webkit-tap-highlight-color:transparent;
-}
+.burger{display:none;width:44px;height:44px;border-radius:10px;flex-direction:column;gap:5px;align-items:center;justify-content:center;background:#fff;border:1.5px solid var(--line);cursor:pointer;padding:0;flex:none;-webkit-tap-highlight-color:transparent}
 .burger span{display:block;width:20px;height:2px;background:var(--ink);border-radius:2px;transition:.3s var(--ease);pointer-events:none}
 .burger.is-open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
 .burger.is-open span:nth-child(2){opacity:0}
@@ -102,14 +80,7 @@ img,svg{display:block;max-width:100%}
   .header .btn-primary{display:none}
 }
 
-.mobile-menu{
-  position:fixed;top:0;left:0;right:0;background:#fff;z-index:999;
-  border-bottom:1px solid var(--line);box-shadow:var(--shadow-md);
-  padding:88px 24px 24px;
-  opacity:0;visibility:hidden;transform:translateY(-20px);
-  transition:opacity .3s var(--ease), transform .3s var(--ease), visibility .3s;
-  max-height:100vh;overflow-y:auto;
-}
+.mobile-menu{position:fixed;top:0;left:0;right:0;background:#fff;z-index:999;border-bottom:1px solid var(--line);box-shadow:var(--shadow-md);padding:88px 24px 24px;opacity:0;visibility:hidden;transform:translateY(-20px);transition:opacity .3s var(--ease), transform .3s var(--ease), visibility .3s;max-height:100vh;overflow-y:auto}
 .mobile-menu.is-open{opacity:1;visibility:visible;transform:none}
 .mobile-menu a{display:block;padding:14px 12px;border-radius:10px;font-size:16px;font-weight:500;color:#334155;border-bottom:1px solid var(--line)}
 .mobile-menu a:last-of-type{border-bottom:0}
@@ -368,21 +339,9 @@ html.js-ready [data-reveal].in-view{opacity:1;transform:none}
 @media(max-width:640px){.wa-float{bottom:16px;right:16px;width:52px;height:52px}}
 
 /* PRICING POPUP */
-.price-popup{
-  position:fixed;left:24px;bottom:24px;z-index:95;
-  width:320px;max-width:calc(100vw - 48px);
-  background:#fff;border-radius:18px;overflow:hidden;
-  box-shadow:0 20px 50px rgba(15,23,42,.22), 0 0 0 1px rgba(249,115,22,.15);
-  transform:translateY(30px) scale(.95);opacity:0;visibility:hidden;
-  transition:opacity .4s var(--ease), transform .4s var(--ease), visibility .4s;
-}
+.price-popup{position:fixed;left:24px;bottom:24px;z-index:95;width:320px;max-width:calc(100vw - 48px);background:#fff;border-radius:18px;overflow:hidden;box-shadow:0 20px 50px rgba(15,23,42,.22), 0 0 0 1px rgba(249,115,22,.15);transform:translateY(30px) scale(.95);opacity:0;visibility:hidden;transition:opacity .4s var(--ease), transform .4s var(--ease), visibility .4s}
 .price-popup.show{transform:none;opacity:1;visibility:visible}
-.price-popup-head{
-  background:linear-gradient(135deg,var(--orange) 0%, #EA580C 100%);
-  color:#fff;padding:14px 18px;
-  display:flex;align-items:center;justify-content:space-between;
-  font-size:13px;font-weight:700;letter-spacing:.02em;text-transform:uppercase;
-}
+.price-popup-head{background:linear-gradient(135deg,var(--orange) 0%, #EA580C 100%);color:#fff;padding:14px 18px;display:flex;align-items:center;justify-content:space-between;font-size:13px;font-weight:700;letter-spacing:.02em;text-transform:uppercase}
 .price-popup-close{color:#fff;font-size:20px;line-height:1;opacity:.9;padding:2px 6px;cursor:pointer}
 .price-popup-close:hover{opacity:1}
 .price-popup-body{padding:20px 20px 18px}
@@ -413,14 +372,11 @@ html.js-ready [data-reveal].in-view{opacity:1;transform:none}
         <circle cx="24" cy="24" r="21.5" fill="#fff" stroke="#0F1B31" stroke-width="2"/>
         <g clip-path="url(#logoClip1)">
           <clipPath id="logoClip1"><circle cx="24" cy="24" r="20.5"/></clipPath>
-          <!-- Orange bars -->
           <rect x="13" y="21" width="3.4" height="6.5" rx="0.6" fill="#F97316"/>
           <rect x="17.4" y="17" width="3.4" height="10.5" rx="0.6" fill="#F97316"/>
           <rect x="21.8" y="13" width="3.4" height="14.5" rx="0.6" fill="#F97316"/>
-          <!-- Orange arrow -->
           <path d="M11 22.5 Q 17 20 26.5 11.5" stroke="#F97316" stroke-width="2.3" fill="none" stroke-linecap="round"/>
           <path d="M22 9.5 L 28 11 L 27 16.5" stroke="#F97316" stroke-width="2.3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
-          <!-- Navy handshake -->
           <g fill="#0F1B31">
             <path d="M4 32 L 10 29.5 C 12.5 28.3 15 28.3 17 29.8 L 20.5 32.3 L 21.5 35.5 L 19 36.5 L 16.5 34.5 C 15.5 33.7 14.3 33.5 13 33.8 L 7.5 35.5 Z"/>
             <path d="M44 32 L 38 29.5 C 35.5 28.3 33 28.3 31 29.8 L 27.5 32.3 L 26.5 35.5 L 29 36.5 L 31.5 34.5 C 32.5 33.7 33.7 33.5 35 33.8 L 40.5 35.5 Z"/>
@@ -480,7 +436,7 @@ html.js-ready [data-reveal].in-view{opacity:1;transform:none}
           <span class="grad">digital business hub.</span>
         </h1>
         <p class="hero-sub" data-reveal style="--d:.16s">
-          Railway tickets, BBPS, money transfer, mobile recharge, PAN card and more —
+          AEPS, railway tickets, BBPS, money transfer, mobile recharge, PAN card and more —
           all on one platform. Built for kirana stores, cyber cafes and agents.
         </p>
         <div class="hero-cta" data-reveal style="--d:.24s">
@@ -500,24 +456,24 @@ html.js-ready [data-reveal].in-view{opacity:1;transform:none}
       <div class="hero-visual">
         <div class="hv-glow"></div>
         <div class="hv-card hv-1">
+          <div class="hv-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 2v20M6 8h12M6 16h12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></div>
+          <h4>AEPS Withdrawal</h4>
+          <p>Aadhaar-based cash withdrawal, instant.</p>
+        </div>
+        <div class="hv-card hv-2">
           <div class="hv-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><rect x="4" y="4" width="16" height="16" rx="3" stroke="currentColor" stroke-width="2"/><path d="M4 9h16M9 4v16" stroke="currentColor" stroke-width="2"/></svg></div>
           <h4>Railway Ticket</h4>
           <p>IRCTC booking — instant PNR.</p>
         </div>
-        <div class="hv-card hv-2">
+        <div class="hv-card hv-3">
           <div class="hv-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><rect x="3" y="6" width="18" height="13" rx="2" stroke="currentColor" stroke-width="2"/><path d="M3 10h18" stroke="currentColor" stroke-width="2"/></svg></div>
           <h4>BBPS Bill Pay</h4>
           <p>Electricity, water, gas — all in one.</p>
         </div>
-        <div class="hv-card hv-3">
+        <div class="hv-card hv-4">
           <div class="hv-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><rect x="6" y="2" width="12" height="20" rx="2" stroke="currentColor" stroke-width="2"/><path d="M12 18h.01" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></div>
           <h4>Mobile Recharge</h4>
           <p>All networks, instant commission.</p>
-        </div>
-        <div class="hv-card hv-4">
-          <div class="hv-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 2 4 6v6c0 5 3.4 9.4 8 10 4.6-.6 8-5 8-10V6z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg></div>
-          <h4>Secure & Safe</h4>
-          <p>Bank-grade encryption.</p>
         </div>
       </div>
     </div>
@@ -594,45 +550,45 @@ html.js-ready [data-reveal].in-view{opacity:1;transform:none}
         <p class="sec-sub">Whatever your customers need — it's all here. One registration, a thousand services.</p>
       </div>
       <div class="services-grid">
-        <div class="svc featured" data-reveal style="--d:.05s">
+        <div class="svc" data-reveal style="--d:.05s">
+          <div class="svc-icon i-blue"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M12 2v20M6 8h12M6 16h12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></div>
+          <h3>AEPS</h3><p>Aadhaar-enabled cash withdrawal, balance enquiry and mini statement.</p>
+          <span class="svc-tag">Instant</span>
+        </div>
+        <div class="svc featured" data-reveal style="--d:.1s">
           <div class="svc-icon i-orange"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><rect x="4" y="4" width="16" height="16" rx="3" stroke="currentColor" stroke-width="2"/><path d="M4 9h16M9 4v16" stroke="currentColor" stroke-width="2"/></svg></div>
           <h3>Railway Ticket</h3><p>Book train tickets, check PNR, handle refunds — all from your counter.</p>
           <span class="svc-tag">New</span>
         </div>
-        <div class="svc" data-reveal style="--d:.1s">
+        <div class="svc" data-reveal style="--d:.15s">
           <div class="svc-icon i-orange"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><rect x="3" y="6" width="18" height="13" rx="2" stroke="currentColor" stroke-width="2"/><path d="M3 10h18" stroke="currentColor" stroke-width="2"/></svg></div>
           <h3>BBPS Bills</h3><p>Electricity, water, gas, DTH, broadband — all in one place.</p>
           <span class="svc-tag">20+ Billers</span>
         </div>
-        <div class="svc" data-reveal style="--d:.15s">
+        <div class="svc" data-reveal style="--d:.2s">
           <div class="svc-icon i-green"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M12 1v22M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></div>
           <h3>Money Transfer</h3><p>DMT — instant bank transfer across India, 24×7.</p>
           <span class="svc-tag">Live</span>
         </div>
-        <div class="svc" data-reveal style="--d:.2s">
+        <div class="svc" data-reveal style="--d:.25s">
           <div class="svc-icon i-purple"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><rect x="6" y="2" width="12" height="20" rx="2" stroke="currentColor" stroke-width="2"/><path d="M12 18h.01" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></div>
           <h3>Recharge</h3><p>Mobile, DTH and data card recharge — all operators.</p>
           <span class="svc-tag">Instant</span>
         </div>
-        <div class="svc" data-reveal style="--d:.25s">
+        <div class="svc" data-reveal style="--d:.3s">
           <div class="svc-icon i-blue"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><rect x="3" y="4" width="18" height="16" rx="2" stroke="currentColor" stroke-width="2"/><circle cx="9" cy="10" r="2" stroke="currentColor" stroke-width="2"/></svg></div>
           <h3>PAN Card</h3><p>New PAN and correction — apply via NSDL &amp; UTI.</p>
           <span class="svc-tag">7-10 Days</span>
         </div>
-        <div class="svc" data-reveal style="--d:.3s">
+        <div class="svc" data-reveal style="--d:.35s">
           <div class="svc-icon i-orange"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M12 2 4 6v6c0 5 3.4 9.4 8 10 4.6-.6 8-5 8-10V6z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="m9 12 2 2 4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
           <h3>Insurance</h3><p>Two-wheeler, car and health insurance — instant quotes.</p>
           <span class="svc-tag">IRDAI</span>
         </div>
-        <div class="svc" data-reveal style="--d:.35s">
+        <div class="svc" data-reveal style="--d:.4s">
           <div class="svc-icon i-green"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/><path d="M2 12h20M12 2a15 15 0 0 1 0 20M12 2a15 15 0 0 0 0 20" stroke="currentColor" stroke-width="2"/></svg></div>
           <h3>Travel Booking</h3><p>Bus and flight tickets — instant confirmation.</p>
           <span class="svc-tag">Live</span>
-        </div>
-        <div class="svc" data-reveal style="--d:.4s">
-          <div class="svc-icon i-purple"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M3 3v18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="m7 14 4-4 3 3 5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-          <h3>More Services</h3><p>FASTag, gift cards, e-stamp — and much more coming.</p>
-          <span class="svc-tag">Coming Soon</span>
         </div>
       </div>
     </div>
@@ -735,7 +691,7 @@ html.js-ready [data-reveal].in-view{opacity:1;transform:none}
       <div class="why-visual" data-reveal style="--d:.15s">
         <div class="why-visual-card">
           <h5>Today's Performance</h5>
-          <div class="mini-row"><span>Railway Tickets</span><span>64</span></div>
+          <div class="mini-row"><span>AEPS Transactions</span><span>248</span></div>
           <div class="mini-row"><span>Recharges</span><span>156</span></div>
           <div class="mini-row"><span>Bill Payments</span><span>89</span></div>
           <div class="mini-row"><span>Total Earnings</span><span class="up">₹4,280</span></div>
@@ -754,7 +710,7 @@ html.js-ready [data-reveal].in-view{opacity:1;transform:none}
       <div class="tst-grid">
         <div class="tst" data-reveal style="--d:.05s">
           <div class="tst-stars">★★★★★</div>
-          <p class="tst-quote">"I used to only run a kirana store. Now with recharge and railway tickets, I earn ₹15,000 extra every month. The platform is very simple."</p>
+          <p class="tst-quote">"I used to only run a kirana store. Now with AEPS and recharge, I earn ₹15,000 extra every month. The platform is very simple."</p>
           <div class="tst-author">
             <div class="tst-avatar" style="background:linear-gradient(135deg,#1E40AF,#3B82F6)">RK</div>
             <div><strong>Ramesh Kumar</strong><span>Kirana Store, Patna</span></div>
@@ -811,12 +767,18 @@ html.js-ready [data-reveal].in-view{opacity:1;transform:none}
     <div class="container">
       <span class="sec-eyebrow" data-reveal>Services</span>
       <h1 data-reveal style="--d:.08s">All services, one place</h1>
-      <p data-reveal style="--d:.16s">The complete digital toolkit for retailers and agents — from railway booking to bill payment.</p>
+      <p data-reveal style="--d:.16s">The complete digital toolkit for retailers and agents — from AEPS to railway booking to bill payment.</p>
     </div>
   </section>
 
   <section class="section-tight">
     <div class="container">
+      <div class="svc-detail" data-reveal>
+        <div class="svc-detail-icon i-blue"><svg width="28" height="28" viewBox="0 0 24 24" fill="none"><path d="M12 2v20M6 8h12M6 16h12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></div>
+        <div><h3>AEPS — Aadhaar Enabled Payment System</h3><p>Cash withdrawal, balance enquiry, mini statement and Aadhaar-to-Aadhaar transfer. Instant transaction via customer's fingerprint.</p></div>
+        <a href="#/contact" class="btn btn-blue">Activate</a>
+      </div>
+
       <div class="svc-detail featured" data-reveal>
         <div class="svc-detail-icon i-orange"><svg width="28" height="28" viewBox="0 0 24 24" fill="none"><rect x="4" y="4" width="16" height="16" rx="3" stroke="currentColor" stroke-width="2"/><path d="M4 9h16M9 4v16" stroke="currentColor" stroke-width="2"/></svg></div>
         <div><h3>Indian Railway Ticket Booking <span class="badge-new">NEW</span></h3><p>Train ticket booking, PNR status check, ticket cancellation and refund — all from your counter. Attractive commission on every booking.</p></div>
@@ -926,6 +888,7 @@ html.js-ready [data-reveal].in-view{opacity:1;transform:none}
         <h2>Commission Structure</h2>
         <p>Each service has a different commission. Detailed chart is provided in your dashboard after activation:</p>
         <ul>
+          <li><strong>AEPS:</strong> Per transaction commission</li>
           <li><strong>Railway Ticket:</strong> ₹20–40 per ticket</li>
           <li><strong>Recharge:</strong> 1–3% per transaction</li>
           <li><strong>BBPS Bills:</strong> ₹5–15 per bill</li>
@@ -1041,7 +1004,7 @@ html.js-ready [data-reveal].in-view{opacity:1;transform:none}
           Grahak Service Center started in 2019 with a simple idea — that small kirana stores, cyber cafes and CSC agents across India should have the same digital power that big businesses have. A platform that turns their counter into a complete digital service hub.
         </p>
         <p style="font-size:16px;color:#475569;line-height:1.75;margin-bottom:20px">
-          Today, 10,000+ partners across 28 states use our platform to run thousands of transactions every day — from railway tickets to bill payments. Every transaction adds income to a small business and saves a customer's time.
+          Today, 10,000+ partners across 28 states use our platform to run thousands of transactions every day — from AEPS to railway tickets to bill payments. Every transaction adds income to a small business and saves a customer's time.
         </p>
       </div>
 
@@ -1107,12 +1070,16 @@ html.js-ready [data-reveal].in-view{opacity:1;transform:none}
           <div class="faq-body">The registration fee is ₹1,499 — one-time. After that, you need to load a minimum of ₹500 into your wallet (which is your own money, used for transactions). No hidden charges. Full pricing details are on the <a href="#/pricing" style="color:var(--blue);font-weight:600">Pricing page</a>.</div>
         </details>
         <details class="faq" data-reveal>
+          <summary>Is AEPS service available?</summary>
+          <div class="faq-body">Yes. AEPS (Aadhaar Enabled Payment System) is available — cash withdrawal, balance enquiry, mini statement and Aadhaar-to-Aadhaar transfer, all via customer fingerprint.</div>
+        </details>
+        <details class="faq" data-reveal>
           <summary>Is railway ticket booking available?</summary>
           <div class="faq-body">Yes! Railway ticket booking is our newest service. You can book train tickets, check PNR status and handle cancellations and refunds — all from your counter.</div>
         </details>
         <details class="faq" data-reveal>
           <summary>How much commission do I earn?</summary>
-          <div class="faq-body">Each service has a different commission — recharge pays 1-3%, railway tickets pay ₹20-40, bill payments pay per bill, money transfer pays 0.5-1%. Detailed chart is provided in your dashboard after activation.</div>
+          <div class="faq-body">Each service has a different commission — recharge pays 1-3%, AEPS pays per transaction, railway tickets pay ₹20-40, bill payments pay per bill, money transfer pays 0.5-1%. Detailed chart is provided in your dashboard after activation.</div>
         </details>
         <details class="faq" data-reveal>
           <summary>When do I receive my payout?</summary>
@@ -1121,10 +1088,6 @@ html.js-ready [data-reveal].in-view{opacity:1;transform:none}
         <details class="faq" data-reveal>
           <summary>How long does KYC verification take?</summary>
           <div class="faq-body">Usually 24 hours. If documents are clear, some cases get same-day approval. You'll receive an SMS and email once verification is complete.</div>
-        </details>
-        <details class="faq" data-reveal>
-          <summary>Can I use it from my mobile?</summary>
-          <div class="faq-body">Yes. The platform works on mobile, tablet and computer. An Android app is also available on Play Store.</div>
         </details>
         <details class="faq" data-reveal>
           <summary>How do I get support?</summary>
@@ -1167,7 +1130,7 @@ html.js-ready [data-reveal].in-view{opacity:1;transform:none}
           </div>
           <div class="contact-item">
             <div class="contact-item-icon i-purple"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="10" r="3" stroke="currentColor" stroke-width="2"/></svg></div>
-            <div><h4>Office</h4><p>Patna, Bihar — 800001</p></div>
+            <div><h4>Office</h4><p>Please note that this ID is exclusively available our online portal. It cannot be obtained offline.</p></div>
           </div>
           <div class="contact-item">
             <div class="contact-item-icon i-blue"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/><path d="M12 6v6l4 2" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></div>
@@ -1182,7 +1145,8 @@ html.js-ready [data-reveal].in-view{opacity:1;transform:none}
             <div class="field"><label>Full Name *</label><input type="text" required placeholder="Your name"></div>
             <div class="field"><label>Mobile Number *</label><input type="tel" required pattern="[0-9]{10}" placeholder="10-digit mobile"></div>
             <div class="field"><label>Email</label><input type="email" placeholder="you@example.com"></div>
-            <div class="field"><label>City / State *</label><input type="text" required placeholder="e.g., Patna, Bihar"></div>
+            <div class="field"><label>City / State *</label><input type="text" required placeholder="e.g., Please note that this ID is exclusively available our online portal. It cannot be obtained offline.
+"></div>
             <div class="field"><label>Business Type</label>
               <select>
                 <option>Kirana Store</option>
@@ -1233,11 +1197,11 @@ html.js-ready [data-reveal].in-view{opacity:1;transform:none}
       <div>
         <h5>Services</h5>
         <ul>
+          <li><a href="#/services">AEPS</a></li>
           <li><a href="#/services">Railway Ticket</a></li>
           <li><a href="#/services">BBPS Bills</a></li>
           <li><a href="#/services">Money Transfer</a></li>
           <li><a href="#/services">Recharge</a></li>
-          <li><a href="#/services">PAN Card</a></li>
         </ul>
       </div>
       <div>
@@ -1292,7 +1256,6 @@ html.js-ready [data-reveal].in-view{opacity:1;transform:none}
 /* BULLETPROOF INIT */
 document.documentElement.classList.add('js-ready');
 
-/* Safety: reveal visible items after load */
 setTimeout(function(){
   document.querySelectorAll('[data-reveal]:not(.in-view)').forEach(function(el){
     var rect = el.getBoundingClientRect();
@@ -1337,12 +1300,10 @@ setTimeout(function(){
       active.querySelectorAll('[data-reveal]').forEach(function(el){
         el.classList.remove('in-view');
       });
-      /* re-observe */
       setTimeout(function(){
         active.querySelectorAll('[data-reveal]').forEach(function(el){
           if(revealObserver) revealObserver.observe(el);
         });
-        /* fallback */
         setTimeout(function(){
           active.querySelectorAll('[data-reveal]:not(.in-view)').forEach(function(el){
             el.classList.add('in-view');
@@ -1355,7 +1316,6 @@ setTimeout(function(){
 
   window.addEventListener('hashchange', function(){ activatePage(getPath()); });
 
-  /* Initial */
   if(document.readyState === 'loading'){
     document.addEventListener('DOMContentLoaded', function(){ activatePage(getPath()); });
   } else {
@@ -1451,10 +1411,8 @@ function closeMobileMenu(){
     }, 12000);
   }
 
-  /* Show after 8 seconds */
   setTimeout(showPopup, 8000);
 
-  /* Or when scrolled to 40% */
   window.addEventListener('scroll', function(){
     if(shown) return;
     var h = document.documentElement;
