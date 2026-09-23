@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="theme-color" content="#1E40AF">
 <title>Grahak Service Center — Aapke Digital Counter Ka Partner</title>
-<meta name="description" content="AEPS, BBPS, money transfer, recharge, PAN aur zyada — ek hi platform par. Retailers aur agents ke liye.">
+<meta name="description" content="Railway ticket, BBPS, money transfer, recharge, PAN aur zyada — ek hi platform par. Retailers aur agents ke liye.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
@@ -43,6 +43,25 @@ img,svg{display:block;max-width:100%}
 .section-tight{padding:64px 0}
 @media(max-width:768px){.section{padding:64px 0}.section-tight{padding:48px 0}}
 
+/* ---------- PRICING TOP BAR ---------- */
+.price-bar{
+  background:linear-gradient(90deg,var(--orange) 0%, #EA580C 50%, var(--orange) 100%);
+  color:#fff;text-align:center;padding:10px 16px;
+  font-size:14px;font-weight:600;letter-spacing:-.01em;
+  position:relative;z-index:101;
+}
+.price-bar span{opacity:.95}
+.price-bar a{
+  color:#fff;text-decoration:underline;margin-left:8px;
+  font-weight:700;
+}
+.price-bar .close-x{
+  position:absolute;right:12px;top:50%;transform:translateY(-50%);
+  color:#fff;font-size:20px;font-weight:400;line-height:1;
+  padding:4px 8px;opacity:.8;
+}
+.price-bar.hide{display:none}
+
 /* ---------- HEADER ---------- */
 .header{
   position:sticky;top:0;z-index:100;
@@ -59,11 +78,7 @@ img,svg{display:block;max-width:100%}
 }
 .brand{display:flex;align-items:center;gap:10px;font-weight:700;font-size:17px;letter-spacing:-.02em}
 .brand-mark{
-  width:36px;height:36px;border-radius:10px;flex:none;
-  background:linear-gradient(135deg,var(--blue),var(--orange));
-  display:flex;align-items:center;justify-content:center;
-  color:#fff;font-weight:800;font-size:16px;
-  box-shadow:0 4px 12px rgba(30,64,175,.25);
+  width:42px;height:42px;flex:none;
 }
 .brand-text small{display:block;font-size:10.5px;font-weight:500;color:var(--muted);letter-spacing:.06em;text-transform:uppercase;margin-top:1px}
 
@@ -109,11 +124,12 @@ img,svg{display:block;max-width:100%}
   .header .btn-primary{display:none}
 }
 .mobile-menu{
-  position:fixed;inset:72px 0 auto 0;background:#fff;z-index:99;
+  position:fixed;inset:0 0 auto 0;background:#fff;z-index:99;
   border-bottom:1px solid var(--line);box-shadow:var(--shadow-md);
   padding:16px 24px 24px;
   opacity:0;visibility:hidden;transform:translateY(-12px);
   transition:opacity .28s var(--ease), transform .28s var(--ease), visibility .28s;
+  max-height:100vh;overflow-y:auto;
 }
 .mobile-menu[data-open]{opacity:1;visibility:visible;transform:none}
 .mobile-menu a{display:block;padding:14px 12px;border-radius:10px;font-size:16px;font-weight:500;color:#334155;border-bottom:1px solid var(--line)}
@@ -214,6 +230,45 @@ h1.hero-title{
 }
 .sec-sub{font-size:16px;color:var(--muted);line-height:1.6}
 
+/* ---------- RAILWAY BANNER ---------- */
+.rail-banner{
+  position:relative;border-radius:24px;overflow:hidden;
+  background:linear-gradient(120deg,#0B1E5C 0%, #1E40AF 45%, #2E5AC7 100%);
+  color:#fff;padding:64px 56px;
+  display:grid;grid-template-columns:1.4fr 1fr;gap:48px;align-items:center;
+}
+@media(max-width:840px){.rail-banner{padding:44px 28px;grid-template-columns:1fr;gap:32px}}
+.rail-banner::before{
+  content:"";position:absolute;inset:0;
+  background:radial-gradient(700px 300px at 90% 20%, rgba(249,115,22,.35), transparent 65%);
+  pointer-events:none;
+}
+.rail-banner > *{position:relative;z-index:1}
+.rail-tag{
+  display:inline-flex;align-items:center;gap:8px;
+  background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.25);
+  color:#fff;font-size:12.5px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;
+  padding:6px 14px;border-radius:999px;margin-bottom:20px;
+  backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);
+}
+.rail-tag .dot{width:7px;height:7px;border-radius:50%;background:#FB923C;box-shadow:0 0 0 4px rgba(251,146,60,.3)}
+.rail-banner h2{
+  font-size:clamp(24px,3.4vw,40px);font-weight:700;letter-spacing:-.03em;line-height:1.15;
+  margin-bottom:14px;
+}
+.rail-banner p{font-size:16px;color:rgba(255,255,255,.85);line-height:1.65;margin-bottom:26px;max-width:520px}
+.rail-feats{display:flex;gap:22px;flex-wrap:wrap;margin-bottom:28px}
+.rail-feats div{font-size:13.5px;color:rgba(255,255,255,.9);display:flex;align-items:center;gap:8px;font-weight:500}
+.rail-feats svg{width:16px;height:16px;color:#FB923C}
+.rail-visual{display:flex;justify-content:center;align-items:center}
+.train-art{
+  width:100%;max-width:340px;height:auto;
+  filter:drop-shadow(0 20px 40px rgba(0,0,0,.35));
+}
+.rail-btns{display:flex;gap:12px;flex-wrap:wrap}
+.rail-banner .btn-ghost{background:rgba(255,255,255,.12);color:#fff;border-color:rgba(255,255,255,.3)}
+.rail-banner .btn-ghost:hover{background:rgba(255,255,255,.2);color:#fff}
+
 /* ---------- SERVICES GRID ---------- */
 .services-grid{
   display:grid;grid-template-columns:repeat(4,1fr);gap:20px;
@@ -232,6 +287,13 @@ h1.hero-title{
 }
 .svc:hover{transform:translateY(-6px);box-shadow:var(--shadow-md);border-color:transparent}
 .svc:hover::before{opacity:1}
+.svc.featured{border-color:var(--orange);box-shadow:0 8px 24px rgba(249,115,22,.12)}
+.svc.featured::after{
+  content:"POPULAR";position:absolute;top:14px;right:14px;
+  background:linear-gradient(135deg,var(--orange),#EA580C);color:#fff;
+  font-size:9.5px;font-weight:700;letter-spacing:.08em;
+  padding:4px 9px;border-radius:999px;
+}
 .svc-icon{
   width:48px;height:48px;border-radius:12px;display:flex;align-items:center;justify-content:center;
   margin-bottom:18px;position:relative;
@@ -246,6 +308,54 @@ h1.hero-title{
 .i-orange{background:#FFF7ED;color:var(--orange)}
 .i-green{background:#ECFDF5;color:var(--green)}
 .i-purple{background:#F5F3FF;color:#7C3AED}
+
+/* ---------- PRICING CALLOUT ---------- */
+.price-callout{
+  position:relative;border-radius:24px;overflow:hidden;
+  background:linear-gradient(135deg,#FFF7ED 0%, #FFEDD5 50%, #FED7AA 100%);
+  border:2px solid rgba(249,115,22,.2);
+  padding:56px 48px;text-align:center;
+  box-shadow:0 20px 50px rgba(249,115,22,.15);
+}
+@media(max-width:640px){.price-callout{padding:40px 24px;border-radius:18px}}
+.price-callout::before{
+  content:"";position:absolute;top:-40px;left:-40px;width:200px;height:200px;
+  background:radial-gradient(circle, rgba(249,115,22,.25), transparent 70%);
+  border-radius:50%;
+}
+.price-callout::after{
+  content:"🎉";position:absolute;top:24px;right:32px;font-size:42px;
+  animation:float 3s ease-in-out infinite;
+}
+@media(max-width:640px){.price-callout::after{display:none}}
+.price-callout > *{position:relative;z-index:1}
+.price-callout .sec-eyebrow{color:#EA580C}
+.price-callout h2{
+  font-size:clamp(26px,3.6vw,42px);font-weight:700;letter-spacing:-.035em;line-height:1.1;
+  color:var(--ink);margin-bottom:14px;
+}
+.price-callout .price-big{
+  display:inline-block;
+  font-size:clamp(52px,7vw,84px);font-weight:800;letter-spacing:-.05em;
+  background:linear-gradient(135deg,#EA580C 0%, #F97316 60%, #FB923C 100%);
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+  line-height:1;margin:8px 0;
+}
+.price-callout .price-sub{
+  font-size:15px;color:#7C2D12;font-weight:600;margin-top:4px;
+  letter-spacing:-.01em;
+}
+.price-callout p.desc{
+  font-size:16px;color:#78350F;line-height:1.65;max-width:560px;margin:18px auto 28px;
+}
+.price-callout .btn-group{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+.tnc-link{
+  display:inline-flex;align-items:center;gap:6px;
+  font-size:13px;color:#7C2D12;font-weight:600;margin-top:22px;
+  text-decoration:underline;text-decoration-color:rgba(124,45,18,.4);
+  text-underline-offset:3px;
+}
+.tnc-link:hover{color:#EA580C;text-decoration-color:#EA580C}
 
 /* ---------- STATS STRIP ---------- */
 .stats-strip{
@@ -317,7 +427,7 @@ h1.hero-title{
 .mini-row .up{color:var(--green)}
 
 /* ---------- TESTIMONIALS ---------- */
-.tst-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.tst-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:22px}
 @media(max-width:900px){.tst-grid{grid-template-columns:1fr}}
 .tst{
   background:#fff;border:1px solid var(--line);border-radius:var(--radius);
@@ -364,7 +474,7 @@ h1.hero-title{
   background:linear-gradient(180deg, var(--blue-soft), transparent);
 }
 .page-hero h1{font-size:clamp(30px,4vw,48px);font-weight:700;letter-spacing:-.03em;line-height:1.1;margin-bottom:16px}
-.page-hero p{font-size:17px;color:#475569;max-width:600px;margin:0 auto;line-height:1.6}
+.page-hero p{font-size:17px;color:#475569;max-width:640px;margin:0 auto;line-height:1.6}
 
 /* ---------- SERVICE DETAIL CARDS ---------- */
 .svc-detail{
@@ -374,11 +484,16 @@ h1.hero-title{
   transition:transform .3s var(--ease), box-shadow .3s, border-color .3s;
 }
 .svc-detail:hover{transform:translateX(4px);box-shadow:var(--shadow-md);border-color:transparent}
+.svc-detail.featured{border-color:var(--orange);background:linear-gradient(135deg,#FFFBEB 0%, #FFF7ED 100%)}
 @media(max-width:720px){.svc-detail{grid-template-columns:60px 1fr;gap:16px}.svc-detail .btn{grid-column:1/-1;width:100%;justify-content:center}}
 .svc-detail-icon{
   width:64px;height:64px;border-radius:14px;display:flex;align-items:center;justify-content:center;
 }
-.svc-detail h3{font-size:17px;font-weight:600;letter-spacing:-.015em;margin-bottom:6px}
+.svc-detail h3{font-size:17px;font-weight:600;letter-spacing:-.015em;margin-bottom:6px;display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.svc-detail h3 .badge-new{
+  font-size:10px;font-weight:700;letter-spacing:.06em;background:linear-gradient(135deg,var(--orange),#EA580C);
+  color:#fff;padding:3px 8px;border-radius:999px;
+}
 .svc-detail p{font-size:14px;color:var(--muted);line-height:1.55}
 
 /* ---------- CONTACT ---------- */
@@ -435,6 +550,50 @@ h1.hero-title{
 .faq[open] summary::after{transform:rotate(45deg);color:var(--blue)}
 .faq-body{padding:0 24px 22px;font-size:14.5px;color:var(--muted);line-height:1.65}
 
+/* ---------- T&C PAGE ---------- */
+.tnc-content{max-width:820px;margin:0 auto}
+.tnc-content h2{
+  font-size:22px;font-weight:700;letter-spacing:-.02em;color:var(--ink);
+  margin:40px 0 16px;padding-bottom:12px;border-bottom:1px solid var(--line);
+}
+.tnc-content h2:first-child{margin-top:0}
+.tnc-content p{font-size:15px;color:#475569;line-height:1.75;margin-bottom:14px}
+.tnc-content ul{list-style:none;padding:0;margin:14px 0 22px}
+.tnc-content li{
+  font-size:15px;color:#475569;line-height:1.75;
+  padding-left:26px;position:relative;margin-bottom:10px;
+}
+.tnc-content li::before{
+  content:"";position:absolute;left:0;top:11px;width:8px;height:8px;border-radius:50%;
+  background:var(--orange);
+}
+.tnc-content strong{color:var(--ink);font-weight:600}
+.pricing-table{
+  width:100%;border-collapse:collapse;margin:24px 0;font-size:14.5px;
+  border:1px solid var(--line);border-radius:12px;overflow:hidden;
+}
+.pricing-table th, .pricing-table td{
+  padding:16px 20px;text-align:left;border-bottom:1px solid var(--line);
+}
+.pricing-table th{
+  background:var(--blue-soft);font-weight:600;color:var(--blue);
+  font-size:13px;letter-spacing:.04em;text-transform:uppercase;
+}
+.pricing-table tr:last-child td{border-bottom:0}
+.pricing-table td:last-child{text-align:right;font-weight:600;color:var(--ink)}
+.pricing-table .total-row td{
+  background:#FFF7ED;color:#7C2D12;font-weight:700;font-size:15.5px;
+}
+@media(max-width:600px){
+  .pricing-table th, .pricing-table td{padding:12px 14px;font-size:13px}
+}
+.note-box{
+  background:#FFF7ED;border-left:4px solid var(--orange);
+  border-radius:10px;padding:18px 22px;margin:24px 0;
+}
+.note-box p{margin:0;font-size:14.5px;color:#7C2D12;line-height:1.7}
+.note-box strong{color:#7C2D12}
+
 /* ---------- FOOTER ---------- */
 .footer{
   background:var(--blue-deep);color:rgba(255,255,255,.75);
@@ -444,7 +603,7 @@ h1.hero-title{
 @media(max-width:820px){.footer-grid{grid-template-columns:1fr 1fr;gap:36px}}
 @media(max-width:520px){.footer-grid{grid-template-columns:1fr}}
 .footer-brand{display:flex;align-items:center;gap:10px;color:#fff;font-weight:700;font-size:17px;letter-spacing:-.02em;margin-bottom:16px}
-.footer-brand .brand-mark{box-shadow:0 4px 12px rgba(0,0,0,.3)}
+.footer-brand .brand-mark{width:38px;height:38px}
 .footer p{font-size:14px;line-height:1.65;color:rgba(255,255,255,.6);max-width:320px}
 .footer h5{color:#fff;font-size:14px;font-weight:600;margin-bottom:16px;letter-spacing:.02em}
 .footer ul{list-style:none;display:flex;flex-direction:column;gap:10px}
@@ -458,21 +617,14 @@ h1.hero-title{
 .footer-bottom a{color:rgba(255,255,255,.65)}
 .footer-bottom a:hover{color:#fff}
 
-/* ---------- REVEAL ANIMATION (FIXED) ---------- */
+/* ---------- REVEAL ANIMATION (BULLETPROOF) ---------- */
 [data-reveal]{
-  opacity:1;
-  transform:none;
+  opacity:1;transform:none;
   transition:opacity .8s var(--ease), transform .8s var(--ease);
   transition-delay:var(--d,0s);
 }
-html.js-ready [data-reveal]:not(.in-view){
-  opacity:0;
-  transform:translateY(24px);
-}
-html.js-ready [data-reveal].in-view{
-  opacity:1;
-  transform:none;
-}
+html.js-ready [data-reveal]:not(.in-view){opacity:0;transform:translateY(24px)}
+html.js-ready [data-reveal].in-view{opacity:1;transform:none}
 @media(prefers-reduced-motion:reduce){
   [data-reveal]{opacity:1 !important;transform:none !important;transition:none !important}
   .hv-card{animation:none}
@@ -491,15 +643,86 @@ html.js-ready [data-reveal].in-view{
 .wa-float:hover{transform:translateY(-3px) scale(1.05);box-shadow:0 12px 30px rgba(37,211,102,.5)}
 .wa-float svg{width:28px;height:28px}
 @media(max-width:640px){.wa-float{bottom:16px;right:16px;width:52px;height:52px}}
+
+/* ---------- PRICING POPUP ---------- */
+.price-popup{
+  position:fixed;left:24px;bottom:24px;z-index:95;
+  width:320px;max-width:calc(100vw - 48px);
+  background:#fff;border-radius:18px;overflow:hidden;
+  box-shadow:0 20px 50px rgba(15,23,42,.2), 0 0 0 1px rgba(249,115,22,.15);
+  transform:translateY(30px) scale(.95);opacity:0;visibility:hidden;
+  transition:opacity .4s var(--ease), transform .4s var(--ease), visibility .4s;
+}
+.price-popup.show{transform:none;opacity:1;visibility:visible}
+.price-popup-head{
+  background:linear-gradient(135deg,var(--orange) 0%, #EA580C 100%);
+  color:#fff;padding:14px 18px;
+  display:flex;align-items:center;justify-content:space-between;
+  font-size:13px;font-weight:700;letter-spacing:.02em;text-transform:uppercase;
+}
+.price-popup-close{
+  color:#fff;font-size:20px;line-height:1;opacity:.9;padding:2px 6px;
+}
+.price-popup-close:hover{opacity:1}
+.price-popup-body{padding:20px 20px 18px}
+.price-popup-body h4{
+  font-size:15px;font-weight:600;letter-spacing:-.01em;color:var(--ink);
+  margin-bottom:6px;line-height:1.35;
+}
+.price-popup-body .pop-price{
+  font-size:38px;font-weight:800;letter-spacing:-.04em;line-height:1;
+  background:linear-gradient(135deg,#EA580C,#F97316);
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+  margin:8px 0 4px;
+}
+.price-popup-body .pop-sub{
+  font-size:12.5px;color:var(--muted);margin-bottom:14px;font-weight:500;
+}
+.price-popup-body .pop-btn{
+  display:flex;align-items:center;justify-content:center;gap:6px;
+  width:100%;padding:11px;border-radius:10px;
+  background:linear-gradient(135deg,var(--orange),#EA580C);
+  color:#fff;font-size:14px;font-weight:600;
+  transition:transform .25s var(--ease), box-shadow .25s;
+  box-shadow:0 6px 18px rgba(249,115,22,.3);
+}
+.price-popup-body .pop-btn:hover{transform:translateY(-2px);box-shadow:0 10px 24px rgba(249,115,22,.4)}
+.price-popup-body .pop-tnc{
+  display:block;text-align:center;font-size:11.5px;color:var(--muted);
+  margin-top:10px;text-decoration:underline;text-underline-offset:2px;
+}
+.price-popup-body .pop-tnc:hover{color:var(--orange)}
+@media(max-width:640px){
+  .price-popup{left:16px;right:16px;bottom:80px;width:auto;max-width:none}
+}
 </style>
 </head>
 <body>
+
+<!-- ================= PRICING TOP BAR ================= -->
+<div class="price-bar" id="priceBar">
+  <span>🎉 Limited Time — Sirf <strong>₹1499</strong> se apna digital counter shuru karein!</span>
+  <a href="#/pricing">Details →</a>
+  <button class="close-x" aria-label="Close" onclick="document.getElementById('priceBar').classList.add('hide')">×</button>
+</div>
 
 <!-- ================= HEADER ================= -->
 <header class="header" id="header">
   <div class="container header-inner">
     <a href="#/" class="brand">
-      <div class="brand-mark">G</div>
+      <svg class="brand-mark" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+        <circle cx="24" cy="24" r="22" fill="#fff" stroke="#0F1B31" stroke-width="2.5"/>
+        <g clip-path="url(#brandClip)">
+          <clipPath id="brandClip"><circle cx="24" cy="24" r="21"/></clipPath>
+          <rect x="13.5" y="22.5" width="4.6" height="7.5" rx="1" fill="#F97316"/>
+          <rect x="20.2" y="17.5" width="4.6" height="12.5" rx="1" fill="#F97316"/>
+          <rect x="26.9" y="11.5" width="4.6" height="18.5" rx="1" fill="#F97316"/>
+          <path d="M10 25 Q 20 19.5 32.5 11.5" stroke="#F97316" stroke-width="2.4" fill="none" stroke-linecap="round"/>
+          <path d="M28.5 9.5 L 33.5 11.5 L 33 16.5" stroke="#F97316" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M6.5 34 L 15.5 30 Q 20 32.5 24 31 Q 28 32.5 32.5 30 L 41.5 34" stroke="#0F1B31" stroke-width="2.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M15.5 30 Q 20 34 24 34 Q 28 34 32.5 30" stroke="#0F1B31" stroke-width="2.2" fill="none" stroke-linecap="round"/>
+        </g>
+      </svg>
       <div class="brand-text">
         Grahak
         <small>Service Center</small>
@@ -508,6 +731,7 @@ html.js-ready [data-reveal].in-view{
     <nav class="nav" id="mainNav">
       <a href="#/" data-nav="/">Home</a>
       <a href="#/services" data-nav="/services">Services</a>
+      <a href="#/pricing" data-nav="/pricing">Pricing</a>
       <a href="#/how" data-nav="/how">How It Works</a>
       <a href="#/about" data-nav="/about">About</a>
       <a href="#/faq" data-nav="/faq">FAQ</a>
@@ -526,6 +750,7 @@ html.js-ready [data-reveal].in-view{
 <div class="mobile-menu" id="mobileMenu">
   <a href="#/" data-nav="/">Home</a>
   <a href="#/services" data-nav="/services">Services</a>
+  <a href="#/pricing" data-nav="/pricing">Pricing</a>
   <a href="#/how" data-nav="/how">How It Works</a>
   <a href="#/about" data-nav="/about">About</a>
   <a href="#/faq" data-nav="/faq">FAQ</a>
@@ -550,12 +775,12 @@ html.js-ready [data-reveal].in-view{
           <span class="grad">digital business hub.</span>
         </h1>
         <p class="hero-sub" data-reveal style="--d:.16s">
-          AEPS, BBPS, money transfer, mobile recharge, PAN card aur bahut kuch —
-          ek hi platform par. Kirana stores, cyber cafes aur agents ke liye banaya gaya.
+          Railway ticket, BBPS, money transfer, mobile recharge, PAN card aur bahut kuch —
+          ek hi platform par. Sirf ₹1499 se shuru.
         </p>
         <div class="hero-cta" data-reveal style="--d:.24s">
-          <a href="#/contact" class="btn btn-primary btn-lg">
-            Become a Partner
+          <a href="#/pricing" class="btn btn-primary btn-lg">
+            Sirf ₹1499 Mein Shuru Karein
             <svg viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </a>
           <a href="#/services" class="btn btn-ghost btn-lg">Explore Services</a>
@@ -571,10 +796,10 @@ html.js-ready [data-reveal].in-view{
         <div class="hv-glow"></div>
         <div class="hv-card hv-1">
           <div class="hv-icon">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M3 12h18M12 3v18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><rect x="4" y="4" width="16" height="16" rx="3" stroke="currentColor" stroke-width="2"/><path d="M4 9h16M9 4v16" stroke="currentColor" stroke-width="2"/></svg>
           </div>
-          <h4>AEPS Withdrawal</h4>
-          <p>Aadhaar-based cash withdrawal, instant.</p>
+          <h4>Railway Ticket</h4>
+          <p>IRCTC authorized — instant booking.</p>
         </div>
         <div class="hv-card hv-2">
           <div class="hv-icon">
@@ -601,6 +826,88 @@ html.js-ready [data-reveal].in-view{
     </div>
   </section>
 
+  <!-- RAILWAY BANNER -->
+  <section class="section-tight">
+    <div class="container">
+      <div class="rail-banner" data-reveal>
+        <div>
+          <span class="rail-tag"><span class="dot"></span> NEW SERVICE</span>
+          <h2>Indian Railway Ticket Booking</h2>
+          <p>Ab apne counter se hi customers ke liye train tickets book karein. IRCTC authorized platform, instant confirmation, aur har ticket par attractive commission.</p>
+          <div class="rail-feats">
+            <div><svg viewBox="0 0 16 16" fill="none"><path d="m2 8 4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> Instant Booking</div>
+            <div><svg viewBox="0 0 16 16" fill="none"><path d="m2 8 4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> IRCTC Authorized</div>
+            <div><svg viewBox="0 0 16 16" fill="none"><path d="m2 8 4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> PNR Status</div>
+            <div><svg viewBox="0 0 16 16" fill="none"><path d="m2 8 4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> Refund Support</div>
+          </div>
+          <div class="rail-btns">
+            <a href="#/contact" class="btn btn-primary btn-lg">
+              Activate Now
+              <svg viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+            <a href="#/services" class="btn btn-ghost btn-lg">Aur Jaanein</a>
+          </div>
+        </div>
+        <div class="rail-visual">
+          <svg class="train-art" viewBox="0 0 400 260" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <!-- Rails -->
+            <path d="M20 220 L 380 220" stroke="#FB923C" stroke-width="4" stroke-linecap="round"/>
+            <path d="M20 234 L 380 234" stroke="#FB923C" stroke-width="4" stroke-linecap="round"/>
+            <g stroke="#FB923C" stroke-width="3" opacity=".5">
+              <path d="M40 220 L 55 234"/>
+              <path d="M90 220 L 105 234"/>
+              <path d="M140 220 L 155 234"/>
+              <path d="M190 220 L 205 234"/>
+              <path d="M240 220 L 255 234"/>
+              <path d="M290 220 L 305 234"/>
+              <path d="M340 220 L 355 234"/>
+            </g>
+            <!-- Train body -->
+            <rect x="60" y="90" width="240" height="110" rx="18" fill="#fff" opacity=".95"/>
+            <rect x="60" y="90" width="240" height="110" rx="18" stroke="#0B1E5C" stroke-width="3"/>
+            <!-- Engine nose -->
+            <path d="M300 100 Q 340 120 340 145 Q 340 170 300 190" stroke="#0B1E5C" stroke-width="3" fill="#fff" opacity=".95"/>
+            <!-- Windows -->
+            <g fill="#1E40AF">
+              <rect x="80" y="110" width="34" height="34" rx="5"/>
+              <rect x="126" y="110" width="34" height="34" rx="5"/>
+              <rect x="172" y="110" width="34" height="34" rx="5"/>
+              <rect x="218" y="110" width="34" height="34" rx="5"/>
+            </g>
+            <!-- Orange stripe -->
+            <rect x="60" y="158" width="240" height="12" fill="#F97316"/>
+            <!-- Chimney -->
+            <rect x="250" y="60" width="26" height="32" rx="4" fill="#0B1E5C"/>
+            <rect x="242" y="52" width="42" height="14" rx="5" fill="#F97316"/>
+            <!-- Steam -->
+            <g opacity=".7">
+              <circle cx="255" cy="38" r="8" fill="#FB923C"/>
+              <circle cx="272" cy="24" r="11" fill="#FB923C" opacity=".6"/>
+              <circle cx="292" cy="14" r="7" fill="#FB923C" opacity=".4"/>
+            </g>
+            <!-- Wheels -->
+            <g fill="#0B1E5C">
+              <circle cx="100" cy="205" r="11"/>
+              <circle cx="140" cy="205" r="11"/>
+              <circle cx="200" cy="205" r="11"/>
+              <circle cx="240" cy="205" r="11"/>
+              <circle cx="290" cy="205" r="11"/>
+            </g>
+            <g fill="#fff">
+              <circle cx="100" cy="205" r="4"/>
+              <circle cx="140" cy="205" r="4"/>
+              <circle cx="200" cy="205" r="4"/>
+              <circle cx="240" cy="205" r="4"/>
+              <circle cx="290" cy="205" r="4"/>
+            </g>
+            <!-- Headlight -->
+            <circle cx="336" cy="145" r="6" fill="#FBBF24"/>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <section class="section">
     <div class="container">
       <div class="sec-head" data-reveal>
@@ -609,10 +916,10 @@ html.js-ready [data-reveal].in-view{
         <p class="sec-sub">Jo bhi aapke customers ko chahiye — sab yahin milega. Ek registration, hazaar services.</p>
       </div>
       <div class="services-grid">
-        <div class="svc" data-reveal style="--d:.05s">
-          <div class="svc-icon i-blue"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M12 2v20M6 8h12M6 16h12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></div>
-          <h3>AEPS</h3><p>Aadhaar-enabled cash withdrawal, balance enquiry aur mini statement.</p>
-          <span class="svc-tag">Instant</span>
+        <div class="svc featured" data-reveal style="--d:.05s">
+          <div class="svc-icon i-orange"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><rect x="4" y="4" width="16" height="16" rx="3" stroke="currentColor" stroke-width="2"/><path d="M4 9h16M9 4v16" stroke="currentColor" stroke-width="2"/></svg></div>
+          <h3>Railway Ticket</h3><p>IRCTC authorized platform — instant train booking, PNR status aur refund support.</p>
+          <span class="svc-tag">New</span>
         </div>
         <div class="svc" data-reveal style="--d:.1s">
           <div class="svc-icon i-orange"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><rect x="3" y="6" width="18" height="13" rx="2" stroke="currentColor" stroke-width="2"/><path d="M3 10h18" stroke="currentColor" stroke-width="2"/></svg></div>
@@ -641,14 +948,40 @@ html.js-ready [data-reveal].in-view{
         </div>
         <div class="svc" data-reveal style="--d:.35s">
           <div class="svc-icon i-green"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M2 12h20M12 2a15 15 0 0 1 0 20M12 2a15 15 0 0 0 0 20" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/></svg></div>
-          <h3>Travel Booking</h3><p>Bus, train aur flight tickets — instant confirmation.</p>
+          <h3>Travel Booking</h3><p>Bus aur flight tickets — instant confirmation.</p>
           <span class="svc-tag">Live</span>
         </div>
         <div class="svc" data-reveal style="--d:.4s">
           <div class="svc-icon i-purple"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M3 3v18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="m7 14 4-4 3 3 5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-          <h3>More Services</h3><p>Gift cards, FASTag, e-stamp, aur bahut kuch aa raha hai.</p>
+          <h3>More Services</h3><p>FASTag, gift cards, e-stamp — aur bahut kuch aa raha hai.</p>
           <span class="svc-tag">Coming Soon</span>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRICING CALLOUT -->
+  <section class="section" style="background:var(--bg-alt)">
+    <div class="container">
+      <div class="price-callout" data-reveal>
+        <span class="sec-eyebrow">🎉 Special Launch Offer</span>
+        <h2>Apna Digital Counter Shuru Karein</h2>
+        <div class="price-big">₹1499</div>
+        <div class="price-sub">Registration fee — one-time</div>
+        <p class="desc">
+          Aaj hi juden 10,000+ retailers ke saath. Railway booking, BBPS, recharge, money transfer — sab kuch ek platform par. Free training aur 24×7 support included.
+        </p>
+        <div class="btn-group">
+          <a href="#/contact" class="btn btn-primary btn-lg">
+            Register Now
+            <svg viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+          <a href="https://wa.me/918685820290" class="btn btn-ghost btn-lg">WhatsApp Par Poochhein</a>
+        </div>
+        <a href="#/pricing" class="tnc-link">
+          <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="6.5" stroke="currentColor" stroke-width="1.5"/><path d="M8 4.5v4M8 11h.01" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+          Pricing details &amp; T&C padhein
+        </a>
       </div>
     </div>
   </section>
@@ -714,7 +1047,7 @@ html.js-ready [data-reveal].in-view{
           </div>
           <div class="why-item">
             <div class="why-check"><svg viewBox="0 0 14 14" fill="none"><path d="m2 7 3.5 3.5L12 3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-            <div><h4>Zero Setup Cost</h4><p>Registration free. Koi hidden charges nahi.</p></div>
+            <div><h4>Transparent Pricing</h4><p>Koi hidden charges nahi. Sab kuch clearly website par likha hai.</p></div>
           </div>
           <div class="why-item">
             <div class="why-check"><svg viewBox="0 0 14 14" fill="none"><path d="m2 7 3.5 3.5L12 3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
@@ -725,7 +1058,7 @@ html.js-ready [data-reveal].in-view{
       <div class="why-visual" data-reveal style="--d:.15s">
         <div class="why-visual-card">
           <h5>Aaj Ka Performance</h5>
-          <div class="mini-row"><span>AEPS Transactions</span><span>248</span></div>
+          <div class="mini-row"><span>Railway Tickets</span><span>64</span></div>
           <div class="mini-row"><span>Recharges</span><span>156</span></div>
           <div class="mini-row"><span>Bill Payments</span><span>89</span></div>
           <div class="mini-row"><span>Total Earnings</span><span class="up">₹4,280</span></div>
@@ -744,13 +1077,13 @@ html.js-ready [data-reveal].in-view{
       <div class="tst-grid">
         <div class="tst" data-reveal style="--d:.05s">
           <div class="tst-stars">★★★★★</div>
-          <p class="tst-quote">"Pehle sirf kirana chalata tha. Ab AEPS aur recharge se mahine ka ₹15,000 extra kama raha hoon. Platform bahut simple hai."</p>
+          <p class="tst-quote">"Pehle sirf kirana chalata tha. Ab recharge aur railway ticket se mahine ka ₹15,000 extra kama raha hoon. Platform bahut simple hai."</p>
           <div class="tst-author">
             <div class="tst-avatar" style="background:linear-gradient(135deg,#1E40AF,#3B82F6)">RK</div>
             <div><strong>Ramesh Kumar</strong><span>Kirana Store, Patna</span></div>
           </div>
         </div>
-        <div class="tst" data-reveal style="--d:.15s">
+        <div class="tst" data-reveal style="--d:.12s">
           <div class="tst-stars">★★★★★</div>
           <p class="tst-quote">"Commission sabse zyada yahin milta hai. Payout daily aata hai — koi rukna nahi. Support team bhi turant reply karti hai."</p>
           <div class="tst-author">
@@ -758,12 +1091,20 @@ html.js-ready [data-reveal].in-view{
             <div><strong>Priya Sharma</strong><span>Cyber Cafe, Lucknow</span></div>
           </div>
         </div>
-        <div class="tst" data-reveal style="--d:.25s">
+        <div class="tst" data-reveal style="--d:.19s">
           <div class="tst-stars">★★★★★</div>
           <p class="tst-quote">"Registration se activation sirf 1 din mein ho gaya. Ab mere customers ko kahin jaana nahi padta — sab kuch yahin mil jata hai."</p>
           <div class="tst-author">
             <div class="tst-avatar" style="background:linear-gradient(135deg,#10B981,#34D399)">AY</div>
             <div><strong>Arjun Yadav</strong><span>CSC Agent, Jaipur</span></div>
+          </div>
+        </div>
+        <div class="tst" data-reveal style="--d:.26s">
+          <div class="tst-stars">★★★★★</div>
+          <p class="tst-quote">"Railway ticket booking service ne mera business double kar diya. Customers ab door ke station jaane ke bajaye mere counter par aate hain."</p>
+          <div class="tst-author">
+            <div class="tst-avatar" style="background:linear-gradient(135deg,#7C3AED,#A78BFA)">SM</div>
+            <div><strong>Sunita Mehta</strong><span>Mobile Shop, Indore</span></div>
           </div>
         </div>
       </div>
@@ -774,10 +1115,10 @@ html.js-ready [data-reveal].in-view{
     <div class="container">
       <div class="cta-block" data-reveal>
         <h2>Aaj hi apna digital counter shuru karein</h2>
-        <p>Free registration. Zero setup cost. Instant activation. Aur hazaar retailers ke saath juden.</p>
+        <p>Sirf ₹1499 registration fee. Zero hidden charges. Instant activation. Aur hazaar retailers ke saath juden.</p>
         <div class="cta-btns">
-          <a href="#/contact" class="btn btn-primary btn-lg">
-            Register Now
+          <a href="#/pricing" class="btn btn-primary btn-lg">
+            Pricing Dekhein
             <svg viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </a>
           <a href="https://wa.me/918685820290" class="btn btn-ghost btn-lg">WhatsApp Par Baat Karein</a>
@@ -793,16 +1134,16 @@ html.js-ready [data-reveal].in-view{
     <div class="container">
       <span class="sec-eyebrow" data-reveal>Services</span>
       <h1 data-reveal style="--d:.08s">Sabhi services, ek hi jagah</h1>
-      <p data-reveal style="--d:.16s">Retailers aur agents ke liye pura digital toolkit — banking se lekar bill payment tak.</p>
+      <p data-reveal style="--d:.16s">Retailers aur agents ke liye pura digital toolkit — railway booking se lekar bill payment tak.</p>
     </div>
   </section>
 
   <section class="section-tight">
     <div class="container">
 
-      <div class="svc-detail" data-reveal>
-        <div class="svc-detail-icon i-blue"><svg width="28" height="28" viewBox="0 0 24 24" fill="none"><path d="M12 2v20M6 8h12M6 16h12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></div>
-        <div><h3>AEPS — Aadhaar Enabled Payment System</h3><p>Cash withdrawal, balance enquiry, mini statement aur Aadhaar-to-Aadhaar transfer. Customer ke fingerprint se instant transaction.</p></div>
+      <div class="svc-detail featured" data-reveal>
+        <div class="svc-detail-icon i-orange"><svg width="28" height="28" viewBox="0 0 24 24" fill="none"><rect x="4" y="4" width="16" height="16" rx="3" stroke="currentColor" stroke-width="2"/><path d="M4 9h16M9 4v16" stroke="currentColor" stroke-width="2"/></svg></div>
+        <div><h3>Indian Railway Ticket Booking <span class="badge-new">NEW</span></h3><p>IRCTC authorized platform par train ticket booking, PNR status check, ticket cancel aur refund — sab kuch apne counter se. Har booking par attractive commission.</p></div>
         <a href="#/contact" class="btn btn-blue">Activate</a>
       </div>
 
@@ -838,13 +1179,13 @@ html.js-ready [data-reveal].in-view{
 
       <div class="svc-detail" data-reveal>
         <div class="svc-detail-icon i-green"><svg width="28" height="28" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/><path d="M2 12h20M12 2a15 15 0 0 1 0 20M12 2a15 15 0 0 0 0 20" stroke="currentColor" stroke-width="2"/></svg></div>
-        <div><h3>Travel Booking</h3><p>Bus, train aur flight tickets — instant confirmation. Cancel aur refund bhi same platform se.</p></div>
+        <div><h3>Travel Booking (Bus & Flight)</h3><p>Bus aur flight tickets — instant confirmation. Cancel aur refund bhi same platform se.</p></div>
         <a href="#/contact" class="btn btn-blue">Activate</a>
       </div>
 
       <div class="svc-detail" data-reveal>
         <div class="svc-detail-icon i-purple"><svg width="28" height="28" viewBox="0 0 24 24" fill="none"><path d="M3 3v18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="m7 14 4-4 3 3 5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-        <div><h3>Gift Cards, FASTag & More</h3><p>Amazon, Flipkart gift cards, FASTag recharge, e-stamp paper — aur bahut kuch aa raha hai.</p></div>
+        <div><h3>FASTag, Gift Cards & More</h3><p>FASTag recharge, Amazon/Flipkart gift cards, e-stamp paper — aur bahut kuch aa raha hai.</p></div>
         <a href="#/contact" class="btn btn-blue">Activate</a>
       </div>
 
@@ -855,10 +1196,107 @@ html.js-ready [data-reveal].in-view{
     <div class="container">
       <div class="cta-block" data-reveal>
         <h2>Ready to start earning?</h2>
-        <p>Aaj hi register karein aur kal se kamai shuru karein.</p>
+        <p>Aaj hi register karein — sirf ₹1499 se shuru.</p>
         <div class="cta-btns">
-          <a href="#/contact" class="btn btn-primary btn-lg">Register Now</a>
+          <a href="#/pricing" class="btn btn-primary btn-lg">Pricing Dekhein</a>
         </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ---------- PRICING / T&C ---------- -->
+<div class="page" data-page="/pricing">
+  <section class="page-hero">
+    <div class="container">
+      <span class="sec-eyebrow" data-reveal>Pricing &amp; T&amp;C</span>
+      <h1 data-reveal style="--d:.08s">Transparent Pricing</h1>
+      <p data-reveal style="--d:.16s">Koi hidden charges nahi. Sab kuch clearly neeche diya gaya hai. Jo dikhta hai, wahi lagta hai.</p>
+    </div>
+  </section>
+
+  <section class="section-tight">
+    <div class="container">
+      <div class="tnc-content" data-reveal>
+
+        <h2>💰 Registration Fee — ₹1499 (One-time)</h2>
+        <p>
+          Hamare platform par partner banne ke liye ek baar <strong>₹1,499</strong> ka registration fee dena hota hai. Isme ye sab included hai:
+        </p>
+        <ul>
+          <li>KYC verification &amp; documentation</li>
+          <li>Dashboard access — lifetime</li>
+          <li>Free training aur onboarding support</li>
+          <li>24×7 WhatsApp support</li>
+          <li>Sabhi services ka activation</li>
+        </ul>
+
+        <h2>💳 Alag Se Lagne Wale Charges</h2>
+        <p>
+          Registration ke baad, kuch services ko use karne ke liye wallet mein paise daalne hote hain. Yeh charges alag hain aur aapki transaction ke liye hain — hamare paas nahi jaate:
+        </p>
+
+        <table class="pricing-table">
+          <thead>
+            <tr>
+              <th>Item</th>
+              <th>Amount</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>Registration Fee (one-time)</td><td>₹1,499</td></tr>
+            <tr><td>Wallet Load (minimum)</td><td>₹500</td></tr>
+            <tr><td>Platform Monthly Fee</td><td>₹0</td></tr>
+            <tr><td>Transaction Charges</td><td>As per service</td></tr>
+            <tr class="total-row"><td>Total Shuru Karne Ke Liye</td><td>₹1,999</td></tr>
+          </tbody>
+        </table>
+
+        <div class="note-box">
+          <p>
+            <strong>📌 Note:</strong> Wallet mein daale gaye paise aapke hi hain — yeh transaction ke liye use hote hain, aur commission ke roop mein aapko wapas milte hain. Yeh koi extra charge nahi hai.
+          </p>
+        </div>
+
+        <h2>📊 Commission Structure</h2>
+        <p>Har service ka commission alag hai. Detailed chart activation ke baad dashboard mein milega:</p>
+        <ul>
+          <li><strong>Railway Ticket:</strong> ₹20-40 per ticket</li>
+          <li><strong>Recharge:</strong> 1-3% per transaction</li>
+          <li><strong>BBPS Bills:</strong> ₹5-15 per bill</li>
+          <li><strong>Money Transfer:</strong> 0.5-1% per transaction</li>
+          <li><strong>Insurance:</strong> 10-20% of premium</li>
+        </ul>
+
+        <h2>💸 Payout Policy</h2>
+        <ul>
+          <li>Commission turant wallet mein add hoti hai</li>
+          <li>Bank transfer same-day ya next-day</li>
+          <li>Minimum payout: ₹100</li>
+          <li>Payout charges: Nil</li>
+        </ul>
+
+        <h2>⚠️ Important Terms</h2>
+        <ul>
+          <li>Registration fee <strong>non-refundable</strong> hai ek baar KYC approve hone ke baad</li>
+          <li>Wallet balance minimum ₹500 maintain karna hoga services active rakhne ke liye</li>
+          <li>Fake documents ya galat information par account suspend ho sakta hai</li>
+          <li>Commission rates company policy ke hisaab se change ho sakti hain — 30 days prior notice ke saath</li>
+          <li>Disputes ke case mein company ka decision final hoga</li>
+        </ul>
+
+        <h2>📞 Sawaal?</h2>
+        <p>
+          Koi bhi confusion ho toh WhatsApp par pooch lein — <a href="https://wa.me/918685820290" style="color:var(--blue);font-weight:600">+91 99999 99999</a>. Hum har cheez clearly samjhayenge.
+        </p>
+
+        <div style="text-align:center;margin-top:48px">
+          <a href="#/contact" class="btn btn-primary btn-lg">
+            Register Now — ₹1499
+            <svg viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
+
       </div>
     </div>
   </section>
@@ -881,7 +1319,7 @@ html.js-ready [data-reveal].in-view{
           <div class="step-num" style="margin:0">1</div>
           <div>
             <h3>Online registration form bharein</h3>
-            <p style="font-size:15px;margin-top:8px">Apna naam, mobile number, email, Aadhaar aur PAN details daalein. Form sirf 3 minute mein bhar jata hai. Koi registration fee nahi.</p>
+            <p style="font-size:15px;margin-top:8px">Apna naam, mobile number, email aur Aadhaar/PAN details daalein. Form sirf 3 minute mein bhar jata hai. Registration fee ₹1,499.</p>
           </div>
         </div>
         <div class="step" data-reveal style="display:grid;grid-template-columns:80px 1fr;gap:28px;align-items:flex-start;padding:28px 0;border-bottom:1px solid var(--line)">
@@ -902,7 +1340,7 @@ html.js-ready [data-reveal].in-view{
           <div class="step-num" style="margin:0">4</div>
           <div>
             <h3>Dashboard login aur earning start</h3>
-            <p style="font-size:15px;margin-top:8px">Apne dashboard mein login karein, services activate karein, aur pehla transaction karein. Commission turant wallet mein aa jayega.</p>
+            <p style="font-size:15px;margin-top:8px">Apne dashboard mein login karein, wallet mein ₹500+ daalein, services activate karein, aur pehla transaction karein.</p>
           </div>
         </div>
       </div>
@@ -913,9 +1351,9 @@ html.js-ready [data-reveal].in-view{
     <div class="container">
       <div class="cta-block" data-reveal>
         <h2>Shuru karne ke liye ready?</h2>
-        <p>Form sirf 3 minute ka hai. Registration bilkul free hai.</p>
+        <p>Form sirf 3 minute ka hai. Registration fee ₹1499.</p>
         <div class="cta-btns">
-          <a href="#/contact" class="btn btn-primary btn-lg">Register Now</a>
+          <a href="#/pricing" class="btn btn-primary btn-lg">Pricing Dekhein</a>
           <a href="https://wa.me/918685820290" class="btn btn-ghost btn-lg">WhatsApp Par Poochhein</a>
         </div>
       </div>
@@ -941,7 +1379,7 @@ html.js-ready [data-reveal].in-view{
           2019 mein shuru hua Grahak Service Center ek simple soch se aaya — ki Bharat ke chhote kirana stores, cyber cafes aur CSC agents ko bhi wahi digital power mile jo bade businesses ke paas hai. Ek aisa platform jo unke counter ko ek complete digital service hub bana de.
         </p>
         <p style="font-size:16px;color:#475569;line-height:1.75;margin-bottom:20px">
-          Aaj 10,000+ partners 28 states mein hamare platform se roz hazaar transactions karte hain — AEPS withdrawal se lekar bill payments tak. Har transaction ek chhote business ki income badhata hai, ek customer ka time bachata hai.
+          Aaj 10,000+ partners 28 states mein hamare platform se roz hazaar transactions karte hain — railway ticket se lekar bill payments tak. Har transaction ek chhote business ki income badhata hai, ek customer ka time bachata hai.
         </p>
       </div>
 
@@ -965,7 +1403,7 @@ html.js-ready [data-reveal].in-view{
         <div class="why-list">
           <div class="why-item">
             <div class="why-check"><svg viewBox="0 0 14 14" fill="none"><path d="m2 7 3.5 3.5L12 3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-            <div><h4>Transparency</h4><p>Koi hidden charges nahi. Har commission, har fee clearly dikhti hai.</p></div>
+            <div><h4>Transparency</h4><p>Koi hidden charges nahi. Har commission, har fee clearly website par likhi hai.</p></div>
           </div>
           <div class="why-item">
             <div class="why-check"><svg viewBox="0 0 14 14" fill="none"><path d="m2 7 3.5 3.5L12 3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
@@ -1003,12 +1441,16 @@ html.js-ready [data-reveal].in-view{
           <div class="faq-body">Aadhaar card, PAN card, bank passbook (front page) aur ek passport size photo. Sab documents clear aur valid hone chahiye. Ek baar verify hone ke baad dobara nahi maangte.</div>
         </details>
         <details class="faq" data-reveal>
-          <summary>Registration fees kitni hai?</summary>
-          <div class="faq-body">Bilkul free. Koi registration fee, koi setup cost, koi monthly charges nahi. Aap sirf tab kamate hain jab aapke customer transaction karte hain.</div>
+          <summary>Registration fee kitni hai? Koi hidden charges hain?</summary>
+          <div class="faq-body">Registration fee ₹1,499 hai — one-time. Iske baad wallet mein minimum ₹500 daalna hota hai (jo aapke hi paise hain, transactions ke liye). Koi hidden charge nahi. Poori pricing detail <a href="#/pricing" style="color:var(--blue);font-weight:600">Pricing page</a> par hai.</div>
+        </details>
+        <details class="faq" data-reveal>
+          <summary>Kya railway ticket booking available hai?</summary>
+          <div class="faq-body">Haan! Railway ticket booking hamari nayi service hai — IRCTC authorized platform par. Aap apne counter se train tickets book kar sakte hain, PNR status check kar sakte hain, aur cancel/refund bhi handle kar sakte hain.</div>
         </details>
         <details class="faq" data-reveal>
           <summary>Commission kitna milta hai?</summary>
-          <div class="faq-body">Har service ka commission alag hai — recharge par 1-3%, AEPS par per transaction, bill payments par per bill. Detailed commission chart aapko activation ke baad dashboard mein milega.</div>
+          <div class="faq-body">Har service ka commission alag hai — recharge par 1-3%, railway ticket par ₹20-40, bill payments par per bill, money transfer par 0.5-1%. Detailed commission chart aapko activation ke baad dashboard mein milega.</div>
         </details>
         <details class="faq" data-reveal>
           <summary>Payout kab milta hai?</summary>
@@ -1024,7 +1466,7 @@ html.js-ready [data-reveal].in-view{
         </details>
         <details class="faq" data-reveal>
           <summary>Support kaise milega?</summary>
-          <div class="faq-body">24×7 WhatsApp support, phone support (9 AM - 9 PM) aur email. Hindi, English aur regional languages mein support available hai.</div>
+          <div class="faq-body">24×7 WhatsApp support, phone support (10 AM - 7 PM) aur email. Hindi, English aur regional languages mein support available hai.</div>
         </details>
         <details class="faq" data-reveal>
           <summary>Kya transactions live hain?</summary>
@@ -1051,11 +1493,11 @@ html.js-ready [data-reveal].in-view{
         <div class="contact-info" data-reveal>
           <div class="contact-item">
             <div class="contact-item-icon i-blue"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 2 .7 2.9a2 2 0 0 1-.4 2.1L8.1 10a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c1 .3 1.9.6 2.9.7a2 2 0 0 1 1.7 2z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-            <div><h4>Phone</h4><a href="tel:+918685820290">+91 99999 99999</a></div>
+            <div><h4>Phone</h4><a href="tel:+918685820290">+91 86858 20290</a></div>
           </div>
           <div class="contact-item">
             <div class="contact-item-icon i-green"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M21 11.5a8.4 8.4 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.4 8.4 0 0 1-3.8-.9L3 21l1.9-5.7a8.4 8.4 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.4 8.4 0 0 1 3.8-.9h.5a8.5 8.5 0 0 1 8 8z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-            <div><h4>WhatsApp</h4><a href="https://wa.me/918685820290">+91 99999 99999</a></div>
+            <div><h4>WhatsApp</h4><a href="https://wa.me/918685820290">+91 86858 20290</a></div>
           </div>
           <div class="contact-item">
             <div class="contact-item-icon i-orange"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><rect x="2" y="4" width="20" height="16" rx="2" stroke="currentColor" stroke-width="2"/><path d="m2 7 10 6 10-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
@@ -1063,22 +1505,22 @@ html.js-ready [data-reveal].in-view{
           </div>
           <div class="contact-item">
             <div class="contact-item-icon i-purple"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="10" r="3" stroke="currentColor" stroke-width="2"/></svg></div>
-            <div><h4>Office</h4><p>India, Bharat — 800001</p></div>
+            <div><h4>Office</h4><p>Patna, Bihar — 800001</p></div>
           </div>
           <div class="contact-item">
             <div class="contact-item-icon i-blue"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/><path d="M12 6v6l4 2" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></div>
-            <div><h4>Support Hours</h4><p>WhatsApp 24×7 · Phone 9 AM – 9 PM</p></div>
+            <div><h4>Support Hours</h4><p>WhatsApp 24×7 · Phone 10 AM – 7 PM</p></div>
           </div>
         </div>
 
         <div class="form-card" data-reveal style="--d:.15s">
           <h3>Partner registration form</h3>
-          <p>Details bharein — hum 24 ghante mein contact karenge.</p>
+          <p>Details bharein — hum 24 ghante mein contact karenge. Registration fee ₹1499.</p>
           <form onsubmit="event.preventDefault(); alert('Form submit ho gaya! Hum jaldi contact karenge. 😊'); this.reset();">
             <div class="field"><label>Poora Naam *</label><input type="text" required placeholder="Aapka naam"></div>
             <div class="field"><label>Mobile Number *</label><input type="tel" required pattern="[0-9]{10}" placeholder="10-digit mobile"></div>
             <div class="field"><label>Email</label><input type="email" placeholder="aap@example.com"></div>
-            <div class="field"><label>Sheher / State *</label><input type="text" required placeholder="Jaise: India, Bharatr"></div>
+            <div class="field"><label>Sheher / State *</label><input type="text" required placeholder="Jaise: Patna, Bihar"></div>
             <div class="field"><label>Business Type</label>
               <select>
                 <option>Kirana Store</option>
@@ -1105,7 +1547,19 @@ html.js-ready [data-reveal].in-view{
     <div class="footer-grid">
       <div>
         <div class="footer-brand">
-          <div class="brand-mark">G</div>
+          <svg class="brand-mark" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+            <circle cx="24" cy="24" r="22" fill="#fff" stroke="#0F1B31" stroke-width="2.5"/>
+            <g clip-path="url(#footClip)">
+              <clipPath id="footClip"><circle cx="24" cy="24" r="21"/></clipPath>
+              <rect x="13.5" y="22.5" width="4.6" height="7.5" rx="1" fill="#F97316"/>
+              <rect x="20.2" y="17.5" width="4.6" height="12.5" rx="1" fill="#F97316"/>
+              <rect x="26.9" y="11.5" width="4.6" height="18.5" rx="1" fill="#F97316"/>
+              <path d="M10 25 Q 20 19.5 32.5 11.5" stroke="#F97316" stroke-width="2.4" fill="none" stroke-linecap="round"/>
+              <path d="M28.5 9.5 L 33.5 11.5 L 33 16.5" stroke="#F97316" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M6.5 34 L 15.5 30 Q 20 32.5 24 31 Q 28 32.5 32.5 30 L 41.5 34" stroke="#0F1B31" stroke-width="2.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M15.5 30 Q 20 34 24 34 Q 28 34 32.5 30" stroke="#0F1B31" stroke-width="2.2" fill="none" stroke-linecap="round"/>
+            </g>
+          </svg>
           Grahak Service Center
         </div>
         <p>Bharat ke har chhote retailer ko digital banane ka mission. Ek platform, hazaar services, aur ek behtar kal.</p>
@@ -1113,7 +1567,7 @@ html.js-ready [data-reveal].in-view{
       <div>
         <h5>Services</h5>
         <ul>
-          <li><a href="#/services">AEPS</a></li>
+          <li><a href="#/services">Railway Ticket</a></li>
           <li><a href="#/services">BBPS Bills</a></li>
           <li><a href="#/services">Money Transfer</a></li>
           <li><a href="#/services">Recharge</a></li>
@@ -1124,6 +1578,7 @@ html.js-ready [data-reveal].in-view{
         <h5>Company</h5>
         <ul>
           <li><a href="#/about">About Us</a></li>
+          <li><a href="#/pricing">Pricing &amp; T&amp;C</a></li>
           <li><a href="#/how">How It Works</a></li>
           <li><a href="#/faq">FAQ</a></li>
           <li><a href="#/contact">Contact</a></li>
@@ -1149,13 +1604,30 @@ html.js-ready [data-reveal].in-view{
   <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.1-1.7-.8-2-.9-.3-.1-.5-.1-.7.1s-.8.9-.9 1.1c-.2.2-.3.2-.6.1-.3-.1-1.2-.5-2.3-1.4-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.4.1-.6.1-.1.3-.4.5-.6.2-.2.2-.3.3-.5.1-.2.1-.4 0-.5s-.7-1.6-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.4s1 2.8 1.2 3c.1.2 2 3 4.8 4.2.7.3 1.2.5 1.6.6.7.2 1.3.2 1.8.1.6-.1 1.7-.7 2-1.4.2-.7.2-1.2.2-1.4-.1-.2-.3-.2-.6-.3zM12 2a10 10 0 0 0-8.5 15.2L2 22l4.9-1.3A10 10 0 1 0 12 2z"/></svg>
 </a>
 
+<!-- ================= PRICING POPUP ================= -->
+<div class="price-popup" id="pricePopup">
+  <div class="price-popup-head">
+    <span>🎉 Limited Offer</span>
+    <button class="price-popup-close" aria-label="Close" onclick="document.getElementById('pricePopup').classList.remove('show')">×</button>
+  </div>
+  <div class="price-popup-body">
+    <h4>Apna digital counter aaj hi shuru karein!</h4>
+    <div class="pop-price">₹1499</div>
+    <div class="pop-sub">Registration fee · One-time</div>
+    <a href="#/contact" class="pop-btn" onclick="document.getElementById('pricePopup').classList.remove('show')">
+      Register Now
+      <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </a>
+    <a href="#/pricing" class="pop-tnc" onclick="document.getElementById('pricePopup').classList.remove('show')">Pricing details dekhein →</a>
+  </div>
+</div>
+
 <script>
 /* ============================================================
-   BULLETPROOF INIT — content dikhega chahe kuch bhi ho
+   BULLETPROOF INIT
    ============================================================ */
 document.documentElement.classList.add('js-ready');
 
-/* Safety net: 1.5 second baad sab visible */
 setTimeout(function(){
   document.querySelectorAll('[data-reveal]:not(.in-view)').forEach(function(el){
     var rect = el.getBoundingClientRect();
@@ -1179,12 +1651,8 @@ setTimeout(function(){
     var found = false;
     pages.forEach(function(p){
       var active = p.getAttribute('data-page') === path;
-      if(active){
-        p.setAttribute('data-active','');
-        found = true;
-      } else {
-        p.removeAttribute('data-active');
-      }
+      if(active){ p.setAttribute('data-active',''); found = true; }
+      else p.removeAttribute('data-active');
     });
     if(!found){
       pages[0].setAttribute('data-active','');
@@ -1205,7 +1673,6 @@ setTimeout(function(){
         active.querySelectorAll('[data-reveal]').forEach(function(el){
           revealObserver.observe(el);
         });
-        /* fallback */
         setTimeout(function(){
           active.querySelectorAll('[data-reveal]:not(.in-view)').forEach(function(el){
             el.classList.add('in-view');
@@ -1220,7 +1687,7 @@ setTimeout(function(){
   show(getPath());
 })();
 
-/* ---------- REVEAL ON SCROLL ---------- */
+/* ---------- REVEAL ---------- */
 var revealObserver = new IntersectionObserver(function(entries){
   entries.forEach(function(e){
     if(e.isIntersecting){
@@ -1268,18 +1735,38 @@ if(burger && menu){
   });
 }
 
+/* ---------- PRICING POPUP ---------- */
+var popupShown = false;
+function showPricingPopup(){
+  if(popupShown) return;
+  var p = document.getElementById('pricePopup');
+  if(!p) return;
+  popupShown = true;
+  p.classList.add('show');
+  setTimeout(function(){
+    p.classList.remove('show');
+    /* Show again after 45 seconds if user didn't interact */
+    setTimeout(function(){ popupShown = false; }, 45000);
+  }, 12000);
+}
+/* Show after 4 seconds */
+setTimeout(showPricingPopup, 4000);
+/* Or when user scrolls 50% of the page */
+window.addEventListener('scroll', function(){
+  if(popupShown) return;
+  var h = document.documentElement;
+  var scrolled = (h.scrollTop) / (h.scrollHeight - h.clientHeight);
+  if(scrolled > 0.5) showPricingPopup();
+}, {passive:true});
+
 /* ---------- START OBSERVING ---------- */
 document.addEventListener('DOMContentLoaded', function(){
   document.querySelectorAll('[data-reveal]').forEach(function(el){
     revealObserver.observe(el);
   });
 });
-/* Also run immediately in case DOMContentLoaded already fired */
 if(document.readyState !== 'loading'){
   document.querySelectorAll('[data-reveal]').forEach(function(el){
     revealObserver.observe(el);
   });
 }
-</script>
-</body>
-</html>
