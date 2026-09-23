@@ -91,7 +91,7 @@ img,svg{display:block;max-width:100%}
   .header .btn-primary{display:none}
 }
 
-.mobile-menu{position:fixed;top:0;left:0;right:0;background:#fff;z-index:999;border-bottom:1px solid var(--line);box-shadow:var(--shadow-md);padding:88px 24px 24px;opacity:0;visibility:hidden;transform:translateY(-20px);transition:opacity .3s var(--ease), transform .3s var(--ease), visibility .3s;max-height:100vh;overflow-y:auto}
+.mobile-menu{position:fixed;top:72px;left:0;right:0;background:#fff;z-index:99;border-bottom:1px solid var(--line);box-shadow:var(--shadow-md);padding:16px 24px 24px;opacity:0;visibility:hidden;transform:translateY(-20px);transition:opacity .3s var(--ease), transform .3s var(--ease), visibility .3s;max-height:calc(100vh - 72px);overflow-y:auto}
 .mobile-menu.is-open{opacity:1;visibility:visible;transform:none}
 .mobile-menu a{display:block;padding:14px 12px;border-radius:10px;font-size:16px;font-weight:500;color:#334155;border-bottom:1px solid var(--line);transition:background .2s, transform .15s}
 .mobile-menu a:active{background:var(--blue-soft);color:var(--blue);transform:scale(.98)}
